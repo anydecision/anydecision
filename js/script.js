@@ -1,5 +1,5 @@
 // Declaring Variables
-var namMember = new Array();
+var mainList = new Array();
 var lstMember = new Array();
 var parent = new Array();
 var equal = new Array();
@@ -30,16 +30,16 @@ var popCatNums = new Array("fastFood", "movies", "collegePrograms", "jBros", "po
 var popCategories = new Array(fastFood, movies, collegePrograms, jBros, popBooks, tvNetflix, travel, adoption);
 
 
-// Checks to see if there is a null value in namMember
+// Checks to see if there is a null value in mainList
 function checkNull(namMem) {
     return namMem == null;
 }
 // If there are null objects, this function removes them from the array
 function myFunction() {
-	for(i=0; i<namMember.length; i++){
-		if(namMember.some(checkNull)){
-			var x = namMember.indexOf(null);
-			namMember.splice(x,1);
+	for(i=0; i<mainList.length; i++){
+		if(mainList.some(checkNull)){
+			var x = mainList.indexOf(null);
+			mainList.splice(x,1);
 			i--;
 		}
 	}
@@ -58,7 +58,7 @@ myFunction();
  
 	// Sequence to be sorted
 	lstMember[n] = new Array();
-	for (i=0; i<namMember.length; i++) {
+	for (i=0; i<mainList.length; i++) {
 		lstMember[n][i] = i;
 	}
 	parent[n] = -1;
@@ -84,7 +84,7 @@ myFunction();
 	}
  
 	// Save the arrangment (Store array)
-	for (i=0; i<namMember.length; i++) {
+	for (i=0; i<mainList.length; i++) {
 		rec[i] = 0;
 	}
 	nrec = 0;
@@ -92,7 +92,7 @@ myFunction();
 	// Save list of draw results list
 	// Key: value of link start point
 	// Value: value of link end point
-	for (i=0; i<=namMember.length; i++) {
+	for (i=0; i<=mainList.length; i++) {
 		equal[i] = -1;
 	}
  	cmp1 = lstMember.length-2;
@@ -201,7 +201,7 @@ function sortList(flag){
  
 		// Initialize the rec before you make a new comparison
 		if (head1==0 && head2==0) {
-			for (i=0; i<namMember.length; i++) {
+			for (i=0; i<mainList.length; i++) {
 				rec[i] = 0;
 			}
 			nrec = 0;
@@ -229,7 +229,7 @@ function showResult() {
 	finalResults.push(lstMember[0]);
 	calculate=[];
 	var calc2= new Array();
-	for (i=0; i < namMember.length; i++) {
+	for (i=0; i < mainList.length; i++) {
 		var sum = 0;
 			for (j=0; j<finalResults.length; j++) {
 				var condense = finalResults[j];
@@ -245,8 +245,8 @@ function showResult() {
 			calc2.push(calculate[i]);
 		}
 			calc2.sort(sortInt);
-		for (i=0; i < namMember.length; i++) {
-			justin.push(namMember[calculate.indexOf(calc2[i])]);
+		for (i=0; i < mainList.length; i++) {
+			justin.push(mainList[calculate.indexOf(calc2[i])]);
 			calculate.splice((calculate.indexOf(calc2[i])), 1, null);
 		}
 	str+="<div id=\"winner\">"+justin[0]+"</div><br /><div id=\"scrollResults\"><table id=\"results\" align=\"center\">";
@@ -259,8 +259,8 @@ function showResult() {
 	}
 	str += "</tr>"
 	
-	// Runs the length of namMember
-	for (i=0; i < namMember.length; i++) {
+	// Runs the length of mainList
+	for (i=0; i < mainList.length; i++) {
 		// Adds the name of each option in order of the justin array
 		str += "<tr>"+"<td>"+justin[i]+"<\/td>";
 		// Creates a row and adds the rank numbers in order
@@ -269,8 +269,8 @@ function showResult() {
 		if(finalResults.length > 1){
 			for (j=0; j<finalResults.length; j++) {
 				var cond = finalResults[j];
-				str += "<td style=\"text-align: center;\">"+(cond.indexOf(namMember.indexOf(justin[i]))+1)+"<\/td>";
-	/*			if (j<namMember.length-1) {
+				str += "<td style=\"text-align: center;\">"+(cond.indexOf(mainList.indexOf(justin[i]))+1)+"<\/td>";
+	/*			if (j<mainList.length-1) {
 					if (equal[lstMember[0][j]]==lstMember[0][j+1]) {
 						sameRank++;
 					} else {
@@ -299,7 +299,7 @@ function showResult() {
 	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">This will bring you back to the first screen and erase your result data.<\/span><label id=\"back_lbl\"><input type=\"button\" id=\"back_btn\" value=\" \" onclick=\"goBack(); reset();\"\/>Edit List<\/label><\/div><div id=\"logo_sm\"><\/div>";
 
 //	for(i=0; i<lstMember[0].length; i++){
-//		previousResult.push(namMember[lstMember[0][i]]);
+//		previousResult.push(mainList[lstMember[0][i]]);
 //	}
 }
 // Display two elements to be compared
@@ -339,12 +339,12 @@ function tryAgain(){
  
 // Convert numbers to names (emoticons)
 function toNameFace(n){
-	var str = namMember[n];
+	var str = mainList[n];
 	return str;
 }
 
 function resetTime(){
-	var difference = namMember.length-nullArray.length;
+	var difference = mainList.length-nullArray.length;
 	if (difference > 1){
 		timeEstimate = Math.floor(Math.pow(difference, 1.655)-2);
 		document.getElementById("estimatedTime").innerHTML = "Approx. "+timeEstimate+" seconds";
@@ -368,22 +368,22 @@ function showData(){
 		var e = popCatNums.findIndex(checkList);
 		// Runs the length of the dropdown item's array
 		for(i=0; i<popCategories[e].length; i++){
-			// Adds each item in the array at the end of namMember
-			namMember.push(popCategories[e][i]);
+			// Adds each item in the array at the end of mainList
+			mainList.push(popCategories[e][i]);
 		}
 		restarted = true;
 	} else {
 		var inputText = document.getElementById("txtOption").value;
 		// Determines if the user provided text has characters (not just spaces or left blank)
 		if (/\S/.test(inputText)){
-			// Adds the user provided text at the end of namMember
-			namMember.push(inputText);
+			// Adds the user provided text at the end of mainList
+			mainList.push(inputText);
 			// Suggests adding more options
-			if ((namMember.length-nullArray.length)<2){
+			if ((mainList.length-nullArray.length)<2){
 				document.getElementById("question").innerHTML = "Please add at least two:";
 				document.getElementById("question").style.color = "initial";
 			}else{
-				document.getElementById("question").innerHTML = "Submit your options:";
+				document.getElementById("question").innerHTML = "Or, submit your options: ";
 				document.getElementById("question").style.color = "initial";				
 			}
 			document.getElementById("submission").style.border = "1px solid #5BC0EB";
@@ -395,31 +395,31 @@ function showData(){
 			document.getElementById("question").innerHTML = "Please submit a valid option below:";
 			document.getElementById("question").style.color = "#f26430";
 			inputText = document.getElementById("txtOption").value = "";
-			if(namMember.length == nullArray.length){
+			if(mainList.length == nullArray.length){
 				document.getElementById("emptyOptions").innerHTML = "Add some options above and they will fill in down here!";
 				document.getElementById("optionChoices").innerHTML = " ";
 				//document.getElementById("count").innerHTML = " ";
 			}
 		};
 	}
-		document.getElementById("count").innerHTML = (namMember.length-nullArray.length)+" options";
-	// Makes start button available if the namMember array has at least two non-null items
-	if ((namMember.length-nullArray.length)>=2){
+		document.getElementById("count").innerHTML = (mainList.length-nullArray.length)+" options";
+	// Makes start button available if the mainList array has at least two non-null items
+	if ((mainList.length-nullArray.length)>=2){
 		document.getElementById("start_btn").disabled = false;
 	};
 	// Resets the dropdown menu and optionChoices input field
 	document.getElementById("popCats").value = "default";
 	document.getElementById("optionChoices").innerHTML = "";
-	// Fills in the optionChoices section from the namMember array
-	for(i=0; i<namMember.length; i++){
-		// If the i value of namMember isn't set to null
-		if(namMember[i] != null){
-			// Create items in optionChoices with an id, remove button, and namMember location of i
-			document.getElementById("optionChoices").innerHTML += "<p id="+i+">"+"<input type=\"button\" id=\"close_btn\"value=\" \" onclick=\"remove("+i+");\"/> "+namMember[i]+"<\/p>";
+	// Fills in the optionChoices section from the mainList array
+	for(i=0; i<mainList.length; i++){
+		// If the i value of mainList isn't set to null
+		if(mainList[i] != null){
+			// Create items in optionChoices with an id, remove button, and mainList location of i
+			document.getElementById("optionChoices").innerHTML += "<p id="+i+">"+"<input type=\"button\" id=\"close_btn\"value=\" \" onclick=\"remove("+i+");\"/> "+mainList[i]+"<\/p>";
 		}
 	}
 	if(restarted == true){
-		document.getElementById("question").innerHTML = "Submit your options:";
+		document.getElementById("question").innerHTML = "Or, submit your options: ";
 		document.getElementById("question").style.color = "initial";
 		restarted = false;
 	} else {
@@ -445,26 +445,26 @@ var nullArray = new Array();
 // Removes items from the list
 function remove(item){
 	document.getElementById("start_btn").disabled = true;
-	// Sets the selected item in namMember to null
-	namMember.splice(item, 1, null);
+	// Sets the selected item in mainList to null
+	mainList.splice(item, 1, null);
 	// Resets the section in optionChoices
 	document.getElementById(item).innerHTML = "";
 	// Increases the nullArray by a single value
 	nullArray.push(0);
-	// Checks if namMember has a value of null
+	// Checks if mainList has a value of null
 	function checkNull(namMem) {
 		return namMem == null;
 	}
 	// Check to see if the Start button should be available
-	if(namMember.length == 2 && namMember.some(checkNull)){
+	if(mainList.length == 2 && mainList.some(checkNull)){
 		document.getElementById("start_btn").disabled = true;
 		document.getElementById("question").innerHTML = "Please add at least two:";
 		document.getElementById("question").style.color = "initial";
-	} else if(namMember.every(checkNull)){
+	} else if(mainList.every(checkNull)){
 		document.getElementById("start_btn").disabled = true;
 		document.getElementById("question").innerHTML = "Please add at least two:";
 		document.getElementById("question").style.color = "initial";
-	} else if((namMember.length-nullArray.length)<=1){
+	} else if((mainList.length-nullArray.length)<=1){
 		document.getElementById("start_btn").disabled = true;
 		document.getElementById("question").innerHTML = "Please add at least two:";
 		document.getElementById("question").style.color = "initial";
@@ -472,11 +472,11 @@ function remove(item){
 		document.getElementById("start_btn").disabled = false;
 	};
 	resetTime();
-	if(namMember.length == nullArray.length){
+	if(mainList.length == nullArray.length){
 			document.getElementById("emptyOptions").innerHTML = "Add some options above and they will fill in down here!";
 			document.getElementById("count").innerHTML = "0 options";
 	} else {
-			document.getElementById("count").innerHTML = (namMember.length-nullArray.length)+" options";
+			document.getElementById("count").innerHTML = (mainList.length-nullArray.length)+" options";
 	}
 }
 function goBack(){
@@ -492,8 +492,8 @@ function goBack(){
 	document.getElementById("resultField").style.visibility = "hidden";
 }
 function clearOptions(){
-	for(i=0; i<namMember.length; i++){
-		namMember.splice(i);
+	for(i=0; i<mainList.length; i++){
+		mainList.splice(i);
 	}
 	nullArray = [];
 	document.getElementById("start_btn").disabled = true;
