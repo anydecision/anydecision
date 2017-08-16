@@ -166,14 +166,14 @@
 	font-size: 1em;
 }
 #optionSubmit_btn{
-	background: #5bc0eb url('../images/icons/add.svg') no-repeat center;
+	background: #00A7E1 url('../images/icons/add.svg') no-repeat center;
 	height: 3em;
 	width: 3em;
 	padding: 1px 6px;
 	font-size: 1em;
 }
 #optionSubmit_btn:active{
-	background-color: #4B9EC1;
+	background-color: #007CA5;
 	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
 	-webkit-appearance: none;
 }
@@ -222,6 +222,7 @@ body{
 	background: linear-gradient(#22c1c3, #64b3f4); /* Standard syntax */
 	font-family: verdana;
 	font-size: 1em;
+	color: #555;
 }
 div{
     text-align: justify;
@@ -341,35 +342,35 @@ input[type="submit"]{
 	-webkit-appearance: none;
 }
 #start_btn{
-	background: #5BC0EB url('../images/icons/play.svg') no-repeat center;
+	background: #00A7E1 url('../images/icons/play.svg') no-repeat center;
 	height: 3em;
 	width: 7em;
 	float: right;
 	font-size: 1em;
 }
 #start_btn:active{
-	background: #4B9EC1 url('../images/icons/play.svg') no-repeat center;
+	background: #0089B9 url('../images/icons/play.svg') no-repeat center;
 }
 
 #back_btn{
-	background: #5BC0EB url('../images/icons/back.svg') no-repeat center;
+	background: #00A7E1 url('../images/icons/back.svg') no-repeat center;
 	height: 22px;
 	width: 22px;
 	margin-right: 1em;
 }
 #back_btn:active{
-	background: #4B9EC1 url('../images/icons/back.svg') no-repeat center;
+	background: #0089B9 url('../images/icons/back.svg') no-repeat center;
 }
 #back_lbl{
 	color:#fff;
-	background-color: #5BC0EB;
+	background-color: #00A7E1;
 	padding: 1em;
 	margin: 1em;
 	display:inline-block;
 }
 #back_lbl:active{
 	color: #fff;
-	background-color: #4B9EC1;
+	background-color: #0089B9;
 	cursor: inherit;
 	-webkit-appearance: none;
 }
@@ -386,23 +387,23 @@ input[type="submit"]{
 	display: none;
 }
 #next_btn{
-	background: #5BC0EB url('../images/icons/next.svg') no-repeat center;
+	background: #00A7E1 url('../images/icons/next.svg') no-repeat center;
 	height: 3em;
 	width: 3em;
 	font-size: 1em;
 }
 #next_btn:active{
-	background: #4B9EC1 url('../images/icons/next.svg') no-repeat center;
+	background: #0089B9 url('../images/icons/next.svg') no-repeat center;
 }
 #next_lbl{
 	color:#fff;
-	background-color: #5BC0EB;
+	background-color: #00A7E1;
 	padding-left: 1em;
 	margin: 1em;
 	display:inline-block;
 }
 #next_lbl:active{
-	background-color: #5BC0EB;
+	background-color: #0089B9;
 	cursor: inherit;
 	-webkit-appearance: none;
 }
@@ -437,7 +438,7 @@ input[type="submit"]{
 }
 #choices > * {
 	flex: 1;
-    background-color:#5BC0EB;
+    background-color:#00A7E1;
 	cursor: pointer;
 	text-align: center;
 	//border-radius:6px;
@@ -453,7 +454,7 @@ input[type="submit"]{
     user-select: none;
 }
 #choices > a:active {
-    background-color: #4B9EC1;
+    background-color: #0089B9;
 	-webkit-appearance: none;
 }
 #warning{
@@ -529,6 +530,7 @@ hr {
 #footerInfo{
 	text-align: center;
 	font-size: .8em;
+	color: #fff;
 }
 
 
@@ -572,7 +574,7 @@ hr {
 		column-count: 2;
 	}
 	#optionSubmit_btn:hover{
-		background: #4B9EC1 url('../images/icons/add.svg') no-repeat center;
+		background: #0089B9 url('../images/icons/add.svg') no-repeat center;
 		-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
 	}
 	.toolTip {
@@ -637,14 +639,14 @@ hr {
 		background: #fff url('../images/icons/noPlay.svg') no-repeat center;
 	}
 	#start_btn:hover{
-		background: #4B9EC1 url('../images/icons/play.svg') no-repeat center;
+		background: #0089B9 url('../images/icons/play.svg') no-repeat center;
 	}
 	#back_btn:hover{
-		background: #4B9EC1 url('../images/icons/back.svg') no-repeat center;
+		background: #0089B9 url('../images/icons/back.svg') no-repeat center;
 	}
 	#back_lbl:hover{
 		color: #fff;
-		background-color: #4B9EC1;
+		background-color: #0089B9;
 		cursor: pointer;
 		-webkit-appearance: none;
 	}
@@ -652,11 +654,11 @@ hr {
 		width: auto;
 	}
 	#next_btn:hover{
-		background: #4B9EC1 url('../images/icons/next.svg') no-repeat center;
+		background: #0089B9 url('../images/icons/next.svg') no-repeat center;
 	}
 	#next_lbl:hover{
 		color: #fff;
-		background-color: #4B9EC1;
+		background-color: #0089B9;
 		cursor: pointer;
 		-webkit-appearance: none;
 	}
@@ -668,7 +670,7 @@ hr {
 	}
 
 	#choices > a:hover {
-		background-color: #4B9EC1;
+		background-color: #0089B9;
 	}
 	#winner{
 		width: 75%;

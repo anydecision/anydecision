@@ -1,0 +1,32 @@
+Background Gradient:
+#64B3F4 ++ #22C1C3
+
+Modal Background:
+#FFFFFF
+
+Modal Section Background
+#EFEFEF;
+
+Logo:
+#007EA7
+
+Text:
+#555555;
+
+Information Text/Inactive Button:
+#AAAAAA (icon and text)
+#FFFFFF (background)
+
+Icon Buttons:
+#FFFFFF (icon and text)
+#00A7E1 (normal)
+#0089B9 (hover/active)
+
+Text Remove Buttons:
+#222222 (normal)
+#8b8b8b (hover/active)
+
+Icon Remove Buttons:
+#000000 (icon)
+#FFFFFF (background normal)
+#999999 (background hover/active)
