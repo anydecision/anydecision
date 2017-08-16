@@ -233,7 +233,7 @@ div{
 	text-align: center;
 	max-width: 100%;
 	background-color: #efefef;
-	padding: 25px 15px;
+	padding: 24px 15px;
 	margin: 8px;
 	min-height: 100px;
 	border-radius: 8px;
@@ -243,7 +243,7 @@ div{
 	max-width: 100%;
 	clear: both;
 	background-color: #efefef;
-	padding: 25px 15px 15px 15px;
+	padding: 24px 15px 15px 15px;
 	margin: 8px;
 	margin-bottom: 20px;
 	border-radius: 8px;
@@ -328,6 +328,7 @@ input[type="submit"]{
 	clear: both;
 	align: bottom;
 	font-size: 1em;
+	padding: 0px;
 }
 #clearOptions_btn:active{
 	color: #8b8b8b;
@@ -353,13 +354,13 @@ input[type="submit"]{
 }
 
 #back_btn{
-	background: #00A7E1 url('../images/icons/back.svg') no-repeat center;
+	background: #00A7E1 url('../images/icons/home.svg') no-repeat center;
 	height: 22px;
 	width: 22px;
 	margin-right: 1em;
 }
 #back_btn:active{
-	background: #0089B9 url('../images/icons/back.svg') no-repeat center;
+	background: #0089B9 url('../images/icons/home.svg') no-repeat center;
 }
 #back_lbl{
 	color:#fff;
@@ -559,12 +560,16 @@ hr {
 	}
 	#banner{
 		flex-direction: row;
-		justify-content: space-between;
+		justify-content: flex-start;
 	}
 	#logo{
 		width: 492px;
 		height: 100px;
 		margin:0px auto;
+	}
+	#logo_sm{
+		width: 420px;
+		height: 75px;
 	}
 	#optionArrange{
 		line-height: 2em;
@@ -642,7 +647,7 @@ hr {
 		background: #0089B9 url('../images/icons/play.svg') no-repeat center;
 	}
 	#back_btn:hover{
-		background: #0089B9 url('../images/icons/back.svg') no-repeat center;
+		background: #0089B9 url('../images/icons/home.svg') no-repeat center;
 	}
 	#back_lbl:hover{
 		color: #fff;

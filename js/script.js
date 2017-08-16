@@ -15,6 +15,7 @@ var restarted = false;
 var finalResults = new Array();
 var calculate = new Array();
 var timeEstimate;
+var firstScroll = true;
 
 // Popular Categories
 var fastFood = new Array("McDonald's", "Wendy's", "Taco Bell", "KFC", "Burger King", "Jack in the Box", "Five Guys", "Q'Doba", "Arby's", "Dairy Queen", "Domino's", "Pizza Hut", "Subway");
@@ -380,10 +381,10 @@ function showData(){
 			// Suggests adding more options
 			if ((mainList.length-nullArray.length)<2){
 				document.getElementById("question").innerHTML = "Please add at least two:";
-				document.getElementById("question").style.color = "initial";
+				document.getElementById("question").style.color = "inherit";
 			}else{
 				document.getElementById("question").innerHTML = "Or, submit your options: ";
-				document.getElementById("question").style.color = "initial";				
+				document.getElementById("question").style.color = "inherit";				
 			}
 			document.getElementById("submission").style.border = "1px solid #5BC0EB";
 			// Resets the input field
@@ -417,11 +418,14 @@ function showData(){
 			document.getElementById("optionChoices").innerHTML += "<p id="+i+">"+"<input type=\"button\" id=\"close_btn\"value=\" \" onclick=\"remove("+i+");\"/> "+mainList[i]+"<\/p>";
 		}
 	}
-	var showView = document.getElementById("submittingOptions");
-	showView.scrollIntoView(true);
+	if(firstScroll){
+		var showView = document.getElementById("submittingOptions");
+		showView.scrollIntoView(true);
+		firstScroll = false;
+	}
 	if(restarted == true){
 		document.getElementById("question").innerHTML = "Or, submit your options: ";
-		document.getElementById("question").style.color = "initial";
+		document.getElementById("question").style.color = "inherit";
 		restarted = false;
 	} else {
 		document.getElementById("txtOption").focus();
@@ -460,15 +464,15 @@ function remove(item){
 	if(mainList.length == 2 && mainList.some(checkNull)){
 		document.getElementById("start_btn").disabled = true;
 		document.getElementById("question").innerHTML = "Please add at least two:";
-		document.getElementById("question").style.color = "initial";
+		document.getElementById("question").style.color = "inherit";
 	} else if(mainList.every(checkNull)){
 		document.getElementById("start_btn").disabled = true;
 		document.getElementById("question").innerHTML = "Please add at least two:";
-		document.getElementById("question").style.color = "initial";
+		document.getElementById("question").style.color = "inherit";
 	} else if((mainList.length-nullArray.length)<=1){
 		document.getElementById("start_btn").disabled = true;
 		document.getElementById("question").innerHTML = "Please add at least two:";
-		document.getElementById("question").style.color = "initial";
+		document.getElementById("question").style.color = "inherit";
 	} else {
 		document.getElementById("start_btn").disabled = false;
 	};

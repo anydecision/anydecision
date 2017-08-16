@@ -13,6 +13,9 @@ Logo:
 Text:
 #555555;
 
+Error Text:
+#F26430;
+
 Information Text/Inactive Button:
 #AAAAAA (icon and text)
 #FFFFFF (background)
