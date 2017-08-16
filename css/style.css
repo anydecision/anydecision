@@ -665,6 +665,9 @@ hr {
 	#mainTable{
 		min-height: 75%;
 	}
+	#warning{
+		font-size: 1em;
+	}
 	#choices{
 		flex-direction: row;
 	}

@@ -357,7 +357,6 @@ function resetTime(){
 function showData(){
 	// Removes the default text in Option List
 	document.getElementById("emptyOptions").innerHTML = " ";
-	// Updates the estimated time clock
 	// Finds the index of the value of popCatNums
 	function checkList(cList) {
 		return cList == document.getElementById("popCats").value;
@@ -418,6 +417,8 @@ function showData(){
 			document.getElementById("optionChoices").innerHTML += "<p id="+i+">"+"<input type=\"button\" id=\"close_btn\"value=\" \" onclick=\"remove("+i+");\"/> "+mainList[i]+"<\/p>";
 		}
 	}
+	var showView = document.getElementById("submittingOptions");
+	showView.scrollIntoView(true);
 	if(restarted == true){
 		document.getElementById("question").innerHTML = "Or, submit your options: ";
 		document.getElementById("question").style.color = "initial";
