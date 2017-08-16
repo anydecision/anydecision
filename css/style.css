@@ -443,7 +443,7 @@ input[type="submit"]{
     background-color:#00A7E1;
 	cursor: pointer;
 	text-align: center;
-	padding: 15% 0px;
+	padding: 15% 5px;
 	margin: 2.5%;
 	color: #fff;
 	-webkit-touch-callout: none;
@@ -472,6 +472,7 @@ input[type="submit"]{
 	font-size: 2em;
 	color: #000;
 	background-color: #c3e8f7;
+	width: 75%;
 }
 #results {
     font-size: .9em; text-align: left; min-width: 300px; background:#F0F9FD; line-height:120%;
@@ -678,7 +679,7 @@ hr {
 		background-color: #0089B9;
 	}
 	#winner{
-		width: 75%;
+		width: 50%;
 	}
 	#groupBox {
 		width: 75%;
