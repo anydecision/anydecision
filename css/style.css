@@ -667,9 +667,6 @@ hr {
 		cursor: pointer;
 		-webkit-appearance: none;
 	}
-	#mainTable{
-		min-height: 75%;
-	}
 	#warning{
 		font-size: 1em;
 	}

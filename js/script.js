@@ -335,6 +335,7 @@ function tryAgain(){
 	document.getElementById("quiz").style.display = "none";
 	document.getElementById("banner").innerHTML = "<div id=\"logo\"><\/div>";
 	document.getElementById("options").style.display = "inherit";
+	document.getElementById("resultField").innerHTML = "";
 	document.getElementById("resultField").style.visibility = "hidden";
 }
  
@@ -494,6 +495,7 @@ function goBack(){
 	document.getElementById("quiz").style.display = "none";
 	document.getElementById("banner").innerHTML = "<div id=\"logo\"><\/div>";
 	document.getElementById("options").style.display = "inherit";
+	document.getElementById("resultField").innerHTML = "";
 	document.getElementById("resultField").style.visibility = "hidden";
 }
 function clearOptions(){
