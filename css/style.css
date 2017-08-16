@@ -173,7 +173,7 @@
 	font-size: 1em;
 }
 #optionSubmit_btn{
-	background: #5bc0eb url('https://cdn.glitch.com/3f6d4d99-97fb-49aa-960a-56af5ca2fbda%2FaddDown.svg?1502569353008') no-repeat center;
+	background: #5bc0eb url('/images/icons/add.svg') no-repeat center;
 	height: 3em;
 	width: 3em;
 	padding: 1px 6px;
