@@ -173,7 +173,7 @@
 	font-size: 1em;
 }
 #optionSubmit_btn{
-	background: #5bc0eb url('/anydecision/images/icons/add.svg') no-repeat center;
+	background: #5bc0eb url('../images/icons/add.svg') no-repeat center;
 	height: 3em;
 	width: 3em;
 	padding: 1px 6px;
@@ -314,7 +314,7 @@ input[type="submit"]{
 	line-height: 1.1em;
 	padding: 7.5px 0px;
 	border-radius:35px;
-	background: #efefef url('https://cdn.glitch.com/3f6d4d99-97fb-49aa-960a-56af5ca2fbda%2Fx.gif?1502519907049') no-repeat center;
+	background: #efefef url('../images/icons/close.svg') no-repeat center;
 	font-size: 1em;
 }
 #close_btn:active{
@@ -342,30 +342,30 @@ input[type="submit"]{
 #start_btn[disabled]:active,
 #start_btn[disabled]{
 	border: 0px;
-	background: #fff url('https://cdn.glitch.com/3f6d4d99-97fb-49aa-960a-56af5ca2fbda%2FnoPlay.svg?1502660978158') no-repeat center;
+	background: #fff url('../images/icons/noPlay.svg') no-repeat center;
 	font-size: 1em;
 	cursor: inherit;
 	-webkit-appearance: none;
 }
 #start_btn{
-	background: #5BC0EB url('https://cdn.glitch.com/3f6d4d99-97fb-49aa-960a-56af5ca2fbda%2Fplay.svg?1502660912536') no-repeat center;
+	background: #5BC0EB url('../images/icons/play.svg') no-repeat center;
 	height: 3em;
 	width: 7em;
 	float: right;
 	font-size: 1em;
 }
 #start_btn:active{
-	background: #4B9EC1 url('https://cdn.glitch.com/3f6d4d99-97fb-49aa-960a-56af5ca2fbda%2Fplay.svg?1502660912536') no-repeat center;
+	background: #4B9EC1 url('../images/icons/play.svg') no-repeat center;
 }
 
 #back_btn{
-	background: #5BC0EB url('https://cdn.glitch.com/3f6d4d99-97fb-49aa-960a-56af5ca2fbda%2Fback-01.svg?1502660622388') no-repeat center;
+	background: #5BC0EB url('../images/icons/back.svg') no-repeat center;
 	height: 22px;
 	width: 22px;
 	margin-right: 1em;
 }
 #back_btn:active{
-	background: #4B9EC1 url('https://cdn.glitch.com/3f6d4d99-97fb-49aa-960a-56af5ca2fbda%2Fback-01.svg?1502660622388') no-repeat center;
+	background: #4B9EC1 url('../images/icons/back.svg') no-repeat center;
 }
 #back_lbl{
 	color:#fff;
@@ -393,13 +393,13 @@ input[type="submit"]{
 	display: none;
 }
 #next_btn{
-	background: #5BC0EB url('https://cdn.glitch.com/3f6d4d99-97fb-49aa-960a-56af5ca2fbda%2Fnext-01.svg?1502818653171') no-repeat center;
+	background: #5BC0EB url('../images/icons/next.svg') no-repeat center;
 	height: 3em;
 	width: 3em;
 	font-size: 1em;
 }
 #next_btn:active{
-	background: #4B9EC1 url('https://cdn.glitch.com/3f6d4d99-97fb-49aa-960a-56af5ca2fbda%2Fnext-01.svg?1502818653171') no-repeat center;
+	background: #4B9EC1 url('../images/icons/next.svg') no-repeat center;
 }
 #next_lbl{
 	color:#fff;
@@ -579,7 +579,7 @@ hr {
 		column-count: 2;
 	}
 	#optionSubmit_btn:hover{
-		background: #4B9EC1 url('https://cdn.glitch.com/3f6d4d99-97fb-49aa-960a-56af5ca2fbda%2FaddDown.svg?1502569353008') no-repeat center;
+		background: #4B9EC1 url('../images/icons/add.svg') no-repeat center;
 		-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
 	}
 	.toolTip {
@@ -641,13 +641,13 @@ hr {
 		color: #8b8b8b;
 	}
 	#start_btn[disabled]:hover{
-		background: #fff url('https://cdn.glitch.com/3f6d4d99-97fb-49aa-960a-56af5ca2fbda%2FnoPlay.svg?1502660978158') no-repeat center;
+		background: #fff url('../images/icons/noPlay.svg') no-repeat center;
 	}
 	#start_btn:hover{
-		background: #4B9EC1 url('https://cdn.glitch.com/3f6d4d99-97fb-49aa-960a-56af5ca2fbda%2Fplay.svg?1502660912536') no-repeat center;
+		background: #4B9EC1 url('../images/icons/play.svg') no-repeat center;
 	}
 	#back_btn:hover{
-		background: #4B9EC1 url('https://cdn.glitch.com/3f6d4d99-97fb-49aa-960a-56af5ca2fbda%2Fback-01.svg?1502660622388') no-repeat center;
+		background: #4B9EC1 url('../images/icons/back.svg') no-repeat center;
 	}
 	#back_lbl:hover{
 		color: #fff;
@@ -659,7 +659,7 @@ hr {
 		width: auto;
 	}
 	#next_btn:hover{
-		background: #4B9EC1 url('https://cdn.glitch.com/3f6d4d99-97fb-49aa-960a-56af5ca2fbda%2Fnext-01.svg?1502818653171') no-repeat center;
+		background: #4B9EC1 url('../images/icons/next.svg') no-repeat center;
 	}
 	#next_lbl:hover{
 		color: #fff;
