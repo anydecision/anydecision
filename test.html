@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<title>Split Decision</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> 
+<meta name="description" content="Make a decision by working through your list, two items at a time." />
+<meta name="author" content="Split Decision" />
+<link rel="icon" href="favicon.ico" />
+<link rel="icon" type="image/png" href="favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<script type="text/javascript" src="client.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+<meta name="robots" content="noindex"/>
+
+</head>
+<body>
+<header id="nav">
+<div><a onclick="goBack(); reset();">Home</a></div>
+<div><a onclick="about();">Us</a></div>
+<div><a onclick="help();">Help</a></div>
+</header>
+<div class="center">
+<div id="banner"><div id="logo"></div></div>
+<noscript>Your browser does not support JavaScript!</noscript>
+<p id="tagLine">Create a list of option to decide.<br />
+<span class="emphasize">Or choose from one of our preset option lists.</span></p>
+<div id="submittingOptions">
+	<label for="popCats">Choose from preset options:</label><br /><br />
+	<select id="popCats" name="popCats" onchange="showData();">
+		<option selected value="default" style="color: #aaa;">Popular Categories</option>
+		<option value="fastFood">Fast Food</option>
+		<option value="movies">Movies</option>
+		<option value="collegePrograms">Bachelor's Programs</option>
+		<option value="jBros">Jonas Brothers</option>
+		<option value="popBooks">Popular Books</option>
+		<option value="tvNetflix">TV Shows on Netflix</option>
+		<option value="travel">Travel Locations</option>
+		<option value="adoption">Adoption Countries</option>
+	</select>
+	<br /><br />
+	<label for="txtOption"><span id="question">Or, submit your options:</span></label>
+	<br /><br />
+	
+	<div id="submission"><input type="text" name="txtOption" id="txtOption" value="" onblur="noHighlight();" onfocus="resetDrop(); highlight();" placeholder="Enter options here" /> <div class="toolTip"><span class="toolTipText">Adds items to your Option List</span><input type="button" value=" " id="optionSubmit_btn" onclick="showData();"/></div></div>
+	<br /><br />
+</div>
+<div id="options">
+	<p>Option List:
+	<input type="button" name="start" id="start_btn" disabled="true" value=" " onclick="initList();"/>
+	</p>
+	<span id="estimatedTime"></span>
+		<span id="emptyOptions">Add some options above and they will fill in down here!</span>
+	<div id="optionArrange">
+	<span id="optionChoices"></span>
+	</div>	<span id="count">0 options</span><input type="button" value="Clear List" id="clearOptions_btn" onclick="clearOptions();"/>
+</div> 
+<div id="quiz">
+<div id="mainTable">
+	<div style="padding-bottom: 10px;">
+	<div id="progress" >
+			<div id="progressBar"></div>
+		</div>
+	<div id="percentComplete"></div>
+	<div id="warning">You cannot go back. Please choose carefully.</div>
+	</div>
+	<div id="choices">
+		<a id="leftField" onClick="if(finishFlag==0)sortList(-1);">
+			&nbsp;
+		</a>
+		<a id="rightField" onClick="if(finishFlag==0)sortList(1);">
+			&nbsp;
+		</a>
+	</div>
+</div>
+</div>
+<div id="resultField" style="text-align:center;">
+</div>
+</div>
+<footer id="footerInfo">Copywrite &#169 2017 Split Decision</footer>
+<div id="aboutScreen"><input type="button" id="close_btn" value=" " onclick="aboutClose();"/></div>
+<div id="helpScreen"></div>
+<div id="fade"></div>
+<script type="text/javascript">
+enterPress();
+</script>
+</body>
+</html>
