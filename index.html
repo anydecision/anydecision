@@ -9,13 +9,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="en">
 <head>
-<title>Any Decision</title>
+<title>Any Decision | Sort Through Your List of Options</title>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
 <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> 
 <meta name="description" content="Make a decision by working through your list, two items at a time." />
-<meta name="keywords" content="decision, pairwise, comparison, split, choose, choice, list, rank" />
+<meta name="keywords" content="decision, pairwise, comparison, pick, choose, choice, list, rank" />
 <meta name="author" content="Any Decision" />
 <link rel="icon" href="../favicon.ico" />
 <link rel="shortcut icon" type="image/png" href="../favicon.png" />
@@ -52,22 +52,22 @@
 	<label for="txtOption"><span id="question">Or, submit your options:</span></label>
 	<br /><br />
 	
-	<div id="submission"><input type="text" name="txtOption" id="txtOption" value="" onblur="noHighlight();" onfocus="resetDrop(); highlight();" placeholder="Enter options here" /> <div class="toolTip"><span class="toolTipText">Adds items to your Option List</span><input type="button" value=" " id="optionSubmit_btn" onclick="showData();"/></div></div>
+	<div id="submission"><input type="text" name="txtOption" id="txtOption" value="" onblur="noHighlight();" onfocus="resetDrop(); highlight();" placeholder="Enter options here" /> <div class="toolTip"><span class="toolTipText">Adds items to your Option List</span><input type="button" name="Add" label="Add Item to Option List" value=" " id="optionSubmit_btn" onclick="showData();"/></div></div>
 	<br /><br />
 </div>
 <div id="options">
 	<p>Option List:
-	<input type="button" name="start" id="start_btn" disabled="true" value=" " onclick="initList();"/>
+	<input type="button" name="Begin" label="Begin" id="start_btn" disabled="true" value=" " onclick="initList();"/>
 	</p>
 	<span id="estimatedTime"></span>
 		<span id="emptyOptions">Add some options above and they will fill in down here!</span>
 	<div id="optionArrange">
 	<span id="optionChoices"></span>
-	</div>	<span id="count">0 options</span><input type="button" value="Clear List" id="clearOptions_btn" onclick="clearOptions();"/>
+	</div>	<span id="count">0 options</span><input type="button" name="Clear List" label="Clear List" value="Clear List" id="clearOptions_btn" onclick="clearOptions();"/>
 </div> 
 <div id="quiz">
 <div id="mainTable">
-	<div style="padding-bottom: 10px;">
+	<div style="margin-top: 25px;">
 	<div id="progress" >
 			<div id="progressBar"></div>
 		</div>
@@ -88,9 +88,9 @@
 </div>
 </div>
 <footer id="footerInfo">Copywrite &#169 2017 Any Decision</footer>
-<div id="aboutScreen"><input type="button" id="close_btn" value=" " onclick="aboutAndHelpClose();"/>
+<div id="aboutScreen"><input type="button" name="Close" label="Close" id="close_btn" value=" " onclick="aboutAndHelpClose();"/>
 <h3>This is us!</h3><p>This is where the content about our people goes. If we didn't have any content to go in here, I'm not quite sure what I'd do.</p></div>
-<div id="helpScreen"><input type="button" id="close_btn" value=" " onclick="aboutAndHelpClose();"/>
+<div id="helpScreen"><input type="button" name="Close" label="Close" id="close_btn" value=" " onclick="aboutAndHelpClose();"/>
 <h3>You need help?</h3><p>It's okay to ask for help. This is our fault, not your's. If you could give us some feedback on what was unclear, we would love to fix it.</p>
 <p>It's worth noting that this website/webapp is currently under construction. So while most of it works properly, there are improvements coming to the problem areas.</p></div>
 <div id="fade" onclick="aboutAndHelpClose();"></div>

@@ -1,12 +1,12 @@
 // Declaring Variables
 var mainList = new Array();
-var lstMember = new Array();
+var storeSelect = new Array();
 var parent = new Array();
 var equal = new Array();
-var rec = new Array();
-var cmp1,cmp2;
+var record = new Array();
+var leftChoice,rightChoice;
 var head1,head2;
-var nrec;
+var newRecord;
 var numQuestion;
 var totalSize;
 var finishSize;
@@ -57,47 +57,38 @@ myFunction();
 	var mid;
 	var i;
  
-	// Sequence to be sorted
-	lstMember[n] = new Array();
+	storeSelect[n] = new Array();
 	for (i=0; i<mainList.length; i++) {
-		lstMember[n][i] = i;
+		storeSelect[n][i] = i;
 	}
 	parent[n] = -1;
 	totalSize = 0;
 	n++;
  
-	for (i=0; i<lstMember.length; i++) {
-		// If the number of elements is two or more, divide by 2
-		// Add the divided array to the end of lstMember
-		if(lstMember[i].length>=2) {
-			mid = Math.ceil(lstMember[i].length/2);
-			lstMember[n] = new Array();
-			lstMember[n] = lstMember[i].slice(0,mid);
-			totalSize += lstMember[n].length;
+	for (i=0; i<storeSelect.length; i++) {
+		if(storeSelect[i].length>=2) {
+			mid = Math.ceil(storeSelect[i].length/2);
+			storeSelect[n] = new Array();
+			storeSelect[n] = storeSelect[i].slice(0,mid);
+			totalSize += storeSelect[n].length;
 			parent[n] = i;
 			n++;
-			lstMember[n] = new Array();
-			lstMember[n] = lstMember[i].slice(mid,lstMember[i].length);
-			totalSize += lstMember[n].length;
+			storeSelect[n] = new Array();
+			storeSelect[n] = storeSelect[i].slice(mid,storeSelect[i].length);
+			totalSize += storeSelect[n].length;
 			parent[n] = i;
 			n++;
 		}
 	}
- 
-	// Save the arrangment (Store array)
-	for (i=0; i<mainList.length; i++) {
-		rec[i] = 0;
+ 	for (i=0; i<mainList.length; i++) {
+		record[i] = 0;
 	}
-	nrec = 0;
- 
-	// Save list of draw results list
-	// Key: value of link start point
-	// Value: value of link end point
+	newRecord = 0;
 	for (i=0; i<=mainList.length; i++) {
 		equal[i] = -1;
 	}
- 	cmp1 = lstMember.length-2;
-	cmp2 = lstMember.length-1;
+ 	leftChoice = storeSelect.length-2;
+	rightChoice = storeSelect.length-1;
 	head1 = 0;
 	head2 = 0;
 	numQuestion = 1;
@@ -105,111 +96,102 @@ myFunction();
 	finishFlag = 0;
     document.body.scrollTop = 0; // For Chrome, Safari and Opera 
     document.documentElement.scrollTop = 0; // For IE and Firefox
-	// Show the quiz
 	showImage();
 }
- 
-// Sort the list
-// flag: comparison result
-// -1・・Choose the left)
-// 0・・Draw)
-// 1・・Choose the Right)
 function sortList(flag){
 	var i;
 	var str;
  
-	// Save to rec
+	// Save to record
 	if (flag<0) {
-		rec[nrec] = lstMember[cmp1][head1];
+		record[newRecord] = storeSelect[leftChoice][head1];
 		head1++;
-		nrec++;
+		newRecord++;
 		finishSize++;
-		while (equal[rec[nrec-1]]!=-1) {
-			rec[nrec] = lstMember[cmp1][head1];
+		while (equal[record[newRecord-1]]!=-1) {
+			record[newRecord] = storeSelect[leftChoice][head1];
 			head1++;
-			nrec++;
+			newRecord++;
 			finishSize++;
 		}
 	}
 	else if (flag>0) {
-		rec[nrec] = lstMember[cmp2][head2];
+		record[newRecord] = storeSelect[rightChoice][head2];
 		head2++;
-		nrec++;
+		newRecord++;
 		finishSize++;
-		while (equal[rec[nrec-1]]!=-1) {
-			rec[nrec] = lstMember[cmp2][head2];
+		while (equal[record[newRecord-1]]!=-1) {
+			record[newRecord] = storeSelect[rightChoice][head2];
 			head2++;
-			nrec++;
+			newRecord++;
 			finishSize++;
 		}
 	}
 	else {
-		rec[nrec] = lstMember[cmp1][head1];
+		record[newRecord] = storeSelect[leftChoice][head1];
 		head1++;
-		nrec++;
+		newRecord++;
 		finishSize++;
-		while (equal[rec[nrec-1]]!=-1) {
-			rec[nrec] = lstMember[cmp1][head1];
+		while (equal[record[newRecord-1]]!=-1) {
+			record[newRecord] = storeSelect[leftChoice][head1];
 			head1++;
-			nrec++;
+			newRecord++;
 			finishSize++;
 		}
-		equal[rec[nrec-1]] = lstMember[cmp2][head2];
-		rec[nrec] = lstMember[cmp2][head2];
+		equal[record[newRecord-1]] = storeSelect[rightChoice][head2];
+		record[newRecord] = storeSelect[rightChoice][head2];
 		head2++;
-		nrec++;
+		newRecord++;
 		finishSize++;
-		while (equal[rec[nrec-1]]!=-1) {
-			rec[nrec] = lstMember[cmp2][head2];
+		while (equal[record[newRecord-1]]!=-1) {
+			record[newRecord] = storeSelect[rightChoice][head2];
 			head2++;
-			nrec++;
+			newRecord++;
 			finishSize++;
 		}
 	}
- 
 	// Processing after it has finished scanning the list of one
-	if (head1<lstMember[cmp1].length && head2==lstMember[cmp2].length) {
-		// Cmp2 list is scanned - copy the rest of the list cmp1
-		while (head1<lstMember[cmp1].length){
-			rec[nrec] = lstMember[cmp1][head1];
+	if (head1<storeSelect[leftChoice].length && head2==storeSelect[rightChoice].length) {
+		// rightChoice list is scanned - copy the rest of the list leftChoice
+		while (head1<storeSelect[leftChoice].length){
+			record[newRecord] = storeSelect[leftChoice][head1];
 			head1++;
-			nrec++;
+			newRecord++;
 			finishSize++;
 		}
 	}
-	else if (head1==lstMember[cmp1].length && head2<lstMember[cmp2].length) {
-		// Cmp1 list is scanned - copy the rest of the list cmp2
-		while (head2<lstMember[cmp2].length){
-			rec[nrec] = lstMember[cmp2][head2];
+	else if (head1==storeSelect[leftChoice].length && head2<storeSelect[rightChoice].length) {
+		// leftChoice list is scanned - copy the rest of the list rightChoice
+		while (head2<storeSelect[rightChoice].length){
+			record[newRecord] = storeSelect[rightChoice][head2];
 			head2++;
-			nrec++;
+			newRecord++;
 			finishSize++;
 		}
 	}
  
-	// If you reach the end of both lists
-	// Update the parent list
-	if (head1==lstMember[cmp1].length && head2==lstMember[cmp2].length) {
-		for (i=0; i<lstMember[cmp1].length+lstMember[cmp2].length; i++) {
-			lstMember[parent[cmp1]][i] = rec[i];
+	// If the user reaches the end of both lists go ahead and update the parent list
+	if (head1==storeSelect[leftChoice].length && head2==storeSelect[rightChoice].length) {
+		for (i=0; i<storeSelect[leftChoice].length+storeSelect[rightChoice].length; i++) {
+			storeSelect[parent[leftChoice]][i] = record[i];
 		}
-		lstMember.pop();
-		lstMember.pop();
-		cmp1 = cmp1-2;
-		cmp2 = cmp2-2;
+		storeSelect.pop();
+		storeSelect.pop();
+		leftChoice = leftChoice-2;
+		rightChoice = rightChoice-2;
 		head1 = 0;
 		head2 = 0;
  
-		// Initialize the rec before you make a new comparison
+		// Initialize the record before you make a new comparison
 		if (head1==0 && head2==0) {
 			for (i=0; i<mainList.length; i++) {
-				rec[i] = 0;
+				record[i] = 0;
 			}
-			nrec = 0;
+			newRecord = 0;
 		}
 	}
  
-	if (cmp1<0) {
+	if (leftChoice<0) {
 		str = "Option No."+(numQuestion-1)+"<br>"+Math.floor(finishSize*100/totalSize)+"% sorted.";
 		document.getElementById("percentComplete").innerHTML = str;
 
@@ -227,7 +209,7 @@ function showResult() {
 	var sameRank = 1;
 	var str = "";
 	str += "<p>And the winner is:<\/p>"
-	finalResults.push(lstMember[0]);
+	finalResults.push(storeSelect[0]);
 	calculate=[];
 	var calc2= new Array();
 	for (i=0; i < mainList.length; i++) {
@@ -271,37 +253,17 @@ function showResult() {
 			for (j=0; j<finalResults.length; j++) {
 				var cond = finalResults[j];
 				str += "<td style=\"text-align: center;\">"+(cond.indexOf(mainList.indexOf(justin[i]))+1)+"<\/td>";
-	/*			if (j<mainList.length-1) {
-					if (equal[lstMember[0][j]]==lstMember[0][j+1]) {
-						sameRank++;
-					} else {
-						ranking += sameRank;
-						sameRank = 1;
-					}
-				}
-	*/
 			}
 		}
 		// Ends each row
 		str += "<\/tr>";
 	}
-	
-//			if (previousResult.length>0){
-//			str += "<\/table><table id=\"results2\" align=\"center\">";
-//			for (i=0; i<previousResult.length; i++){
-//				str += "<tr><td>"+(i+7)+". "+previousResult[i]+"<\/td><\/tr>";
-//			}
-//		}
-	str += "<\/table></div><br \/><div id=\"groupBox\"><h2>Group Decision<\/h2><hr /><p>With a group?<br />Let everyone have a say.</p><label id=\"next_lbl\">Next Person&nbsp;&nbsp;<input id=\"next_btn\" type=\"button\" value=\" \" onClick=\"initList(); \"><\/label><\/div>";
+	str += "<\/table></div><br \/><div id=\"groupBox\"><h2>Group Decision<\/h2><hr /><p>With a group?<br />Let everyone have a say.</p><label id=\"next_lbl\">Next Person&nbsp;&nbsp;<input id=\"next_btn\" type=\"button\" name=\"Next\" label=\"Next Person\" value=\" \" onClick=\"initList(); \"><\/label><\/div>";
 	/*&nbsp; &nbsp; <input type=\"button\" value=\"Reset\" onClick=\"window.location.reload()\">*/
 	document.getElementById("resultField").style.visibility = "visible";
 	document.getElementById("resultField").innerHTML = str;
 	document.getElementById("quiz").style.display = "none";
-	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">This will bring you back to the first screen and erase your result data.<\/span><label id=\"back_lbl\"><input type=\"button\" id=\"back_btn\" value=\" \" onclick=\"goBack(); reset();\"\/>Edit List<\/label><\/div><div id=\"logo_sm\"><\/div>";
-
-//	for(i=0; i<lstMember[0].length; i++){
-//		previousResult.push(mainList[lstMember[0][i]]);
-//	}
+	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">This will bring you back to the first screen and erase your result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div><div id=\"logo_sm\"><\/div>";
 }
 // Display two elements to be compared
 function showImage() {
@@ -309,14 +271,14 @@ function showImage() {
 	document.getElementById("tagLine").style.display = "none";
 	document.getElementById("quiz").style.display = "inline";
 	
-	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">This will bring you back to the first screen and erase your result data.<\/span><label id=\"back_lbl\"><input type=\"button\" id=\"back_btn\" value=\" \" onclick=\"goBack(); reset();\"\/>Edit List<\/label><\/div><div id=\"logo_sm\"><\/div>";
+	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">This will bring you back to the first screen and erase your result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div><div id=\"logo_sm\"><\/div>";
 
 	document.getElementById("resultField").innerHTML = "";
 	document.getElementById("resultField").style.visibility = "hidden";
 	document.getElementById("options").style.display = "none";
 	var str0 = Math.floor(finishSize*100/totalSize)+"%";
-	var str1 = ""+toNameFace(lstMember[cmp1][head1]);
-	var str2 = ""+toNameFace(lstMember[cmp2][head2]);
+	var str1 = ""+toNameFace(storeSelect[leftChoice][head1]);
+	var str2 = ""+toNameFace(storeSelect[rightChoice][head2]);
 	document.getElementById("percentComplete").innerHTML = str0;
 	document.getElementById("leftField").innerHTML = str1;
 	document.getElementById("rightField").innerHTML = str2;
@@ -324,6 +286,9 @@ function showImage() {
 	// Display a progress bar
 	var bar = document.getElementById("progressBar");
 	var width = Math.floor(finishSize*100/totalSize);
+	if(width==0){
+		width=1;
+	}
 	bar.style.width = width + '%';
 }
 // Resets the program without losing the quiz options
@@ -486,7 +451,7 @@ function remove(item){
 	}
 }
 function goBack(){
-	lstMember = [];
+	storeSelect = [];
 	nullArray = [];
 	restarted = true;
 	showData();
