@@ -58,6 +58,7 @@
     display: none;
 	background-color: #fff;
 	border-radius: 10px;
+	overflow:auto;
 }
 #aboutScreen > h3{
 	text-align: center;
@@ -216,6 +217,9 @@ h2{
 }
 .emphasize{
 	font-style: italic;
+}
+.bolded{
+	font-weight: bold;
 }
 body{
 	background-color: #22c1c3;

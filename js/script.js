@@ -18,17 +18,24 @@ var timeEstimate;
 var firstScroll = true;
 
 // Popular Categories
-var fastFood = new Array("McDonald's", "Wendy's", "Taco Bell", "KFC", "Burger King", "Jack in the Box", "Five Guys", "Q'Doba", "Arby's", "Dairy Queen", "Domino's", "Pizza Hut", "Subway");
-var movies = new Array("Kill Bill", "Pulp Fiction", "The Breakfast Club", "Up", "Toy Story", "Benjamin Button");
-var collegePrograms = new Array("Engineering", "Political Science", "Economics", "Business Administration", "History", "English");
-var popBooks = new Array("The Sorcerer's Stone", "The Chamber of Secrets", "The Prisoner of Azkaban", "The Goblet of Fire", "The Order of the Phoenix", "The Half-Blood Prince", "The Deathly Hallows");
-var jBros = new Array("Joe Jonas", "Kevin Jonas", "Nick Jonas");
-var tvNetflix = new Array("Stranger Things", "Orange is the New Black", "The Crown", "13 Reasons Why", "House of Cards", "Master of None", "Love", "Girlboss", "Narcos", "Hemlock Grove");
-var travel = new Array("Los Angeles, California", "Loch Ness, Scotland", "Ibiza, Balearic Islands, Spain", "Bali, Indonesia", "Greek Islands, Greece", "Bora Bora, French Polynesia", "Machu Pichu, Peru" );
-var adoption = new Array("Thailand", "Uganda", "China", "Ethiopia", "Ukraine", "Haiti", "South Korea", "The Phillipines", "India");
+var food = new Array("Mexican Food", "Italian Cuisine", "Indian Food", "Thai Food", "Greek Cuisine", "Chinese Food", "Japanese Cuisine", "American Food", "Mediterranean Cuisine", "Korean Food",
+"Vietnamese Food", "Seafood", "Southern Food");
+var vacation = new Array("Beach Trip", "Relaxation and/or Yoga Retreat", "Cruise Vacation", "Hiking/Camping Trip", "Backpacking/Hitch Hiking", "Hunting/Fishing Trip", "Skiing/Snowboarding",
+"Safari Trek", "Sightseeing/Art and Culture", "Wine Tasting", "Golfing Trip", "Theme Park", "Road Trip", "Festival/Live Event", "Volunteering Trip", "Stay-cation");
+var movieGenre = new Array("Action", "Adventure", "Animated", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "Historical", "Horror", "Musical", "Mystery", "Romance",
+"Romantic Comedy", "Sci-Fi", "Sports", "Spy", "Superhero", "Thriller Suspense", "War", "Western");
+var tattoo = new Array("Face", "Behind Ear", "Neck", "Shoulder", "Bicep", "Forearm", "Wrist", "Hand", "Finger", "Upper Back", "Lower Back", "Chest", "Stomach", "Side/Ribs", "Buttocks",
+"Thigh", "Calves", "Ankle", "Foot");
 
-var popCatNums = new Array("fastFood", "movies", "collegePrograms", "jBros", "popBooks", "tvNetflix", "travel", "adoption");
-var popCategories = new Array(fastFood, movies, collegePrograms, jBros, popBooks, tvNetflix, travel, adoption);
+var got = new Array("Arya Stark", "Beric Dondarrion", "Bran Stark", "Brienne of Tarth", "Bronn", "Cersei Lannister", "Daenerys Targaryen", "Davos Seaworth", "Ellaria Sand", "Euron Greyjoy",
+"Gendry", "Gilly", "Grey Worm", "Hodor", "Hot Pie", "Jaime Lannister", "Jaqen H'ghar (No One)", "Jon Snow", "Jorah Mormont", "Lyanna Mormont", "Melisandre", "Missandei", "Olenna Tyrell",
+"Petyr Baelish (Littlefinger)", "Podrick Payne", "Qyburn", "Samwell Tarly", "Sansa Stark", "The Hound", "The Mountain", "The Night King", "Theon Greyjoy", "Tormund Giantsbane", "Tycho Nestoris",
+"Tyrion Lannister", "Varys", "Yara Greyjoy");
+var tvNetflix = new Array("Stranger Things", "Orange is the New Black", "Dear White People", "A Series of Unfortunate Events", "G.L.O.W.", "Black Mirror", "Easy", "White Rabbit Project",
+"The Crown", "Narcos", "13 Reasons Why", "House of Cards", "Master of None", "Love", "Girlboss", "Narcos", "Hemlock Grove");
+
+var popCatNums = new Array("food", "vacation", "movieGenre", "tattoo", "got", "tvNetflix",);
+var popCategories = new Array(food, vacation, movieGenre, tattoo, got, tvNetflix);
 
 
 // Checks to see if there is a null value in mainList

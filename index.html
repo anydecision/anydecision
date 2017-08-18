@@ -42,14 +42,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<label for="popCats">Choose from preset options:</label><br /><br />
 	<select id="popCats" name="popCats" onchange="showData();">
 		<option selected value="default" style="color: #aaa;">Popular Categories</option>
-		<option value="fastFood">Fast Food</option>
-		<option value="movies">Movies</option>
-		<option value="collegePrograms">Bachelor's Programs</option>
-		<option value="jBros">Jonas Brothers</option>
-		<option value="popBooks">Popular Books</option>
-		<option value="tvNetflix">TV Shows on Netflix</option>
-		<option value="travel">Travel Locations</option>
-		<option value="adoption">Adoption Countries</option>
+		<option value="food">What food should I eat today?</option>
+		<option value="vacation">How should I vacation?</option>
+		<option value="movieGenre">What kind of movie should I watch?</option>
+		<option value="tattoo">Where should I get a tattoo?</option>
+		<option value="got">Who is your favorite Game of Thrones character?</option>
+		<option value="tvNetflix">What should I watch on Netflix?</option>
 	</select>
 	<br /><br />
 	<label for="txtOption"><span id="question">Or, submit your options:</span></label>
@@ -92,10 +90,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <footer id="footerInfo">Copywrite &#169 2017 Any Decision</footer>
 <div id="aboutScreen"><input type="button" name="Close" label="Close" id="close_btn" value=" " onclick="aboutAndHelpClose();"/>
-<h3>This is us!</h3><p>This is where the content about our people goes. If we didn't have any content to go in here, I'm not quite sure what I'd do.</p></div>
+<h3>This is us!</h3>
+<p>We all get overwhelmed with too many options. Any Decision is a tool that helps you sort through your list of options by taking it two items at a time. All you need to do is pick between the two displayed, and move on to the next. We'll sort out the rest. By the end, we'll provide your final decision and even a fancy table to show your ranked order of the remaining options.
+Check out our <a href="#" onclick="help();">Help page</a> for detailed instructions.</p>
+<p>If you have a group, click on "Next Person" under the results section. Let each person go through the list of randomly paired items, and we'll compare the results at the end.</p>
+<h3>FAQ</h3>
+<p><span class="bolded">Who are you?</span><br />
+We're the answer to all your decision-making problems.</p>
+
+<p><span class="bolded">How can you afford to do this?</span><br />
+We spent most of our free time working on this project just for fun, but in order to keep up with the fees associated with owning a webpage, we could really use support in the shape of donations from users.</p>
+
+<p><span class="bolded">Can I give you feedback?</span><br />
+Of course you can! Click that little button at the bottom of the screen that you probably minimized out of habit. Alternatively, you can send us an email: <a href="mailto:admin@anydecision.com">admin@anydecision.com</a>. We would love to hear from you!</p>
+ 
+<p><span class="bolded">Testimonials</span><br />
+I couldn't decide a darn thing before. Now I can't STOP deciding!<br />
+-Matt S.</p>
+<p>I have searched for something [...] like this on the internet and nothing was really helpful before. I will totally use it!<br />
+-Sarah R.</p>
+<p>Without Any Decision, I'm just a dumb ol' human.<br />
+Dumb dumb dumb, that's me.<br />
+-Human 1</p>
+ 
+<p><span class="bolded">Privacy Policy</span><br />
+We reserve the right to record any use of our product for research purposes. We are dedicated to making the best user experience possible for our users, and we will use all data from users exclusively to create a better product.</p>
+</div>
 <div id="helpScreen"><input type="button" name="Close" label="Close" id="close_btn" value=" " onclick="aboutAndHelpClose();"/>
 <h3>You need help?</h3><p>It's okay to ask for help. This is our fault, not your's. If you could give us some feedback on what was unclear, we would love to fix it.</p>
-<p>It's worth noting that this website/webapp is currently under construction. So while most of it works properly, there are improvements coming to the problem areas.</p></div>
+<p>Step 1. Choose from one of our preset lists, or create a custom list of options.</p>
+<p>Step 2. Begin the sorting process, during which you will choose between two of the options at a time.</p>
+<p>Step 3. Check out the results! You'll see your top choice, as well as a table of all your other options ranked in the order of your preference.</p>
+</div>
 <div id="fade" onclick="aboutAndHelpClose();"></div>
 <script type="text/javascript">
 enterPress();
