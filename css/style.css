@@ -29,12 +29,8 @@
 	cursor: pointer;
 	height: 20px;
 }
-#nav div a:hover{
-	color: #fff;
+#nav div a:hover, #nav div a:active{
 	background-color: rgba(0,0,0,.2);
-}
-#nav .active{
-	color: #000;
 }
 #home_btn{
 	background: url('../images/icons/home.svg') no-repeat center;
@@ -44,6 +40,9 @@
 }
 #help_btn{
 	background: url('../images/icons/help.svg') no-repeat center;
+}
+#donate_btn{
+	background: url('../images/icons/donate.svg') no-repeat center;
 }
 #fade{
     position:fixed;
@@ -56,26 +55,31 @@
     display:none;
 }
 #aboutScreen{
-    height: 65%;
+    height: 85%;
     width: 100%;
     margin: 0px auto;
     position: absolute;
     z-index: 10;
-	top: 10%;
+	top: 8%;
 	left: 0;
 	right: 0;
     display: none;
-	background-color: #EFEFEF;
 	border-radius: 10px;
+	background-color: #EFEFEF;
+
 }
-#aboutScreen > h3{
+#aboutScreen > h2{
 	text-align: center;
 	font-size: 1.5em;
+	margin: 20px 0px;
 }
 #aboutScreen > #close_btn{
 	float: right;
-	margin: 5px;
+	margin: 10px 10px 0px 0px;
 	background-color: #EFEFEF;
+}
+#aboutScreen > #close_btn:active{
+	background-color: #999;
 }
 #aboutContent{
 	margin-top: 45px 0px;
@@ -90,28 +94,18 @@
 #aboutContent > p{
 	margin: 25px 50px;
 }
-#aboutContent > #close_btn:active{
-	background-color: #999;
-}
 #helpScreen{
-    height: 65%;
+    height: 85%;
     width: 100%;
     margin: 0px auto;
     position: absolute;
     z-index: 10;
-	top: 10%;
+	top: 8%;
 	left: 0;
 	right: 0;
     display: none;
-	background-color: #fff;
+	background-color: #EFEFEF;
 	border-radius: 10px;
-}
-#helpScreen > h3{
-	text-align: center;
-	font-size: 1.5em;
-}
-#helpScreen > p{
-	margin: 25px 50px;
 }
 #helpScreen > #close_btn{
 	float: right;
@@ -120,6 +114,24 @@
 }
 #helpScreen > #close_btn:active{
 	background-color: #999;
+}
+#helpScreen > h2{
+	text-align: center;
+	font-size: 1.5em;
+	margin: 20px 0px;
+}
+#helpContent{
+	margin-top: 45px 0px;
+	height: 80%;
+	overflow:auto;
+	background-color: #FFF;
+}
+#helpContent > h3{
+	text-align: center;
+	font-size: 1.5em;
+}
+#helpContent > p{
+	margin: 25px 50px;
 }
 
 #banner{
@@ -194,8 +206,9 @@
 	padding: 1px 6px;
 	font-size: 1em;
 }
-#optionSubmit_btn:active{
-	background-color: #007CA5;
+#optionSubmit_btn:active,
+#optionSubmit_btn:hover{
+	background: #0089B9 url('../images/icons/add.svg') no-repeat center;
 	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
 	-webkit-appearance: none;
 }
@@ -332,8 +345,10 @@ input[type="submit"]{
 	background: #efefef url('../images/icons/close.svg') no-repeat center;
 	font-size: 1em;
 }
-#close_btn:active{
+#close_btn:active,
+#close_btn:hover{
 	background-color: #999;
+	border-radius: 50px;
 	-webkit-appearance: none;
 }
 #count{
@@ -351,12 +366,14 @@ input[type="submit"]{
 	font-size: 1em;
 	padding: 0px;
 }
-#clearOptions_btn:active{
+#clearOptions_btn:active,
+#clearOptions_btn:hover{
 	color: #8b8b8b;
 	-webkit-appearance: none;
 }
 #start_btn[disabled]:active,
-#start_btn[disabled]{
+#start_btn[disabled],
+#start_btn[disabled]:hover{
 	border: 0px;
 	background: #fff url('../images/icons/noPlay.svg') no-repeat center;
 	font-size: 1em;
@@ -370,10 +387,10 @@ input[type="submit"]{
 	float: right;
 	font-size: 1em;
 }
-#start_btn:active{
+#start_btn:active,
+#start_btn:hover{
 	background: #0089B9 url('../images/icons/play.svg') no-repeat center;
 }
-
 #back_btn{
 	background-color: #fff;
 	color: #222;
@@ -383,11 +400,11 @@ input[type="submit"]{
 	font-size: 1em;
 	padding: 0px;
 }
-#back_btn:active{
+#back_btn:active,
+#back_btn:hover{
 	color: #8b8b8b;
 	-webkit-appearance: none;
 }
-
 #estimatedTime{
 	float: right;
 	font-size: .75em;
@@ -406,7 +423,8 @@ input[type="submit"]{
 	width: 3em;
 	font-size: 1em;
 }
-#next_btn:active{
+#next_btn:active,
+#next_btn:hover{
 	background: #0089B9 url('../images/icons/next.svg') no-repeat center;
 }
 #next_lbl{
@@ -416,7 +434,8 @@ input[type="submit"]{
 	margin: 1em;
 	display:inline-block;
 }
-#next_lbl:active{
+#next_lbl:active,
+#next_lbl:hover{
 	background-color: #0089B9;
 	cursor: inherit;
 	-webkit-appearance: none;
@@ -589,10 +608,7 @@ hr {
 		-moz-column-count: 2; /* Firefox */
 		column-count: 2;
 	}
-	#optionSubmit_btn:hover{
-		background: #0089B9 url('../images/icons/add.svg') no-repeat center;
-		-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
-	}
+
 	.toolTip {
 		position: relative;
 		display: inline-block;
@@ -643,40 +659,14 @@ hr {
 		color: #8b8b8b;
 		background-color: transparent;
 	}
-	#close_btn:hover{
-		background-color: #999;
-		border-radius: 50px;
-		font-size: 1em;
-	}
-	#clearOptions_btn:hover{
-		color: #8b8b8b;
-	}
-	#start_btn[disabled]:hover{
-		background: #fff url('../images/icons/noPlay.svg') no-repeat center;
-	}
-	#start_btn:hover{
-		background: #0089B9 url('../images/icons/play.svg') no-repeat center;
-	}
-	#back_btn:hover{
-		color: #8b8b8b;
-	}
-	#estimatedTime{
-		width: auto;
-	}
-	#next_btn:hover{
-		background: #0089B9 url('../images/icons/next.svg') no-repeat center;
-	}
-	#next_lbl:hover{
-		color: #fff;
-		background-color: #0089B9;
-		cursor: pointer;
-		-webkit-appearance: none;
-	}
 	#mainTable{
 		min-height: 50%;
 	}
 	#mainTable > *{
 		padding: 10px;
+	}
+	#estimatedTime{
+		width: auto;
 	}
 	#warning{
 		font-size: 1em;
