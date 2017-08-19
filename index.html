@@ -29,9 +29,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <header id="nav">
-<div><a onclick="goBack(); reset();">Home</a></div>
-<div><a onclick="about();">Us</a></div>
-<div><a onclick="help();">Help</a></div>
+<div><a name="home" label="Home" id="home_btn" value=" " onclick="goBack(); reset();"/></a></div>
+<div><a name="about" label="Us" id="us_btn" value=" " onclick="about();"/></a></div>
+<div><a name="help" label="Help" id="help_btn" value=" " onclick="help();"/></a></div>
 </header>
 <div class="center">
 <div id="banner"><div id="logo"></div></div>
@@ -90,7 +90,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <footer id="footerInfo">Copywrite &#169 2017 Any Decision</footer>
 <div id="aboutScreen"><input type="button" name="Close" label="Close" id="close_btn" value=" " onclick="aboutAndHelpClose();"/>
-<h3>This is us!</h3>
+<h3>Here's a little about us</h3>
+<div id="aboutContent">
 <p>We all get overwhelmed with too many options. Any Decision is a tool that helps you sort through your list of options by taking it two items at a time. All you need to do is pick between the two displayed, and move on to the next. We'll sort out the rest. By the end, we'll provide your final decision and even a fancy table to show your ranked order of the remaining options.
 Check out our <a href="#" onclick="help();">Help page</a> for detailed instructions.</p>
 <p>If you have a group, click on "Next Person" under the results section. Let each person go through the list of randomly paired items, and we'll compare the results at the end.</p>
@@ -115,7 +116,7 @@ Dumb dumb dumb, that's me.<br />
  
 <p><span class="bolded">Privacy Policy</span><br />
 We reserve the right to record any use of our product for research purposes. We are dedicated to making the best user experience possible for our users, and we will use all data from users exclusively to create a better product.</p>
-</div>
+</div></div>
 <div id="helpScreen"><input type="button" name="Close" label="Close" id="close_btn" value=" " onclick="aboutAndHelpClose();"/>
 <h3>You need help?</h3><p>It's okay to ask for help. This is our fault, not your's. If you could give us some feedback on what was unclear, we would love to fix it.</p>
 <p>Step 1. Choose from one of our preset lists, or create a custom list of options.</p>
