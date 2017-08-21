@@ -32,7 +32,7 @@ var got = new Array("Arya Stark", "Beric Dondarrion", "Bran Stark", "Brienne of 
 "Petyr Baelish (Littlefinger)", "Podrick Payne", "Qyburn", "Samwell Tarly", "Sansa Stark", "The Hound", "The Mountain", "The Night King", "Theon Greyjoy", "Tormund Giantsbane", "Tycho Nestoris",
 "Tyrion Lannister", "Varys", "Yara Greyjoy");
 var tvNetflix = new Array("Stranger Things", "Orange is the New Black", "Dear White People", "A Series of Unfortunate Events", "G.L.O.W.", "Black Mirror", "Easy", "White Rabbit Project",
-"The Crown", "Narcos", "13 Reasons Why", "House of Cards", "Master of None", "Love", "Girlboss", "Narcos", "Hemlock Grove");
+"The Crown", "Narcos", "13 Reasons Why", "House of Cards", "Master of None", "Love", "Girlboss", "Hemlock Grove");
 
 var popCatNums = new Array("food", "vacation", "movieGenre", "tattoo", "got", "tvNetflix",);
 var popCategories = new Array(food, vacation, movieGenre, tattoo, got, tvNetflix);
@@ -53,17 +53,15 @@ function myFunction() {
 	}
 	nullArray = [];
 }
- 
 // Variable initialization
 function initList(){
    
-// Calls myFunction
-myFunction();
+	// Calls myFunction
+	myFunction();
 
 	var n = 0;
 	var mid;
 	var i;
- 
 	storeSelect[n] = new Array();
 	for (i=0; i<mainList.length; i++) {
 		storeSelect[n][i] = i;
@@ -71,7 +69,6 @@ myFunction();
 	parent[n] = -1;
 	totalSize = 0;
 	n++;
- 
 	for (i=0; i<storeSelect.length; i++) {
 		if(storeSelect[i].length>=2) {
 			mid = Math.ceil(storeSelect[i].length/2);
@@ -215,7 +212,6 @@ function showResult() {
 	var ranking = 1;
 	var sameRank = 1;
 	var str = "";
-	str += "<p>And the winner is:<\/p>"
 	finalResults.push(storeSelect[0]);
 	calculate=[];
 	var calc2= new Array();
@@ -239,7 +235,7 @@ function showResult() {
 			justin.push(mainList[calculate.indexOf(calc2[i])]);
 			calculate.splice((calculate.indexOf(calc2[i])), 1, null);
 		}
-	str+="<div id=\"winner\">"+justin[0]+"</div><br /><div id=\"scrollResults\"><table id=\"results\" align=\"center\">";
+	str+="<div id=\"winner\"><p>And the winner is:<\/p><span>"+justin[0]+"<\/span></div><br /><div id=\"scrollResults\"><table id=\"results\" align=\"center\">";
 	// Table heading section
 	str += "<tr>"+"<td>Name</td><td style=\"text-align: center;\">Rank</td>";
 	if(finalResults.length > 1){
@@ -277,9 +273,7 @@ function showImage() {
 	document.getElementById("submittingOptions").style.display = "none";
 	document.getElementById("tagLine").style.display = "none";
 	document.getElementById("quiz").style.display = "inline";
-	
 	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">This will bring you back to the first screen and erase your result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div><div id=\"logo_sm\"><\/div>";
-
 	document.getElementById("resultField").innerHTML = "";
 	document.getElementById("resultField").style.visibility = "hidden";
 	document.getElementById("options").style.display = "none";
@@ -298,6 +292,26 @@ function showImage() {
 	}
 	bar.style.width = width + '%';
 }
+	leftPress();
+	rightPress();
+// Allows the user to press "Left" instead of clicking the left option
+function leftPress(){
+	document.addEventListener("keyup", function(event) {
+	event.preventDefault();
+		if (event.keyCode == 37) {
+			document.getElementById("leftField").click();
+		};
+	});
+}
+function rightPress(){
+	document.addEventListener("keyup", function(event) {
+	event.preventDefault();
+		if (event.keyCode == 39) {
+			document.getElementById("rightField").click();
+		};
+	});
+}
+
 // Resets the program without losing the quiz options
 function tryAgain(){
 	nullArray = [];
@@ -337,7 +351,11 @@ function showData(){
 	}
 	// Decides if the dropdown value matches an array
 	if(popCatNums.some(checkList)){
-		// Sets e equal to the index of the dropdown item
+		// Rests the list if the user selects a new dropdown
+		for(i=0; i<mainList.length; i++){
+			mainList.splice(i);
+		}
+		nullArray = [];		// Sets e equal to the index of the dropdown item
 		var e = popCatNums.findIndex(checkList);
 		// Runs the length of the dropdown item's array
 		for(i=0; i<popCategories[e].length; i++){
@@ -349,15 +367,24 @@ function showData(){
 		var inputText = document.getElementById("txtOption").value;
 		// Determines if the user provided text has characters (not just spaces or left blank)
 		if (/\S/.test(inputText)){
-			// Adds the user provided text at the end of mainList
-			mainList.push(inputText);
-			// Suggests adding more options
-			if ((mainList.length-nullArray.length)<2){
-				document.getElementById("question").innerHTML = "Please add at least two:";
-				document.getElementById("question").style.color = "inherit";
-			}else{
-				document.getElementById("question").innerHTML = "Or, submit your options: ";
-				document.getElementById("question").style.color = "inherit";				
+			// Allows a user to input a list from an Excel row (separated by tabs)
+			if(/\t/.test(inputText)){
+				var excel = inputText.split("\t");
+				for(i=0; i<excel.length; i++){
+					mainList.push(excel[i]);
+				}
+				inputText = document.getElementById("txtOption").value = "";
+			} else {
+				// Adds the user provided text at the end of mainList
+				mainList.push(inputText);
+				// Suggests adding more options
+				if ((mainList.length-nullArray.length)<2){
+					document.getElementById("question").innerHTML = "Please add at least two:";
+					document.getElementById("question").style.color = "inherit";
+				}else{
+					document.getElementById("question").innerHTML = "Or, submit your options: ";
+					document.getElementById("question").style.color = "inherit";				
+				}
 			}
 			document.getElementById("submission").style.border = "1px solid #5BC0EB";
 			// Resets the input field
@@ -416,7 +443,6 @@ function enterPress(){
 			document.getElementById("optionSubmit_btn").click();
 		};
 	});
-	
 }
 
 var nullArray = new Array();
@@ -494,18 +520,21 @@ function noHighlight(){
 function reset(){
 	finalResults = [];
 }
-
+function popClose(){
+	document.getElementById("aboutScreen").style.display = "none";
+	document.getElementById("helpScreen").style.display = "none";
+	document.getElementById("donateScreen").style.display = "none";	
+	document.getElementById("fade").style.display = "none";
+}
 function about(){
 	document.getElementById("aboutScreen").style.display = "block";
 	document.getElementById("fade").style.display = "block";
 }
-function aboutAndHelpClose(){
-	document.getElementById("aboutScreen").style.display = "none";
-	document.getElementById("fade").style.display = "none";
-	document.getElementById("helpScreen").style.display = "none";
-	document.getElementById("fade").style.display = "none";
-}
 function help(){
 	document.getElementById("helpScreen").style.display = "block";
+	document.getElementById("fade").style.display = "block";
+}
+function donate(){
+	document.getElementById("donateScreen").style.display = "block";
 	document.getElementById("fade").style.display = "block";
 }

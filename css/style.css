@@ -11,9 +11,8 @@
 	flex-wrap: nowrap;
 	align-items: center;
 	flex-direction: row;
-	width: 75%;
+	width: 94%;
 	margin: 0px auto;
-	padding-left: 1%;
 	text-align: center;
 	background-color: rgba(0,0,0,.2);
 	border-radius: 15px;
@@ -29,7 +28,25 @@
 	cursor: pointer;
 	height: 20px;
 }
-#nav div a:hover, #nav div a:active{
+#nav div a:hover,
+#nav div a:focus,
+#nav div a:active{
+	background-color: rgba(0,0,0,.2);
+}
+#nav div form{
+    display: block;
+	width: 50px;
+    color: #fff;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+	cursor: pointer;
+	height: 20px;
+	margin: 0px;
+}
+#nav div form:hover,
+#nav div form:focus,
+#nav div form:active{
 	background-color: rgba(0,0,0,.2);
 }
 #home_btn{
@@ -42,7 +59,7 @@
 	background: url('../images/icons/help.svg') no-repeat center;
 }
 #donate_btn{
-	background: url('../images/icons/donate.svg') no-repeat center;
+	background: url('../images/icons/donateNav.svg') no-repeat center;
 }
 #fade{
     position:fixed;
@@ -81,17 +98,17 @@
 #aboutScreen > #close_btn:active{
 	background-color: #999;
 }
-#aboutContent{
+#popContent{
 	margin-top: 45px 0px;
 	height: 80%;
 	overflow:auto;
 	background-color: #FFF;
 }
-#aboutContent > h3{
+#popContent > h3{
 	text-align: center;
 	font-size: 1.5em;
 }
-#aboutContent > p{
+#popContent > p{
 	margin: 25px 50px;
 }
 #helpScreen{
@@ -110,7 +127,7 @@
 #helpScreen > #close_btn{
 	float: right;
 	margin: 5px;
-	background-color: #fff;
+	background-color: #EFEFEF;
 }
 #helpScreen > #close_btn:active{
 	background-color: #999;
@@ -120,17 +137,56 @@
 	font-size: 1.5em;
 	margin: 20px 0px;
 }
-#helpContent{
+#donateScreen{
+    height: 85%;
+    width: 100%;
+    margin: 0px auto;
+    position: absolute;
+    z-index: 10;
+	top: 8%;
+	left: 0;
+	right: 0;
+    display: none;
+	background-color: #EFEFEF;
+	border-radius: 10px;
+}
+#donateScreen > #close_btn{
+	float: right;
+	margin: 5px;
+	background-color: #EFEFEF;
+}
+#donateScreen > #close_btn:active{
+	background-color: #999;
+}
+#donateScreen > h2{
+	text-align: center;
+	font-size: 1.5em;
+	margin: 20px 0px;
+}
+#donateScreen form{
+	display: block;
+	margin: 0px auto;
+	background: #00A7E1;
+	width: 200px;
+}
+#donateScreen form:active,
+#donateScreen form:focus,
+#donateScreen form:hover{
+	background: #0089B9;
+	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+	-webkit-appearance: none;
+}
+#popContent{
 	margin-top: 45px 0px;
 	height: 80%;
 	overflow:auto;
 	background-color: #FFF;
 }
-#helpContent > h3{
+#popContent > h3{
 	text-align: center;
 	font-size: 1.5em;
 }
-#helpContent > p{
+#popContent > p{
 	margin: 25px 50px;
 }
 
@@ -207,6 +263,7 @@
 	font-size: 1em;
 }
 #optionSubmit_btn:active,
+#optionSubmit_btn:focus,
 #optionSubmit_btn:hover{
 	background: #0089B9 url('../images/icons/add.svg') no-repeat center;
 	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
@@ -267,7 +324,7 @@ body{
 	text-align: center;
 	max-width: 100%;
 	background-color: #efefef;
-	padding: 24px 15px;
+	padding: 24px 15px 0px 15px;
 	margin: 8px;
 	min-height: 100px;
 	border-radius: 8px;
@@ -326,8 +383,10 @@ input[type="submit"][disabled]{
 	border-radius: 0px;
 }
 input[type="button"]:active,
+input[type="button"]:focus,
 input[type="button"],
 input[type="submit"]:active,
+input[type="submit"]:focus,
 input[type="submit"]{
 	border: 0px;
 	cursor: pointer;
@@ -346,6 +405,7 @@ input[type="submit"]{
 	font-size: 1em;
 }
 #close_btn:active,
+#close_btn:focus,
 #close_btn:hover{
 	background-color: #999;
 	border-radius: 50px;
@@ -367,6 +427,7 @@ input[type="submit"]{
 	padding: 0px;
 }
 #clearOptions_btn:active,
+#clearOptions_btn:focus,
 #clearOptions_btn:hover{
 	color: #8b8b8b;
 	-webkit-appearance: none;
@@ -388,6 +449,7 @@ input[type="submit"]{
 	font-size: 1em;
 }
 #start_btn:active,
+#start_btn:focus,
 #start_btn:hover{
 	background: #0089B9 url('../images/icons/play.svg') no-repeat center;
 }
@@ -401,6 +463,7 @@ input[type="submit"]{
 	padding: 0px;
 }
 #back_btn:active,
+#back_btn:focus,
 #back_btn:hover{
 	color: #8b8b8b;
 	-webkit-appearance: none;
@@ -424,6 +487,7 @@ input[type="submit"]{
 	font-size: 1em;
 }
 #next_btn:active,
+#next_btn:focus,
 #next_btn:hover{
 	background: #0089B9 url('../images/icons/next.svg') no-repeat center;
 }
@@ -435,9 +499,10 @@ input[type="submit"]{
 	display:inline-block;
 }
 #next_lbl:active,
+#next_lbl:focus,
 #next_lbl:hover{
 	background-color: #0089B9;
-	cursor: inherit;
+	cursor: pointer;
 	-webkit-appearance: none;
 }
 #mainTable{
@@ -504,6 +569,14 @@ input[type="submit"]{
 	color: #000;
 	background-color: #c3e8f7;
 	width: 75%;
+}
+#winner p{
+	margin: 0px;
+	font-size: 0.5em;
+}
+#winner span{
+	font-size: 1.25em;
+	font-weight: bold;
 }
 #results {
     font-size: .9em; text-align: left; min-width: 300px; background:#F0F9FD; line-height:120%;
@@ -584,6 +657,13 @@ hr {
 	#helpScreen > #close_btn:hover{
 		background-color: #999;
 	}
+	#donateScreen{
+		height: 75%;
+		width: 50%;
+	}
+	#donateScreen > #close_btn:hover{
+		background-color: #999;
+	}
 	.center {
 		margin: 20px auto;
 		max-width: 50%;
@@ -601,6 +681,9 @@ hr {
 		height: 75px;
 		align-self: center;
 	}
+	#submittingOptions{
+		padding: 24px 15px;
+	}
 	#optionArrange{
 		line-height: 2em;
 		margin-top: 25px;
@@ -608,7 +691,6 @@ hr {
 		-moz-column-count: 2; /* Firefox */
 		column-count: 2;
 	}
-
 	.toolTip {
 		position: relative;
 		display: inline-block;
