@@ -369,9 +369,9 @@ function showData(){
 		if (/\S/.test(inputText)){
 			// Allows a user to input a list from an Excel row (separated by tabs)
 			if(/\t/.test(inputText)){
-				var excel = inputText.split("\t");
-				for(i=0; i<excel.length; i++){
-					mainList.push(excel[i]);
+				var excelT = inputText.split("\t");
+				for(i=0; i<excelT.length; i++){
+					mainList.push(excelT[i]);
 				}
 				inputText = document.getElementById("txtOption").value = "";
 			} else {

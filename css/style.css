@@ -95,7 +95,9 @@
 	margin: 10px 10px 0px 0px;
 	background-color: #EFEFEF;
 }
-#aboutScreen > #close_btn:active{
+#aboutScreen > #close_btn:active,
+#aboutScreen > #close_btn:focus,
+#aboutScreen > #close_btn:hover{
 	background-color: #999;
 }
 #popContent{
@@ -129,7 +131,9 @@
 	margin: 5px;
 	background-color: #EFEFEF;
 }
-#helpScreen > #close_btn:active{
+#helpScreen > #close_btn:active,
+#helpScreen > #close_btn:focus,
+#helpScreen > #close_btn:hover{
 	background-color: #999;
 }
 #helpScreen > h2{
@@ -155,7 +159,9 @@
 	margin: 5px;
 	background-color: #EFEFEF;
 }
-#donateScreen > #close_btn:active{
+#donateScreen > #close_btn:active,
+#donateScreen > #close_btn:focus,
+#donateScreen > #close_btn:hover{
 	background-color: #999;
 }
 #donateScreen > h2{
@@ -176,20 +182,6 @@
 	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
 	-webkit-appearance: none;
 }
-#popContent{
-	margin-top: 45px 0px;
-	height: 80%;
-	overflow:auto;
-	background-color: #FFF;
-}
-#popContent > h3{
-	text-align: center;
-	font-size: 1.5em;
-}
-#popContent > p{
-	margin: 25px 50px;
-}
-
 #banner{
 	display: -webkit-box;
 	display: -moz-box;
@@ -308,6 +300,10 @@ h2{
 }
 .bolded{
 	font-weight: bold;
+}
+.testimonials{
+	text-align: center;
+	margin: 25px 50px;
 }
 body{
 	background-color: #22c1c3;
@@ -647,22 +643,13 @@ hr {
 		height: 75%;
 		width: 50%;
 	}
-	#aboutScreen > #close_btn:hover{
-		background-color: #999;
-	}
 	#helpScreen{
 		height: 75%;
 		width: 50%;
 	}
-	#helpScreen > #close_btn:hover{
-		background-color: #999;
-	}
 	#donateScreen{
 		height: 75%;
 		width: 50%;
-	}
-	#donateScreen > #close_btn:hover{
-		background-color: #999;
 	}
 	.center {
 		margin: 20px auto;
