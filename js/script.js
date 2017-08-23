@@ -55,10 +55,8 @@ function myFunction() {
 }
 // Variable initialization
 function initList(){
-   
 	// Calls myFunction
 	myFunction();
-
 	var n = 0;
 	var mid;
 	var i;
@@ -173,7 +171,6 @@ function sortList(flag){
 			finishSize++;
 		}
 	}
- 
 	// If the user reaches the end of both lists go ahead and update the parent list
 	if (head1==storeSelect[leftChoice].length && head2==storeSelect[rightChoice].length) {
 		for (i=0; i<storeSelect[leftChoice].length+storeSelect[rightChoice].length; i++) {
@@ -185,7 +182,6 @@ function sortList(flag){
 		rightChoice = rightChoice-2;
 		head1 = 0;
 		head2 = 0;
- 
 		// Initialize the record before you make a new comparison
 		if (head1==0 && head2==0) {
 			for (i=0; i<mainList.length; i++) {
@@ -194,11 +190,9 @@ function sortList(flag){
 			newRecord = 0;
 		}
 	}
- 
 	if (leftChoice<0) {
 		str = "Option No."+(numQuestion-1)+"<br>"+Math.floor(finishSize*100/totalSize)+"% sorted.";
 		document.getElementById("percentComplete").innerHTML = str;
-
 		showResult();
 		finishFlag = 1;
 	}
@@ -525,16 +519,28 @@ function popClose(){
 	document.getElementById("helpScreen").style.display = "none";
 	document.getElementById("donateScreen").style.display = "none";	
 	document.getElementById("fade").style.display = "none";
+	document.body.style.position = "static";
+	document.body.style.overflow = "auto";
+	document.body.style.width = "inherit";
 }
 function about(){
 	document.getElementById("aboutScreen").style.display = "block";
 	document.getElementById("fade").style.display = "block";
+	document.body.style.position = "fixed";
+	document.body.style.overflowY = "scroll";
+	document.body.style.width = "-webkit-fill-available";
 }
 function help(){
 	document.getElementById("helpScreen").style.display = "block";
 	document.getElementById("fade").style.display = "block";
+	document.body.style.position = "fixed";
+	document.body.style.overflowY = "scroll";
+	document.body.style.width = "-webkit-fill-available";
 }
 function donate(){
 	document.getElementById("donateScreen").style.display = "block";
 	document.getElementById("fade").style.display = "block";
+	document.body.style.position = "fixed";
+	document.body.style.overflowY = "scroll";
+	document.body.style.width = "-webkit-fill-available";
 }
