@@ -86,7 +86,7 @@
     display:none;
 }
 #aboutScreen{
-    height: 85%;
+    height: 75%;
     width: 100%;
     margin: 0px auto;
 	padding-bottom: 20px;
@@ -127,7 +127,7 @@
 }
 #popContent{
 	margin: 25px 0px;
-	height: 80%;
+	height: 85%;
 	overflow:auto;
 	background-color: #FFF;
 }
@@ -139,7 +139,7 @@
 	margin: 25px 50px;
 }
 #helpScreen{
-    height: 85%;
+    height: 75%;
     width: 100%;
     margin: 0px auto;
 	padding-bottom: 20px;
@@ -179,7 +179,7 @@
 	margin: 20px 0px;
 }
 #donateScreen{
-    height: 85%;
+    height: 75%;
     width: 100%;
     margin: 0px auto;
 	padding-bottom: 20px;
