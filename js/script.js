@@ -257,6 +257,7 @@ function showResult() {
 	}
 	str += "<\/table></div><br \/><div id=\"groupBox\"><h2>Group Decision<\/h2><hr /><p>With a group?<br />Let everyone have a say.</p><label id=\"next_lbl\">Next Person&nbsp;&nbsp;<input id=\"next_btn\" type=\"button\" name=\"Next\" label=\"Next Person\" value=\" \" onClick=\"initList(); \"><\/label><\/div>";
 	/*&nbsp; &nbsp; <input type=\"button\" value=\"Reset\" onClick=\"window.location.reload()\">*/
+	document.getElementById("social").style.visibility = "visible";
 	document.getElementById("resultField").style.visibility = "visible";
 	document.getElementById("resultField").innerHTML = str;
 	document.getElementById("quiz").style.display = "none";
@@ -270,6 +271,7 @@ function showImage() {
 	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">This will bring you back to the first screen and erase your result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div><div id=\"logo_sm\"><\/div>";
 	document.getElementById("resultField").innerHTML = "";
 	document.getElementById("resultField").style.visibility = "hidden";
+	document.getElementById("social").style.visibility = "hidden";
 	document.getElementById("options").style.display = "none";
 	var str0 = Math.floor(finishSize*100/totalSize)+"%";
 	var str1 = ""+toNameFace(storeSelect[leftChoice][head1]);
@@ -317,6 +319,7 @@ function tryAgain(){
 	document.getElementById("options").style.display = "inherit";
 	document.getElementById("resultField").innerHTML = "";
 	document.getElementById("resultField").style.visibility = "hidden";
+	document.getElementById("social").style.visibility = "hidden";
 }
  
 // Convert numbers to names (emoticons)
@@ -489,6 +492,7 @@ function goBack(){
 	document.getElementById("options").style.display = "inherit";
 	document.getElementById("resultField").innerHTML = "";
 	document.getElementById("resultField").style.visibility = "hidden";
+	document.getElementById("social").style.visibility = "hidden";
 }
 function clearOptions(){
 	for(i=0; i<mainList.length; i++){
