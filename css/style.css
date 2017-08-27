@@ -715,7 +715,7 @@ hr {
 	.center {
 		margin: 20px auto;
 		max-width: 640px;
-		padding: 56px 80px;
+		padding: 18px 80px;
 	}
 	#banner{
 		justify-content: flex-start;
@@ -737,7 +737,7 @@ hr {
 		width: 480px;
 	}
 	#submission{
-		width: 480px;
+		width: 471.9px;
 	}
 	#submittingOptions{
 		max-width: 640px;
