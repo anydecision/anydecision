@@ -470,11 +470,14 @@ input[type="submit"]{
 	align: bottom;
 	font-size: 1em;
 	padding: 0px;
+	padding-left: 20px;
+	background: #efefef url('../images/icons/trash.svg') no-repeat left;
 }
 #clearOptions_btn:active,
 #clearOptions_btn:focus,
 #clearOptions_btn:hover{
 	color: #8b8b8b;
+	background: #efefef url('../images/icons/trashDown.svg') no-repeat left;
 	-webkit-appearance: none;
 }
 #start_btn[disabled]:active,
