@@ -715,7 +715,7 @@ hr {
 	.center {
 		margin: 20px auto;
 		max-width: 640px;
-		padding: 35px 80px;
+		padding: 43px 80px;
 	}
 	#banner{
 		justify-content: flex-start;
@@ -732,6 +732,20 @@ hr {
 	}
 	#submittingOptions{
 		padding: 24px 15px;
+	}
+	#popCats{
+		width: 480px;
+	}
+	#submission{
+		width: 480px;
+	}
+	#submittingOptions{
+		max-width: 640px;
+		margin: 0px;
+	}
+	#options{
+		max-width: 640px;
+		margin: 20px 0px;
 	}
 	#optionArrange{
 		line-height: 2em;
