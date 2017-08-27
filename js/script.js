@@ -229,7 +229,7 @@ function showResult() {
 			justin.push(mainList[calculate.indexOf(calc2[i])]);
 			calculate.splice((calculate.indexOf(calc2[i])), 1, null);
 		}
-	str+="<div id=\"winner\"><p>And the winner is:<\/p><span>"+justin[0]+"<\/span></div><br /><div id=\"scrollResults\"><table id=\"results\" align=\"center\">";
+	str+="<div class=\"addthis_inline_share_toolbox_bx2j\"><\/div><div id=\"winner\"><p>And the winner is:<\/p><span>"+justin[0]+"<\/span></div><br /><div id=\"scrollResults\"><table id=\"results\" align=\"center\">";
 	// Table heading section
 	str += "<tr>"+"<td>Name</td><td style=\"text-align: center;\">Rank</td>";
 	if(finalResults.length > 1){
