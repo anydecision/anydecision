@@ -258,7 +258,7 @@ function showResult() {
 	str += "<\/table></div><br \/><div id=\"groupBox\"><h2>Group Decision<\/h2><hr /><p>With a group?<br />Let everyone have a say.</p><label id=\"next_lbl\">Next Person&nbsp;&nbsp;<input id=\"next_btn\" type=\"button\" name=\"Next\" label=\"Next Person\" value=\" \" onClick=\"initList(); \"><\/label><\/div>";
 	/*&nbsp; &nbsp; <input type=\"button\" value=\"Reset\" onClick=\"window.location.reload()\">*/
 	document.getElementById("resultField").style.visibility = "visible";
-	document.getElementById("resultField").innerHTML += str;
+	document.getElementById("resultField").innerHTML = str;
 	document.getElementById("quiz").style.display = "none";
 	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">This will bring you back to the first screen and erase your result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div><div id=\"logo_sm\"><\/div>";
 }
@@ -268,7 +268,7 @@ function showImage() {
 	document.getElementById("tagLine").style.display = "none";
 	document.getElementById("quiz").style.display = "inline";
 	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">This will bring you back to the first screen and erase your result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div><div id=\"logo_sm\"><\/div>";
-	document.getElementById("resultField").innerHTML = "<div class=\"addthis_inline_share_toolbox_v63p_1gbn\"><\/div>";
+	document.getElementById("resultField").innerHTML = "";
 	document.getElementById("resultField").style.visibility = "hidden";
 	document.getElementById("options").style.display = "none";
 	var str0 = Math.floor(finishSize*100/totalSize)+"%";
@@ -315,7 +315,7 @@ function tryAgain(){
 	document.getElementById("quiz").style.display = "none";
 	document.getElementById("banner").innerHTML = "<div id=\"logo\"><\/div>";
 	document.getElementById("options").style.display = "inherit";
-	document.getElementById("resultField").innerHTML = "<div class=\"addthis_inline_share_toolbox_v63p_1gbn\"><\/div>";
+	document.getElementById("resultField").innerHTML = "";
 	document.getElementById("resultField").style.visibility = "hidden";
 }
  
@@ -487,7 +487,7 @@ function goBack(){
 	document.getElementById("quiz").style.display = "none";
 	document.getElementById("banner").innerHTML = "<div id=\"logo\"><\/div>";
 	document.getElementById("options").style.display = "inherit";
-	document.getElementById("resultField").innerHTML = "<div class=\"addthis_inline_share_toolbox_v63p_1gbn\"><\/div>";
+	document.getElementById("resultField").innerHTML = "";
 	document.getElementById("resultField").style.visibility = "hidden";
 }
 function clearOptions(){

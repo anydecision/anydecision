@@ -413,6 +413,7 @@ body{
 	display: block;
 }
 #resultField{
+	text-align: center;
 	width: 100%;
 	clear: both;
 }
