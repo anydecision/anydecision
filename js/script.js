@@ -229,7 +229,7 @@ function showResult() {
 			justin.push(mainList[calculate.indexOf(calc2[i])]);
 			calculate.splice((calculate.indexOf(calc2[i])), 1, null);
 		}
-	str+="<div class=\"addthis_inline_share_toolbox_v63p_1gbn\"><\/div><script type=\"text/javascript\" src=\"//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59a06327918d69f3\"><\/script><div id=\"winner\"><p>And the winner is:<\/p><span>"+justin[0]+"<\/span></div><br /><div id=\"scrollResults\"><table id=\"results\" align=\"center\">";
+	str+="<div class=\"addthis_inline_share_toolbox_v63p_1gbn\"><\/div><div id=\"winner\"><p>And the winner is:<\/p><span>"+justin[0]+"<\/span></div><br /><div id=\"scrollResults\"><table id=\"results\" align=\"center\">";
 	// Table heading section
 	str += "<tr>"+"<td>Name</td><td style=\"text-align: center;\">Rank</td>";
 	if(finalResults.length > 1){
@@ -261,6 +261,9 @@ function showResult() {
 	document.getElementById("resultField").innerHTML = str;
 	document.getElementById("quiz").style.display = "none";
 	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">This will bring you back to the first screen and erase your result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div><div id=\"logo_sm\"><\/div>";
+	function loadAddThis() {
+        addthis.init()
+    }
 }
 // Display two elements to be compared
 function showImage() {
