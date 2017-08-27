@@ -26,16 +26,16 @@ var movieGenre = new Array("Action", "Adventure", "Animated", "Comedy", "Crime",
 "Romantic Comedy", "Sci-Fi", "Sports", "Spy", "Superhero", "Thriller Suspense", "War", "Western");
 var tattoo = new Array("Face", "Behind Ear", "Neck", "Shoulder", "Bicep", "Forearm", "Wrist", "Hand", "Finger", "Upper Back", "Lower Back", "Chest", "Stomach", "Side/Ribs", "Buttocks",
 "Thigh", "Calves", "Ankle", "Foot");
-
 var got = new Array("Arya Stark", "Beric Dondarrion", "Bran Stark", "Brienne of Tarth", "Bronn", "Cersei Lannister", "Daenerys Targaryen", "Davos Seaworth", "Ellaria Sand", "Euron Greyjoy",
 "Gendry", "Gilly", "Grey Worm", "Hodor", "Hot Pie", "Jaime Lannister", "Jaqen H'ghar (No One)", "Jon Snow", "Jorah Mormont", "Lyanna Mormont", "Melisandre", "Missandei", "Olenna Tyrell",
 "Petyr Baelish (Littlefinger)", "Podrick Payne", "Qyburn", "Samwell Tarly", "Sansa Stark", "The Hound", "The Mountain", "The Night King", "Theon Greyjoy", "Tormund Giantsbane", "Tycho Nestoris",
 "Tyrion Lannister", "Varys", "Yara Greyjoy");
 var tvNetflix = new Array("Stranger Things", "Orange is the New Black", "Dear White People", "A Series of Unfortunate Events", "G.L.O.W.", "Black Mirror", "Easy", "White Rabbit Project",
 "The Crown", "Narcos", "13 Reasons Why", "House of Cards", "Master of None", "Love", "Girlboss", "Hemlock Grove");
+var emoji = new Array("😀", "😁", "😂", "😅", "😜", "🤐", "😍", "🤗", "😳", "😇", "💩", "🙈", "🙉", "🙊", "💅", "💖");
 
-var popCatNums = new Array("food", "vacation", "movieGenre", "tattoo", "got", "tvNetflix",);
-var popCategories = new Array(food, vacation, movieGenre, tattoo, got, tvNetflix);
+var popCatNums = new Array("food", "vacation", "movieGenre", "tattoo", "got", "tvNetflix", "emoji");
+var popCategories = new Array(food, vacation, movieGenre, tattoo, got, tvNetflix, emoji);
 
 
 // Checks to see if there is a null value in mainList

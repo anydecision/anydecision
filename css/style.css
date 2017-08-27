@@ -686,7 +686,7 @@ hr {
 
 @media only screen and (min-width : 1024px) {
 	#nav {
-		width: 35%;
+		width: 640px;
 	}
 	#aboutScreen{
 		max-height: 75%;
@@ -714,7 +714,8 @@ hr {
 	}
 	.center {
 		margin: 20px auto;
-		max-width: 50%;
+		max-width: 640px;
+		padding: 35px 80px;
 	}
 	#banner{
 		justify-content: flex-start;
