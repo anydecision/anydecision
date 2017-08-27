@@ -261,9 +261,8 @@ function showResult() {
 	document.getElementById("resultField").innerHTML = str;
 	document.getElementById("quiz").style.display = "none";
 	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">This will bring you back to the first screen and erase your result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div><div id=\"logo_sm\"><\/div>";
-	function loadAddThis() {
-        addthis.init()
-    }
+	// Call Social Media "Addthis"
+	addthis.init()
 }
 // Display two elements to be compared
 function showImage() {
