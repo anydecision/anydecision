@@ -502,18 +502,20 @@ input[type="submit"]{
 	background: #0089B9 url('../images/icons/play.svg') no-repeat center;
 }
 #back_btn{
-	background-color: #fff;
 	color: #222;
 	display: inline-block;
 	clear: both;
 	align: bottom;
 	font-size: 1em;
 	padding: 0px;
+	background: #fff url('../images/icons/edit.svg') no-repeat left;
+	padding-left: 20px;
 }
 #back_btn:active,
 #back_btn:focus,
 #back_btn:hover{
 	color: #8b8b8b;
+	background: #fff url('../images/icons/editDown.svg') no-repeat left;
 	-webkit-appearance: none;
 }
 #estimatedTime{
@@ -628,7 +630,7 @@ input[type="submit"]{
 }
 #social{
 	display: block;
-	margin: 0px auto;
+	text-align: center;
 }
 #results {
     font-size: .9em; text-align: left; min-width: 300px; background:#F0F9FD; line-height:120%;

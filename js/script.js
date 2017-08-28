@@ -271,7 +271,6 @@ function showImage() {
 	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">This will bring you back to the first screen and erase your result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div><div id=\"logo_sm\"><\/div>";
 	document.getElementById("resultField").innerHTML = "";
 	document.getElementById("resultField").style.visibility = "hidden";
-	document.getElementById("social").style.visibility = "hidden";
 	document.getElementById("options").style.display = "none";
 	var str0 = Math.floor(finishSize*100/totalSize)+"%";
 	var str1 = ""+toNameFace(storeSelect[leftChoice][head1]);
@@ -306,20 +305,6 @@ function rightPress(){
 			document.getElementById("rightField").click();
 		};
 	});
-}
-
-// Resets the program without losing the quiz options
-function tryAgain(){
-	nullArray = [];
-	restarted = true;
-	document.getElementById("submittingOptions").style.display = "inherit";
-	document.getElementById("tagLine").style.display = "inherit";
-	document.getElementById("quiz").style.display = "none";
-	document.getElementById("banner").innerHTML = "<div id=\"logo\"><\/div>";
-	document.getElementById("options").style.display = "inherit";
-	document.getElementById("resultField").innerHTML = "";
-	document.getElementById("resultField").style.visibility = "hidden";
-	document.getElementById("social").style.visibility = "hidden";
 }
  
 // Convert numbers to names (emoticons)
