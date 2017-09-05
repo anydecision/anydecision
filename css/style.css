@@ -1,22 +1,19 @@
+#navWrap{
+	width: 100%;
+	background-color: #00a7e1;
+	top: 0;
+	z-index: 100;
+	position: fixed;
+}
 #nav {
-	-moz-box-shadow: inset 0px 3px 8px rgba(0,0,0,.2), 3px 0px 8px  rgba(255,255,255,.4);
-	-webkit-box-shadow: inset 0px 3px 8px rgba(0,0,0,.2), 3px 0px 8px  rgba(255,255,255,.2);
-	box-shadow: inset 0px 3px 8px rgba(0,0,0,.2), 3px 0px 8px  rgba(255,255,255,.2);
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
-	justify-content: center;
-	flex-wrap: nowrap;
-	align-items: center;
-	flex-direction: row;
-	width: 94%;
+	justify-content: flex-end;
+	background: #00a7e1 url('../images/icons/icon.svg') no-repeat left;
 	margin: 0px auto;
-	text-align: center;
-	background-color: rgba(0,0,0,.2);
-	border-radius: 15px;
-	font-size: 1em;
 }
 #nav div a{
     display: block;
@@ -33,33 +30,8 @@
 #nav div a:active{
 	background-color: rgba(0,0,0,.2);
 }
-#nav div form{
-    display: block;
-	width: 50px;
-    color: #fff;
-    text-align: center;
-    padding: 15px 16px;
-    text-decoration: none;
-	cursor: pointer;
-	height: 20px;
-	margin: 0px;
-}
-#nav div form:hover,
-#nav div form:focus,
-#nav div form:active{
+.active{
 	background-color: rgba(0,0,0,.2);
-}
-#home_btn{
-	background: url('../images/icons/home.svg') no-repeat center;
-}
-#us_btn{
-	background: url('../images/icons/us.svg') no-repeat center;
-}
-#help_btn{
-	background: url('../images/icons/help.svg') no-repeat center;
-}
-#donate_btn{
-	background: url('../images/icons/donateNav.svg') no-repeat center;
 }
 #donateBtnBorder{
 	border: 1px #999 solid;
@@ -85,46 +57,7 @@
     height:100%;
     display:none;
 }
-#aboutScreen{
-    height: 75%;
-    width: 100%;
-    margin: 0px auto;
-	padding-bottom: 20px;
-    position: absolute;
-    z-index: 10;
-	top: 8%;
-	left: 0;
-	right: 0;
-    display: none;
-	border-radius: 10px;
-	background-color: #EFEFEF;
-	box-shadow: 0px 0px 50px RGBA(0,0,0,.23);
-}
-#aboutScreen::before {
-	content: " ";
-	position: absolute;
-	top: -18px;
-	left: 35%;
-	margin-left: -10px;
-	border-width: 10px;
-	border-style: solid;
-	border-color: transparent transparent #EFEFEF transparent;
-}
-#aboutScreen > h2{
-	text-align: center;
-	font-size: 1.5em;
-	margin: 20px 0px;
-}
-#aboutScreen > #close_btn{
-	float: right;
-	margin: 10px 10px 0px 0px;
-	background-color: #EFEFEF;
-}
-#aboutScreen > #close_btn:active,
-#aboutScreen > #close_btn:focus,
-#aboutScreen > #close_btn:hover{
-	background-color: #999;
-}
+
 #popContent{
 	margin: 25px 0px;
 	height: 85%;
@@ -138,95 +71,16 @@
 #popContent > p{
 	margin: 25px 50px;
 }
-#helpScreen{
-    height: 75%;
-    width: 100%;
-    margin: 0px auto;
-	padding-bottom: 20px;
-    position: absolute;
-    z-index: 10;
-	top: 8%;
-	left: 0;
-	right: 0;
-    display: none;
-	background-color: #EFEFEF;
-	border-radius: 10px;
-	box-shadow: 0px 0px 50px RGBA(0,0,0,.23);
-}
-#helpScreen > #close_btn{
-	float: right;
-	margin: 5px;
-	background-color: #EFEFEF;
-}
-#helpScreen > #close_btn:active,
-#helpScreen > #close_btn:focus,
-#helpScreen > #close_btn:hover{
-	background-color: #999;
-}
-#helpScreen::before {
-	content: " ";
-	position: absolute;
-	top: -18px;
-	left: 55%;
-	margin-left: -10px;
-	border-width: 10px;
-	border-style: solid;
-	border-color: transparent transparent #EFEFEF transparent;
-}
-#helpScreen > h2{
-	text-align: center;
-	font-size: 1.5em;
-	margin: 20px 0px;
-}
-#donateScreen{
-    height: 75%;
-    width: 100%;
-    margin: 0px auto;
-	padding-bottom: 20px;
-    position: absolute;
-    z-index: 10;
-	top: 8%;
-	left: 0;
-	right: 0;
-    display: none;
-	background-color: #EFEFEF;
-	border-radius: 10px;
-	box-shadow: 0px 0px 50px RGBA(0,0,0,.23);
-}
-#donateScreen > #close_btn{
-	float: right;
-	margin: 5px;
-	background-color: #EFEFEF;
-}
-#donateScreen > #close_btn:active,
-#donateScreen > #close_btn:focus,
-#donateScreen > #close_btn:hover{
-	background-color: #999;
-}
-#donateScreen::before {
-	content: " ";
-	position: absolute;
-	top: -18px;
-	left: 75%;
-	margin-left: -10px;
-	border-width: 10px;
-	border-style: solid;
-	border-color: transparent transparent #EFEFEF transparent;
-}
-#donateScreen > h2{
-	text-align: center;
-	font-size: 1.5em;
-	margin: 20px 0px;
-}
-#donateScreen form{
+
+form{
 	display: block;
 	margin: 0px auto;
 	background: #00A7E1;
 	width: 200px;
 }
-#donateScreen form:active,
-#donateScreen form:focus,
-#donateScreen form:hover{
+form:active,
+form:focus,
+form:hover{
 	background: #0089B9;
 	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
 	-webkit-appearance: none;
@@ -246,12 +100,12 @@
 	align-items: center;
 }
 #logo{
-	background: url('../images/icons/logo.svg') no-repeat center;
+	background: url('../images/icons/icon.svg') no-repeat center;
 	width: 100%;
 	height: 100px;
 }
 #logo_sm{
-	background: url('../images/icons/logo.svg') no-repeat center;
+	background: url('../images/icons/icon.svg') no-repeat center;
 	width: 246px;
 	height: 50px;
 	align-self: flex-end;
@@ -310,6 +164,20 @@
 	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
 	-webkit-appearance: none;
 }
+#added{
+	color: #22c1c3;
+	position: absolute;
+	z-index: 1;
+	font-size: .8em;
+	font-weight: bold;
+	opacity: 0;
+	width: 0px;
+	text-align: center;
+	padding: 8px 0px;
+	bottom: 100%;
+	-webkit-transition: all .5s ease-out; /* Safari */
+	transition: all .5s ease-out;
+}
 .toolTip {
 	position: relative;
 	display: inline-block;
@@ -363,6 +231,7 @@ body{
 	font-family: verdana;
 	font-size: 1em;
 	color: #555;
+	margin: 0px;
 }
 
 #submittingOptions{
@@ -541,6 +410,18 @@ input[type="submit"]{
 #next_btn:hover{
 	background: #0089B9 url('../images/icons/next.svg') no-repeat center;
 }
+#reset_btn{
+	background: #00A7E1 url('../images/icons/reset.svg') no-repeat center;
+	height: 3em;
+	width: 3em;
+	font-size: 1em;
+}
+#reset_btn:active,
+#reset_btn:focus,
+#reset_btn:hover{
+	background: #0089B9 url('../images/icons/reset.svg') no-repeat center;
+}
+
 #next_lbl{
 	color:#fff;
 	background-color: #00A7E1;
@@ -651,9 +532,20 @@ input[type="submit"]{
 	overflow:auto;
 	margin: 0px auto;
 }
-#groupBox {
-	display: block;
+#resultOptions{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: stretch;
+	width: 80%;
 	margin: 0px auto;
+	flex-direction: column;
+}
+#groupBox {
+	margin: 10px 0px;
 	border-radius: 8px;
 	background-color: #efefef;
 	text-align: center;
@@ -686,48 +578,33 @@ hr {
 	flex: 1;
 }
 #footerInfo{
+	padding: 10px;
 	text-align: center;
 	font-size: .8em;
 	color: #fff;
+	background-color: #8b8b8b;
 }
 
 
 
 @media only screen and (min-width : 1024px) {
 	#nav {
-		width: 640px;
-	}
-	#aboutScreen{
-		max-height: 75%;
-		width: 50%;
-	}
-	#aboutScreen::before {
-		top: -20px;
-		left: 45%;
-	}
-	#helpScreen{
-		max-height: 75%;
-		width: 50%;
-	}
-	#helpScreen::before{
-		top: -20px;
-		left: 55%;
-	}
-	#donateScreen{
-		max-height: 75%;
-		width: 50%;
-	}
-	#donateScreen::before{
-		top: -20px;
-		left: 65%;
+		width: 800px;
 	}
 	.center {
-		margin: 20px auto;
+		margin: 75px auto 20px auto;
 		max-width: 640px;
 		padding: 18px 80px;
 	}
 	#banner{
+		width: 640px;
 		justify-content: flex-start;
+		padding: 0px;
+	}
+	#resultOptions{
+		align-items: stretch;
+		width: 640px;
+		flex-direction: row;
 	}
 	#logo{
 		width: 492px;
@@ -841,5 +718,6 @@ hr {
 	}
 	#groupBox {
 		width: 75%;
+		margin: 0px 10px;
 	}
 }

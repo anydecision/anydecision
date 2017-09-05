@@ -231,13 +231,15 @@ function showResult() {
 		}
 	str+="<div id=\"winner\"><p>And the winner is:<\/p><span>"+justin[0]+"<\/span></div><br /><div id=\"scrollResults\"><table id=\"results\" align=\"center\">";
 	// Table heading section
-	str += "<tr>"+"<td>Name</td><td style=\"text-align: center;\">Rank</td>";
+	str += "<tr>"+"<td>Name</td>";
 	if(finalResults.length > 1){
+		str+= "<td style=\"text-align: center;\">Avg Rank</td>"
 		for (i=0; i<finalResults.length; i++){
 			str += "<td style=\"text-align: center;\">P"+(i+1)+"</td>";
 		}
+	} else {
+		str += "<td style=\"text-align: center;\">Rank</td></tr>";
 	}
-	str += "</tr>"
 	
 	// Runs the length of mainList
 	for (i=0; i < mainList.length; i++) {
@@ -255,7 +257,7 @@ function showResult() {
 		// Ends each row
 		str += "<\/tr>";
 	}
-	str += "<\/table></div><br \/><div id=\"groupBox\"><h2>Group Decision<\/h2><hr /><p>With a group?<br />Let everyone have a say.</p><label id=\"next_lbl\">Next Person&nbsp;&nbsp;<input id=\"next_btn\" type=\"button\" name=\"Next\" label=\"Next Person\" value=\" \" onClick=\"initList(); \"><\/label><\/div><div id=\"groupBox\"><h2>Make a New Decision<\/h2><hr /><p>Done with this list?<br />Go back to create a new one.</p><label id=\"next_lbl\">Start Over&nbsp;&nbsp;<input id=\"next_btn\" type=\"button\" name=\"Reset\" label=\"Reset\" value=\" \" onClick=\"goBack(); clearOptions(); reset();\"><\/label><\/div>";
+	str += "<\/table></div><br \/><div id=\"resultOptions\"><div id=\"groupBox\"><h2>Group Decision<\/h2><hr /><p>With a group?<br />Let everyone have a say.</p><label id=\"next_lbl\">Next Person&nbsp;&nbsp;<input id=\"next_btn\" type=\"button\" name=\"Next\" label=\"Next Person\" value=\" \" onClick=\"initList(); \"><\/label><\/div><div id=\"groupBox\"><h2>New Decision<\/h2><hr /><p>Done with this list?<br />Go back to create a new one.</p><label id=\"next_lbl\">Start Over&nbsp;&nbsp;<input id=\"reset_btn\" type=\"button\" name=\"Reset\" label=\"Reset\" value=\" \" onClick=\"goBack(); clearOptions(); reset();\"><\/label><\/div><\/div>";
 	/*&nbsp; &nbsp; <input type=\"button\" value=\"Reset\" onClick=\"window.location.reload()\">*/
 	document.getElementById("resultField").style.visibility = "visible";
 	document.getElementById("resultField").innerHTML = str;
@@ -355,7 +357,7 @@ function showData(){
 					mainList.push(excelT[i]);
 				}
 				inputText = document.getElementById("txtOption").value = "";
-			} else {
+			} else if(mainList.indexOf(inputText)==-1){
 				// Adds the user provided text at the end of mainList
 				mainList.push(inputText);
 				// Suggests adding more options
@@ -366,6 +368,12 @@ function showData(){
 					document.getElementById("question").innerHTML = "Or, submit your options: ";
 					document.getElementById("question").style.color = "inherit";				
 				}
+			// Tell user item has been added
+				added();
+			} else {
+				// Suggests user should type an option
+			document.getElementById("question").innerHTML = "Duplicate entries not allowed.";
+			document.getElementById("question").style.color = "#f26430";
 			}
 			document.getElementById("submission").style.border = "1px solid #5BC0EB";
 			// Resets the input field
@@ -501,33 +509,25 @@ function noHighlight(){
 function reset(){
 	finalResults = [];
 }
-function popClose(){
-	document.getElementById("aboutScreen").style.display = "none";
-	document.getElementById("helpScreen").style.display = "none";
-	document.getElementById("donateScreen").style.display = "none";	
-	document.getElementById("fade").style.display = "none";
-	document.body.style.position = "static";
-	document.body.style.overflow = "auto";
-	document.body.style.width = "inherit";
+function added(){
+	var notice = document.getElementById("added");	
+	notice.style.opacity = "100";
+	setTimeout(function(){notice.style.opacity = "0"}, 1500);
 }
-function about(){
-	document.getElementById("aboutScreen").style.display = "block";
-	document.getElementById("fade").style.display = "block";
-	document.body.style.position = "fixed";
-	document.body.style.overflowY = "scroll";
-	document.body.style.width = "-webkit-fill-available";
-}
-function help(){
-	document.getElementById("helpScreen").style.display = "block";
-	document.getElementById("fade").style.display = "block";
-	document.body.style.position = "fixed";
-	document.body.style.overflowY = "scroll";
-	document.body.style.width = "-webkit-fill-available";
-}
-function donate(){
-	document.getElementById("donateScreen").style.display = "block";
-	document.getElementById("fade").style.display = "block";
-	document.body.style.position = "fixed";
-	document.body.style.overflowY = "scroll";
-	document.body.style.width = "-webkit-fill-available";
+function scrollFunction() {
+	var scrollTopx = document.body.scrollTop;
+	var scrollTopy = document.documentElement.scrollTop;
+    if (scrollTopx > 2500 || scrollTopy > 2500) {
+		document.getElementById("donate").classList.add('active');
+		document.getElementById("help").classList.remove('active');
+		document.getElementById("us").classList.remove('active');
+    } else if (scrollTopx > 1500 || scrollTopy > 1500){
+		document.getElementById("help").classList.add('active');
+		document.getElementById("donate").classList.remove('active');
+		document.getElementById("us").classList.remove('active');
+	} else {
+		document.getElementById("us").classList.add('active');
+		document.getElementById("help").classList.remove('active');
+		document.getElementById("donate").classList.remove('active');
+	}
 }

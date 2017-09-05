@@ -1,0 +1,349 @@
+#navWrap {
+	width: 100%;
+	background-color: #00a7e1;
+	top: 0;
+	z-index: 100;
+	position: fixed;
+}
+#nav {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: flex-end;
+	background: #00a7e1 url('../images/icons/icon.svg') no-repeat left;
+	margin: 0px auto;
+}
+#nav div a {
+    display: block;
+	width: 50px;
+    color: #fff;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+	cursor: pointer;
+	height: 20px;
+}
+#nav div a:hover,
+#nav div a:focus,
+#nav div a:active {
+	background-color: rgba(0,0,0,.2);
+}
+.active {
+	background-color: rgba(0,0,0,.2);
+}
+.spacer {
+	padding: 35px 0px;
+	display: block;
+	background-color: #fff;
+}
+#teamBanner {
+	background-image: url('../images/teamPhoto2.jpg');
+	height: 400px;
+	color: #fff;
+	text-align: center;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: flex-end;
+	margin: 0px 0px 50px 0px;
+	flex-direction: column;
+}
+#teamBanner h2 {
+	margin-bottom: -11px;
+}
+#helpBanner {
+	background-image: url('../images/helpPhoto.jpg');
+	height: 400px;
+	color: #fff;
+	text-align: center;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: flex-end;
+	margin: 0px 0px 50px 0px;
+	flex-direction: column;
+}
+#helpBanner h2 {
+	margin-bottom: 250px;
+}
+#donateBanner {
+	background-image: url('../images/donatePhoto.jpg');
+	height: 400px;
+	color: #fff;
+	text-align: center;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: flex-end;
+	margin: 0px 0px 50px 0px;
+	flex-direction: column;
+}
+#donateBanner h2 {
+	margin-bottom: 13px;
+}
+#donateBtnBorder {
+	border: 1px #999 solid;
+	border-radius: 8px;
+	float: right;
+	margin: 0px 80px 20px 50px;
+	width: 250px;
+	padding-bottom: 15px;
+}
+#donateBtnBorder:before {
+	content: url(https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png);
+	display: inline-block;
+    position: relative;
+    top: -12;
+	left: 12;
+    background: #fff;
+	padding: 0px 8px;
+}
+#popContent {
+	margin: 25px 0px;
+	height: 85%;
+	overflow:auto;
+	background-color: #FFF;
+}
+#popContent > h3 {
+	text-align: center;
+	font-size: 1.5em;
+}
+#popContent > p{
+	margin: 25px 50px;
+}
+form {
+	display: block;
+	margin: 0px auto;
+	background: #00A7E1;
+	width: 200px;
+}
+form:active,
+form:focus,
+form:hover {
+	background: #0089B9;
+	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+	-webkit-appearance: none;
+}
+#banner {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	width: 80%;
+	margin: 0px auto;
+	padding: 0px 20px;
+	justify-content: flex-start;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-items: center;
+}
+#logo {
+	background: url('../images/icons/logo.svg') no-repeat center;
+	width: 100%;
+	height: 100px;
+}
+#logo_sm {
+	background: url('../images/icons/logo.svg') no-repeat center;
+	width: 246px;
+	height: 50px;
+	align-self: flex-end;
+}
+.center {
+    margin: 50px auto;
+    max-width: 90%;
+	min-height: 50%;
+	background-color: #fff;
+	padding-bottom: 50px;
+}
+.center p {
+	margin: 15px 80px 0px 80px;
+}
+#tagLine {
+	text-align: center;
+	color: #3F3F3F;
+	padding: 0px 0px 2% 0px;
+	margin-top: 0px;
+}
+h1 {
+	padding: 0px;
+	margin: 0px 0px 10px 0px;
+	text-align: center;
+}
+h2 {
+	padding: 0px;
+	font-size: 3em;
+}
+.emphasize {
+	font-style: italic;
+}
+.bolded {
+	font-weight: bold;
+}
+.alignCenter {
+	text-align: center;
+}
+.testimonials {
+	text-align: center;
+	margin: 25px 50px;
+}
+body {
+	background-color: #22c1c3;
+	background: -webkit-linear-gradient(#22c1c3, #64b3f4); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#22c1c3, #64b3f4); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#22c1c3, #64b3f4); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#22c1c3, #64b3f4); /* Standard syntax */
+	font-family: verdana;
+	font-size: 1em;
+	color: #555;
+	margin: 0px;
+}
+input[type="button"][disabled]:active,
+input[type="button"][disabled],
+input[type="submit"][disabled]:active,
+input[type="submit"][disabled] {
+	border: 0px;
+	cursor: inherit;
+	background: transparent;
+	font-family: verdana;
+	-webkit-appearance: none;
+	border-radius: 0px;
+}
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="button"],
+input[type="submit"]:active,
+input[type="submit"]:focus,
+input[type="submit"] {
+	border: 0px;
+	cursor: pointer;
+	background: transparent;
+	font-weight: bold;
+	font-family: verdana;
+	-webkit-appearance: none;
+	border-radius: 0px;
+}
+#social {
+	display: block;
+	text-align: center;
+}
+hr {
+	width: 50%;
+    border: 0;
+    height: 1px;
+    background-color: #000;
+	margin: 50px auto;
+}
+.instruction {
+	background-color: #007ea7;
+	margin: 15px 80px 0px 80px;
+	border-radius: 12px;
+	padding-top: 1px;
+}
+.instruction div {
+	background-color: #EFEFEF;
+	padding: 20px;
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+}
+.instruction h3 {
+	text-align: center;
+	color: #fff;
+}
+.instruction p {
+	margin: 0px;
+}
+#footerInfo {
+	padding: 10px;
+	text-align: center;
+	font-size: .8em;
+	color: #fff;
+	background-color: #8b8b8b;
+}
+
+@media only screen and (min-width : 1024px) {
+	#navWrap {
+		width: 100%;
+	}
+	#nav {
+		width: 800px;
+	}
+	.center {
+		margin: 0px auto 0px auto;
+		max-width: 800px;
+		min-height: 1000px;
+	}
+	#banner {
+		width: 640px;
+		justify-content: flex-start;
+		padding: 0px;
+	}
+	#logo {
+		width: 492px;
+		height: 100px;
+		margin:0px auto;
+	}
+	#logo_sm {
+		width: 75%;
+		height: 75px;
+		align-self: center;
+	}
+	.toolTip {
+		position: relative;
+		display: inline-block;
+		}
+	.toolTip .toolTipText {
+		visibility: hidden;
+		background-color: black;
+		color: #fff;
+		text-align: center;
+		padding: 5px 5px;
+		border-radius: 6px;
+		position: absolute;
+		z-index: 1;
+		font-size: .8em;
+		width: 200px;
+		bottom: 100%;
+		left: 50%; 
+		margin-left: -100px;
+		transition: all 0s linear;
+	}
+	.tooltip .tooltiptext::after {
+		content: " ";
+		position: absolute;
+		top: 100%; /* At the bottom of the tooltip */
+		left: 50%;
+		margin-left: -5px;
+		border-width: 5px;
+		border-style: solid;
+		border-color: black transparent transparent transparent;
+	}
+	.toolTip:hover .toolTipText {
+		visibility: visible;
+		transition-delay:.4s;
+	}
+	input[type="button"][disabled]:active,
+	input[type="button"][disabled],
+	input[type="button"][disabled]:hover,
+	input[type="submit"][disabled]:hover {
+		border: 0px;
+		cursor: inherit;
+		background: transparent;
+		font-size: 1em;
+		font-family: verdana;
+	}
+	input[type="button"]:hover,
+	input[type="submit"]:hover {
+		border: 0px;
+		color: #8b8b8b;
+		background-color: transparent;
+	}
+}

@@ -14,7 +14,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> 
 <meta name="description" content="Make a decision by working through your list, two items at a time." />
-<meta name="keywords" content="decision, pairwise, comparison, decision making, fatigue, choice, list, rank" />
+<meta name="keywords" content="decision, option list, compare, options" />
 <meta name="author" content="Any Decision" />
 <link rel="icon" href="../favicon.ico" />
 <link rel="shortcut icon" type="image/png" href="../favicon.png" />
@@ -35,12 +35,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6MVTWF"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<header id="nav">
-<div><a href="javascript:void(0)" name="home" label="Home" id="home_btn" value=" " onclick="goBack(); reset();"></a></div>
-<div><a href="javascript:void(0)" name="about" label="Us" id="us_btn" value=" " onclick="about();"></a></div>
-<div><a href="javascript:void(0)" name="help" label="Help" id="help_btn" value=" " onclick="help();"></a></div>
-<div><a href="javascript:void(0)" name="donate" label="Donate" id="donate_btn" value=" " onclick="donate();"></a></div>
-</header>
+<div id="navWrap"><header id="nav">
+<div><a href="index.html" class="active" id="home" label="Home" value=" ">Home</a></div>
+<div><a href="pages.html#us-point" id="us" label="Us" value=" ">Us</a></div>
+<div><a href="pages.html#help-point" id="help" label="Help" value=" ">Help</a></div>
+<div><a href="pages.html#donate-point" id="donate" label="Donate" value=" " >Donate</a></div>
+</header></div>
 <div class="center">
 <div id="banner"><div id="logo" alt="Any Desicion Logo"></div></div>
 <noscript>Your browser does not support JavaScript!</noscript>
@@ -62,7 +62,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<label for="txtOption"><span id="question">Or, submit your options:</span></label>
 	<br /><br />
 	
-	<div id="submission"><input type="text" name="txtOption" id="txtOption" value="" onblur="noHighlight();" onfocus="resetDrop(); highlight();" placeholder="Enter options here" /> <div class="toolTip"><span class="toolTipText">Adds items to your Option List</span><input type="button" name="Add" label="Add Item to Option List" value=" " id="optionSubmit_btn" onclick="showData();"/></div></div>
+	<div id="submission"><input type="text" name="txtOption" id="txtOption" value="" onblur="noHighlight();" onfocus="resetDrop(); highlight();" placeholder="Enter options here" /> <div class="toolTip"><span class="toolTipText">Adds items to your Option List</span><div id="added">Added</div><input type="button" name="Add" label="Add Item to Option List" value=" " id="optionSubmit_btn" onclick="showData();"/></div></div>
 	<br /><br />
 </div>
 <div id="options">
@@ -98,64 +98,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="resultField"></div>
 </div>
 <footer id="footerInfo">Copyright &#169 2017 Any Decision</footer>
-<div id="aboutScreen"><input type="button" name="Close" label="Close" id="close_btn" value=" " onclick="popClose();"/>
-<h2>Here's a little about us</h2>
-<div id="popContent">
-<p>We all get overwhelmed with too many options. Any Decision is a tool that helps you sort through your list of options by taking it two items at a time so that you can make a decision. All you need to do is pick between the two displayed, and move on to the next. We'll sort out the rest. By the end, we'll provide your final decision and even a fancy table to show your ranked order of the remaining options.
-Check out our <a href="javascript:void(0)" onclick="popClose(); help();">Help page</a> for detailed instructions.</p>
-<p>If your group is having trouble making a decision, click on "Next Person" under the results section. Let each person go through the list of randomly paired items, and we'll compare the results at the end.</p>
-<p>This process of grabbing a pair of items from a list and comparing them is called a "pairwise comparison." Before now, if someone wanted to make a pairwise comparison they had to do it on paper. We have decided to make this process as easy as possible by intelligently ranking items throughout the comparison process.</p>
-<h3>FAQ</h3>
-<p><span class="bolded">Who are you?</span><br />
-We're the answer to all your decision making problems. This website is dedicationed to making pairwise comparisons as easy as possible.</p>
-
-<p><span class="bolded">How can you afford to do this?</span><br />
-We spent most of our free time working on this project just for fun, but in order to keep up with the fees associated with owning a webpage, we could really use support in the shape of donations from users. If you can, we would really appreciate a <a href="javascript:void(0)" onclick="donate();">donation of any size</a>.</p>
-
-<p><span class="bolded">Can I give you feedback?</span><br />
-Of course you can! Click that little button at the bottom of the screen that you probably minimized out of habit. Alternatively, you can send us an email: <a href="mailto:admin@anydecision.com">admin@anydecision.com</a>. We would love to hear from you!</p>
- 
-<p class="testimonials"><span class="bolded">Testimonials</span><br />
-I couldn't decide a darn thing before. Now I can't STOP deciding!<br />
--Matt S.</p>
-<p class="testimonials">I have searched for something [...] like this on the internet and nothing was really helpful before. I will totally use it!<br />
--Sarah R.</p>
-<p class="testimonials">Without Any Decision, I'm just a dumb ol' human.<br />
-Dumb dumb dumb, that's me.<br />
--Human 1</p>
-<p><span class="bolded">Privacy Policy</span><br />
-We reserve the right to record any use of our product for research purposes. We are dedicated to making the best user experience possible for our users, and we will use all data from users exclusively to create a better product.</p>
-</div></div>
-<div id="helpScreen"><input type="button" name="Close" label="Close" id="close_btn" value=" " onclick="popClose();"/>
-<h2>You need help?</h2>
-<div id="popContent">
-<p>It's okay to ask for help. This is our fault, not your's. If you could give us some feedback on what was unclear, we would love to fix it.</p>
-<p>Step 1. Choose from one of our preset lists, or create a custom list of options.</p>
-<p>Step 2. Begin the sorting process, during which you will choose between two of the options at a time.</p>
-<p>Step 3. Check out the results! You'll see your top choice, as well as a table of all your other options ranked in the order of your preference.</p>
-</div></div>
-<div id="donateScreen"><input type="button" name="Close" label="Close" id="close_btn" value=" " onclick="popClose();"/>
-<h2>We need your support!</h2>
-<div id="popContent">
-<!-- PayPal Logo -->
-<div id="donateBtnBorder"> <img id="payPal" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" alt="PayPal" />
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="SN38B4STRZEXL">
-<input type="image" src="https://www.anydecision.com/images/icons/donate.svg" border="0" name="submit" alt="Donate through PayPal - The easiest way to send support online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-</div>
-<!-- PayPal Logo -->
-<p>For us to continue hosting this comparison website, we need support from users like you! If this decision-making webapp is useful to you at all and you have a few dollars to spare, we would be forever grateful.</p>
-<p>Please remember that behind these blue and grey boxes on a page, there are two people that really care about this project and want it to be used and shared with millions of users just like you. If you can't show your support with money, then go ahead and share it with your friends. Let them know that this is a website that really helps people come to decisions in their life.</p>
-<p>If you know anyone who is in need of a quick pairwise comparison, please let them know this resource is available online, and it is free!</p>
-<p>But also remember, this resource is only free because of the donations we receive in support of this project.</p>
-</div></div>
-<div id="fade" onclick="popClose();"></div>
 <script type="text/javascript">
 enterPress();
-</script>
 </script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59a06327918d69f3"></script> 
 </body>
