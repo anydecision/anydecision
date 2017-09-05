@@ -11,8 +11,7 @@
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
-	justify-content: flex-end;
-	background: #00a7e1 url('../images/icons/icon.svg') no-repeat left;
+	justify-content: center;
 	margin: 0px auto;
 }
 #nav div a{
@@ -590,6 +589,8 @@ hr {
 @media only screen and (min-width : 1024px) {
 	#nav {
 		width: 800px;
+		justify-content: flex-end;
+		background: #00a7e1 url('../images/icons/icon.svg') no-repeat left;
 	}
 	.center {
 		margin: 75px auto 20px auto;
