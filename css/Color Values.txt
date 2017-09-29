@@ -16,6 +16,11 @@ Text:
 Error Text:
 #F26430;
 
+Good, Medium, Bad Approx Time:
+#22C1C3; (good)
+#F3B700; (medium)
+#FF3D32; (bad)
+
 Information Text/Inactive Button:
 #AAAAAA (icon and text)
 #FFFFFF (background)

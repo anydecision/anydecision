@@ -1,13 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P6MVTWF');</script>
-<!-- End Google Tag Manager -->
 <title>Any Decision | Sort Through Your List of Options</title>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
@@ -16,91 +9,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="description" content="Make a decision by working through your list, two items at a time." />
 <meta name="keywords" content="decision, option list, compare, options" />
 <meta name="author" content="Any Decision" />
-<link rel="icon" href="../favicon.ico" />
-<link rel="shortcut icon" type="image/png" href="../favicon.png" />
-<link rel="apple-touch-icon" href="../apple-touch-icon.png" />
-<link rel="apple-touch-icon-precomposed" href="../apple-touch-icon.png" />
 <script type="text/javascript" src="js/script.js"></script>
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-8481735328801283",
-    enable_page_level_ads: true
-  });
-</script>
+<link rel="stylesheet" type="text/css" href="css/style3.css" />
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6MVTWF"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 <div id="navWrap"><header id="nav">
-<div><a href="index.html" class="active" id="home" label="Home" value=" ">Home</a></div>
+<div><a href="/" class="active" id="home" label="Home" value=" ">Home</a></div>
 <div><a href="pages.html#us-point" id="us" label="Us" value=" ">Us</a></div>
 <div><a href="pages.html#help-point" id="help" label="Help" value=" ">Help</a></div>
 <div><a href="pages.html#donate-point" id="donate" label="Donate" value=" " >Donate</a></div>
 </header></div>
 <div class="center">
-<div id="banner"><div id="logo" alt="Any Desicion Logo"></div></div>
 <noscript>Your browser does not support JavaScript!</noscript>
-<p id="tagLine">Choose from one of our preset option lists.<br />
-<span class="emphasize">Or create a custom list of options to compare.</span></p>
-<div id="submittingOptions">
-	<label for="popCats">Choose from preset options:</label><br /><br />
-	<select id="popCats" name="popCats" onchange="showData();">
-		<option selected value="default" style="color: #aaa;">Popular Categories</option>
-		<option value="food">What food should I eat today?</option>
-		<option value="vacation">How should I vacation?</option>
-		<option value="movieGenre">What kind of movie should I watch?</option>
-		<option value="tattoo">Where should I get a tattoo?</option>
-		<option value="got">Who is your favorite Game of Thrones character?</option>
-		<option value="tvNetflix">What should I watch on Netflix?</option>
-		<option value="emoji">What is your favorite emoji?</option>
-	</select>
-	<br /><br />
-	<label for="txtOption"><span id="question">Or, submit your options:</span></label>
-	<br /><br />
-	
-	<div id="submission"><input type="text" name="txtOption" id="txtOption" value="" onblur="noHighlight();" onfocus="resetDrop(); highlight();" placeholder="Enter options here" /> <div class="toolTip"><span class="toolTipText">Adds items to your Option List</span><div id="added">Added</div><input type="button" name="Add" label="Add Item to Option List" value=" " id="optionSubmit_btn" onclick="showData();"/></div></div>
-	<br /><br />
-</div>
-<div id="options">
-	<p>Option List:
-	<input type="button" name="Begin" label="Begin" id="start_btn" disabled="true" value=" " onclick="initList();"/>
-	</p>
-	<span id="estimatedTime"></span>
-		<span id="emptyOptions">Add some options above and they will fill in down here!</span>
-	<div id="optionArrange">
-	<span id="optionChoices"></span>
-	</div>	<span id="count">0 options</span><input type="button" name="Clear List" label="Clear List" value="Clear List" id="clearOptions_btn" onclick="clearOptions();"/>
-</div> 
-<div id="quiz">
-<div id="mainTable">
-	<div style="margin-top: 25px;">
-	<div id="progress" >
-			<div id="progressBar"></div>
-		</div>
-	<div id="percentComplete"></div>
-	<div id="warning">You cannot go back. Please choose carefully.</div>
-	</div>
-	<div id="choices">
-		<a id="leftField" onClick="if(finishFlag==0)sortList(-1);">
-			&nbsp;
-		</a>
-		<a id="rightField" onClick="if(finishFlag==0)sortList(1);">
-			&nbsp;
-		</a>
-	</div>
-</div>
-</div>
-<div id="social"><div class="addthis_inline_share_toolbox_v63p_1gbn"></div></div>
-<div id="resultField"></div>
+<div style="background-color: #fff; padding: 35px 0px"> </div>
+<h1>Pick a category below.</h1>
+<p id="tagLine">(samples recommended for first time users)</p>
+
+<div class="flex-container">
+        <div class="itemGroup">
+            <a href="compare.html" onclick="setLocalStorage('samVac');"><div class="item">(Sample) How should I vacation?</div></a>
+        </div>
+        <div class="itemGroup">
+            <a href="compare.html" onclick="setLocalStorage('samGot');"><div class="item">(Sample) Who is your favorite Game of Thrones character?</div></a>
+        </div>
+        <div class="itemGroup">
+            <a href="compare.html" onclick="setLocalStorage('samFoo');"><div class="item">(Sample) What food should I eat today?</div></a>
+        </div>
+        <div class="itemGroup">
+            <a href="compare.html" onclick="setLocalStorage('foo');"><div class="item">What food should I eat today?</div></a>
+        </div>
+        <div class="itemGroup">
+            <a href="compare.html" onclick="setLocalStorage('vac');"><div class="item">How should I vacation?</div></a>
+        </div>
+        <div class="itemGroup">
+            <a href="compare.html" onclick="setLocalStorage('mov');"><div class="item">What kind of movie should I watch?</div></a>
+        </div>
+        <div class="itemGroup">
+            <a href="compare.html" onclick="setLocalStorage('tat');"><div class="item">Where should I get a tattoo?</div></a>
+        </div>
+        <div class="itemGroup">
+            <a href="compare.html" onclick="setLocalStorage('got');"><div class="item">Who is your favorite Game of Thrones character?</div></a>
+        </div>
+        <div class="itemGroup">
+            <a href="compare.html" onclick="setLocalStorage('net');"><div class="item">What should I watch on Netflix?</div></a>
+        </div>
+        <div class="itemGroup">
+            <a href="compare.html" onclick="setLocalStorage('emo');"><div class="item">What is your favorite emoji?</div></a>
+        </div>
+    </div>
 </div>
 <footer id="footerInfo">Copyright &#169 2017 Any Decision</footer>
-<script type="text/javascript">
-enterPress();
-</script>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59a06327918d69f3"></script> 
 </body>
 </html>

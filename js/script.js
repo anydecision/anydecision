@@ -38,7 +38,7 @@ var popCatNums = new Array("food", "vacation", "movieGenre", "tattoo", "got", "t
 var popCategories = new Array(food, vacation, movieGenre, tattoo, got, tvNetflix, emoji);
 
 
-// Checks to see if there is a null value in mainList
+// Checks to see if there is a null value in 'mainList'
 function checkNull(namMem) {
     return namMem == null;
 }
@@ -61,18 +61,24 @@ function initList(){
 	var mid;
 	var i;
 	storeSelect[n] = new Array();
+	// Sets the 0 position of storeSelect to an array of [0, 1, 2... length of mainList]
 	for (i=0; i<mainList.length; i++) {
 		storeSelect[n][i] = i;
 	}
 	parent[n] = -1;
 	totalSize = 0;
 	n++;
+//?? Sets storeSelect array to a broken apparent numbered version of mainList
 	for (i=0; i<storeSelect.length; i++) {
+		// Runs through the 
 		if(storeSelect[i].length>=2) {
+			// Sets 'mid' to half the length of 'storeSelect' rounded up
 			mid = Math.ceil(storeSelect[i].length/2);
 			storeSelect[n] = new Array();
+			// Sets the new array to the first half of the i position of 'storeSelect' (not including 'mid')
 			storeSelect[n] = storeSelect[i].slice(0,mid);
 			totalSize += storeSelect[n].length;
+//?? Not sure what 'parent' even does
 			parent[n] = i;
 			n++;
 			storeSelect[n] = new Array();
@@ -82,6 +88,7 @@ function initList(){
 			n++;
 		}
 	}
+// console.log(storeSelect);
  	for (i=0; i<mainList.length; i++) {
 		record[i] = 0;
 	}
@@ -100,11 +107,12 @@ function initList(){
     document.documentElement.scrollTop = 0; // For IE and Firefox
 	showImage();
 }
+// Save users choice to the 'record' array
 function sortList(flag){
+	// console.log(record);
 	var i;
 	var str;
- 
-	// Save to record
+	// If user clicked LEFT
 	if (flag<0) {
 		record[newRecord] = storeSelect[leftChoice][head1];
 		head1++;
@@ -116,8 +124,8 @@ function sortList(flag){
 			newRecord++;
 			finishSize++;
 		}
-	}
-	else if (flag>0) {
+	// If user clicked RIGHT
+	} else if (flag>0) {
 		record[newRecord] = storeSelect[rightChoice][head2];
 		head2++;
 		newRecord++;
@@ -128,8 +136,7 @@ function sortList(flag){
 			newRecord++;
 			finishSize++;
 		}
-	}
-	else {
+	} else {
 		record[newRecord] = storeSelect[leftChoice][head1];
 		head1++;
 		newRecord++;
@@ -153,6 +160,7 @@ function sortList(flag){
 		}
 	}
 	// Processing after it has finished scanning the list of one
+	// Sets the next position in the record array to the losing option (LEFT)
 	if (head1<storeSelect[leftChoice].length && head2==storeSelect[rightChoice].length) {
 		// rightChoice list is scanned - copy the rest of the list leftChoice
 		while (head1<storeSelect[leftChoice].length){
@@ -161,8 +169,8 @@ function sortList(flag){
 			newRecord++;
 			finishSize++;
 		}
-	}
-	else if (head1==storeSelect[leftChoice].length && head2<storeSelect[rightChoice].length) {
+	// Sets the next position in the record array to the losing option (RIGHT)	
+	} else if (head1==storeSelect[leftChoice].length && head2<storeSelect[rightChoice].length) {
 		// leftChoice list is scanned - copy the rest of the list rightChoice
 		while (head2<storeSelect[rightChoice].length){
 			record[newRecord] = storeSelect[rightChoice][head2];
@@ -171,6 +179,7 @@ function sortList(flag){
 			finishSize++;
 		}
 	}
+
 	// If the user reaches the end of both lists go ahead and update the parent list
 	if (head1==storeSelect[leftChoice].length && head2==storeSelect[rightChoice].length) {
 		for (i=0; i<storeSelect[leftChoice].length+storeSelect[rightChoice].length; i++) {
@@ -182,7 +191,7 @@ function sortList(flag){
 		rightChoice = rightChoice-2;
 		head1 = 0;
 		head2 = 0;
-		// Initialize the record before you make a new comparison
+		// Reset record array before you make a new comparison
 		if (head1==0 && head2==0) {
 			for (i=0; i<mainList.length; i++) {
 				record[i] = 0;
@@ -194,13 +203,13 @@ function sortList(flag){
 		str = "Option No."+(numQuestion-1)+"<br>"+Math.floor(finishSize*100/totalSize)+"% sorted.";
 		document.getElementById("percentComplete").innerHTML = str;
 		showResult();
+		// console.log(record);
 		finishFlag = 1;
 	}
 	else {
 		showImage();
 	}
 }
- 
 // View Results
 function showResult() {
 	var ranking = 1;
@@ -217,18 +226,18 @@ function showResult() {
 		}
 		calculate.push(sum);
 	}
-		function sortInt(a,b) {
-			return a - b;
-		}
-		var justin = new Array();
-		for (i=0; i < calculate.length; i++) {
-			calc2.push(calculate[i]);
-		}
-			calc2.sort(sortInt);
-		for (i=0; i < mainList.length; i++) {
-			justin.push(mainList[calculate.indexOf(calc2[i])]);
-			calculate.splice((calculate.indexOf(calc2[i])), 1, null);
-		}
+	function sortInt(a,b) {
+		return a - b;
+	}
+	var justin = new Array();
+	for (i=0; i < calculate.length; i++) {
+		calc2.push(calculate[i]);
+	}
+		calc2.sort(sortInt);
+	for (i=0; i < mainList.length; i++) {
+		justin.push(mainList[calculate.indexOf(calc2[i])]);
+		calculate.splice((calculate.indexOf(calc2[i])), 1, null);
+	}
 	str+="<div id=\"winner\"><p>And the winner is:<\/p><span>"+justin[0]+"<\/span></div><br /><div id=\"scrollResults\"><table id=\"results\" align=\"center\">";
 	// Table heading section
 	str += "<tr>"+"<td>Name</td>";
@@ -257,25 +266,25 @@ function showResult() {
 		// Ends each row
 		str += "<\/tr>";
 	}
-	str += "<\/table></div><br \/><div id=\"resultOptions\"><div id=\"groupBox\"><h2>Group Decision<\/h2><hr /><p>With a group?<br />Let everyone have a say.</p><label id=\"next_lbl\">Next Person&nbsp;&nbsp;<input id=\"next_btn\" type=\"button\" name=\"Next\" label=\"Next Person\" value=\" \" onClick=\"initList(); \"><\/label><\/div><div id=\"groupBox\"><h2>New Decision<\/h2><hr /><p>Done with this list?<br />Go back to create a new one.</p><label id=\"next_lbl\">Start Over&nbsp;&nbsp;<input id=\"reset_btn\" type=\"button\" name=\"Reset\" label=\"Reset\" value=\" \" onClick=\"goBack(); clearOptions(); reset();\"><\/label><\/div><\/div>";
+	str += "<\/table></div><br \/><div id=\"resultOptions\"><div id=\"groupBox\"><h2>Group Decision<\/h2><hr /><p>With a group?<br />Let everyone have a say.</p><input id=\"next_btn\" type=\"button\" name=\"Next\" label=\"Next Person\" value=\"Next Person\" onClick=\"initList(); \"><\/div><div id=\"groupBox\"><h2>New Decision<\/h2><hr /><p>Done with this list?<br />Go back to create a new one.</p><a href=\"landingPage.html\" tabindex=\"-1\"><input id=\"reset_btn\" type=\"button\" name=\"Reset\" label=\"Reset\" value=\"Start Over\" onClick=\"goBack(); clearOptions(); reset();\"><\/div><\/div><\/a>";
 	/*&nbsp; &nbsp; <input type=\"button\" value=\"Reset\" onClick=\"window.location.reload()\">*/
 	document.getElementById("resultField").style.visibility = "visible";
 	document.getElementById("resultField").innerHTML = str;
 	document.getElementById("quiz").style.display = "none";
-	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">This will bring you back to the first screen and erase your result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div><div id=\"logo_sm\"><\/div>";
+	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">Return to the first screen and lose result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div>";
 }
 // Display two elements to be compared
 function showImage() {
-	document.getElementById("submittingOptions").style.display = "none";
+	// document.getElementById("submittingOptions").style.display = "none";
 	document.getElementById("tagLine").style.display = "none";
 	document.getElementById("quiz").style.display = "inline";
-	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">This will bring you back to the first screen and erase your result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div><div id=\"logo_sm\"><\/div>";
+	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">Return to the first screen and lose result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div>";
 	document.getElementById("resultField").innerHTML = "";
 	document.getElementById("resultField").style.visibility = "hidden";
 	document.getElementById("options").style.display = "none";
 	var str0 = Math.floor(finishSize*100/totalSize)+"%";
-	var str1 = ""+toNameFace(storeSelect[leftChoice][head1]);
-	var str2 = ""+toNameFace(storeSelect[rightChoice][head2]);
+	var str1 = ""+namingBoxFunc(storeSelect[leftChoice][head1]);
+	var str2 = ""+namingBoxFunc(storeSelect[rightChoice][head2]);
 	document.getElementById("percentComplete").innerHTML = str0;
 	document.getElementById("leftField").innerHTML = str1;
 	document.getElementById("rightField").innerHTML = str2;
@@ -288,9 +297,14 @@ function showImage() {
 	}
 	bar.style.width = width + '%';
 }
+// Convert 'storeSelect' to 'mainList'
+function namingBoxFunc(n){
+	var textStr = mainList[n];
+	return textStr;
+}
 	leftPress();
 	rightPress();
-// Allows the user to press "Left" instead of clicking the left option
+// Allows the user to press the "Left" key instead of clicking the left option
 function leftPress(){
 	document.addEventListener("keyup", function(event) {
 	event.preventDefault();
@@ -307,24 +321,23 @@ function rightPress(){
 		};
 	});
 }
- 
-// Convert numbers to names (emoticons)
-function toNameFace(n){
-	var str = mainList[n];
-	return str;
-}
-
 function resetTime(){
 	var difference = mainList.length-nullArray.length;
 	if (difference > 1){
 		timeEstimate = Math.floor(Math.pow(difference, 1.655)-2);
 		document.getElementById("estimatedTime").innerHTML = "Approx. "+timeEstimate+" seconds";
+		if (timeEstimate > 100){
+			document.getElementById("estimatedTime").style.color = "#EF3E36";
+		} else if (timeEstimate > 60 && timeEstimate < 100){
+			document.getElementById("estimatedTime").style.color = "#F3B700";
+		} else {
+			document.getElementById("estimatedTime").style.color = "#22C1C3";
+		}
 	} else {
 		timeEstimate = 0;
 		document.getElementById("estimatedTime").innerHTML = "";
 	}
 }
-
 function showData(){
 	// Removes the default text in Option List
 	document.getElementById("emptyOptions").innerHTML = " ";
@@ -332,13 +345,15 @@ function showData(){
 	function checkList(cList) {
 		return cList == document.getElementById("popCats").value;
 	}
+/*
 	// Decides if the dropdown value matches an array
 	if(popCatNums.some(checkList)){
 		// Rests the list if the user selects a new dropdown
 		for(i=0; i<mainList.length; i++){
 			mainList.splice(i);
 		}
-		nullArray = [];		// Sets e equal to the index of the dropdown item
+		nullArray = [];
+		// Sets e equal to the index of the dropdown item
 		var e = popCatNums.findIndex(checkList);
 		// Runs the length of the dropdown item's array
 		for(i=0; i<popCategories[e].length; i++){
@@ -347,6 +362,7 @@ function showData(){
 		}
 		restarted = true;
 	} else {
+*/
 		var inputText = document.getElementById("txtOption").value;
 		// Determines if the user provided text has characters (not just spaces or left blank)
 		if (/\S/.test(inputText)){
@@ -365,7 +381,7 @@ function showData(){
 					document.getElementById("question").innerHTML = "Please add at least two:";
 					document.getElementById("question").style.color = "inherit";
 				}else{
-					document.getElementById("question").innerHTML = "Or, submit your options: ";
+					document.getElementById("question").innerHTML = "Submit any new options not listed:";
 					document.getElementById("question").style.color = "inherit";				
 				}
 			// Tell user item has been added
@@ -390,30 +406,30 @@ function showData(){
 				//document.getElementById("count").innerHTML = " ";
 			}
 		};
-	}
+	//}
 		document.getElementById("count").innerHTML = (mainList.length-nullArray.length)+" options";
 	// Makes start button available if the mainList array has at least two non-null items
 	if ((mainList.length-nullArray.length)>=2){
 		document.getElementById("start_btn").disabled = false;
 	};
 	// Resets the dropdown menu and optionChoices input field
-	document.getElementById("popCats").value = "default";
+	// document.getElementById("popCats").value = "default";
 	document.getElementById("optionChoices").innerHTML = "";
 	// Fills in the optionChoices section from the mainList array
 	for(i=0; i<mainList.length; i++){
 		// If the i value of mainList isn't set to null
 		if(mainList[i] != null){
 			// Create items in optionChoices with an id, remove button, and mainList location of i
-			document.getElementById("optionChoices").innerHTML += "<p id="+i+">"+"<input type=\"button\" id=\"close_btn\"value=\" \" onclick=\"remove("+i+");\"/> "+mainList[i]+"<\/p>";
+			document.getElementById("optionChoices").innerHTML += "<div id="+i+"><p>"+"<input type=\"button\" id=\"close_btn\"value=\" \" onclick=\"remove("+i+");\"/> "+mainList[i]+"<\/p><\/div>";
 		}
 	}
-	if(firstScroll){
+	/* if(firstScroll){
 		var showView = document.getElementById("submittingOptions");
 		showView.scrollIntoView(true);
 		firstScroll = false;
-	}
+	}*/
 	if(restarted == true){
-		document.getElementById("question").innerHTML = "Or, submit your options: ";
+		document.getElementById("question").innerHTML = "Submit any new options not listed:";
 		document.getElementById("question").style.color = "inherit";
 		restarted = false;
 	} else {
@@ -421,9 +437,7 @@ function showData(){
 	}
 	resetTime();
 }
-	
-	
-// Allows the user to press "Enter" instead of clicking "Submit Option"
+// Allows the user to press the "Enter" key instead of clicking "Submit Option"
 function enterPress(){
 	document.getElementById("txtOption")
 	.addEventListener("keyup", function(event) {
@@ -433,15 +447,15 @@ function enterPress(){
 		};
 	});
 }
-
 var nullArray = new Array();
-// Removes items from the list
+// Removes items from the options list
 function remove(item){
 	document.getElementById("start_btn").disabled = true;
 	// Sets the selected item in mainList to null
 	mainList.splice(item, 1, null);
 	// Resets the section in optionChoices
 	document.getElementById(item).innerHTML = "";
+	document.getElementById(item).style.margin = "0px";
 	// Increases the nullArray by a single value
 	nullArray.push(0);
 	// Checks if mainList has a value of null
@@ -477,10 +491,10 @@ function goBack(){
 	nullArray = [];
 	restarted = true;
 	showData();
-	document.getElementById("submittingOptions").style.display = "inherit";
+	// document.getElementById("submittingOptions").style.display = "inherit";
 	document.getElementById("tagLine").style.display = "inherit";
 	document.getElementById("quiz").style.display = "none";
-	document.getElementById("banner").innerHTML = "<div id=\"logo\"><\/div>";
+	document.getElementById("banner").innerHTML = "<h1>From the list below,<br />remove any irrelevant items.</h1>";
 	document.getElementById("options").style.display = "inherit";
 	document.getElementById("resultField").innerHTML = "";
 	document.getElementById("resultField").style.visibility = "hidden";
@@ -496,7 +510,6 @@ function clearOptions(){
 	document.getElementById("emptyOptions").innerHTML = "Add some options above and they will fill in down here!";
 	document.getElementById("count").innerHTML = "0 options";
 }
-
 function resetDrop(){
 	document.getElementById("popCats").value = "default";
 }
@@ -530,4 +543,56 @@ function scrollFunction() {
 		document.getElementById("help").classList.remove('active');
 		document.getElementById("donate").classList.remove('active');
 	}
+}
+function check(){
+	if(localStorage.getItem('tacos')){
+		var myObject = JSON.parse(localStorage.getItem('tacos'));
+		mainList = myObject;
+		restarted = true;
+		showData();
+		localStorage.removeItem('tacos');
+	}
+}
+function setLocalStorage(opt){
+	switch (opt) {
+    case 'samVac':
+        var sendOpt = new Array("Relaxating Beach Trip", "Cruise Vacation", "Hiking/Camping Trip", "Skiing/Snowboarding");
+        break;
+    case 'samGot':
+        var sendOpt = new Array("Arya Stark", "John Snow", "Daenerys Targaryen", "Sansa Stark");
+        break;
+    case 'samFoo':
+        var sendOpt = new Array("Mexican Food", "Italian Cuisine", "Asian Food", "Seafood", "American Food");
+        break;
+    case 'foo':
+        var sendOpt = new Array("Mexican Food", "Italian Cuisine", "Indian Food", "Thai Food", "Greek Cuisine", "Chinese Food", "Japanese Cuisine", "American Food", "Mediterranean Cuisine", "Korean Food",
+"Vietnamese Food", "Seafood", "Southern Food");
+        break;
+    case 'vac':
+        var sendOpt = new Array("Beach Trip", "Relaxation and/or Yoga Retreat", "Cruise Vacation", "Hiking/Camping Trip", "Backpacking/Hitch Hiking", "Hunting/Fishing Trip", "Skiing/Snowboarding",
+"Safari Trek", "Sightseeing/Art and Culture", "Wine Tasting", "Golfing Trip", "Theme Park", "Road Trip", "Festival/Live Event", "Volunteering Trip", "Stay-cation");
+        break;
+    case 'mov':
+        var sendOpt = new Array("Action", "Adventure", "Animated", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "Historical", "Horror", "Musical", "Mystery", "Romance",
+"Romantic Comedy", "Sci-Fi", "Sports", "Spy", "Superhero", "Thriller Suspense", "War", "Western");
+        break;
+    case 'tat':
+        var sendOpt = new Array("Face", "Behind Ear", "Neck", "Shoulder", "Bicep", "Forearm", "Wrist", "Hand", "Finger", "Upper Back", "Lower Back", "Chest", "Stomach", "Side/Ribs", "Buttocks",
+"Thigh", "Calves", "Ankle", "Foot");
+		break;
+    case 'got':
+        var sendOpt = new Array("Arya Stark", "Beric Dondarrion", "Bran Stark", "Brienne of Tarth", "Bronn", "Cersei Lannister", "Daenerys Targaryen", "Davos Seaworth", "Ellaria Sand", "Euron Greyjoy",
+"Gendry", "Gilly", "Grey Worm", "Hodor", "Hot Pie", "Jaime Lannister", "Jaqen H'ghar (No One)", "Jon Snow", "Jorah Mormont", "Lyanna Mormont", "Melisandre", "Missandei", "Olenna Tyrell",
+"Petyr Baelish (Littlefinger)", "Podrick Payne", "Qyburn", "Samwell Tarly", "Sansa Stark", "The Hound", "The Mountain", "The Night King", "Theon Greyjoy", "Tormund Giantsbane", "Tycho Nestoris",
+"Tyrion Lannister", "Varys", "Yara Greyjoy");
+		break;
+    case 'net':
+        var sendOpt = new Array("Stranger Things", "Orange is the New Black", "Dear White People", "A Series of Unfortunate Events", "G.L.O.W.", "Black Mirror", "Easy", "White Rabbit Project",
+"The Crown", "Narcos", "13 Reasons Why", "House of Cards", "Master of None", "Love", "Girlboss", "Hemlock Grove");
+		break;
+    case 'emo':
+        var sendOpt = new Array("😀", "😁", "😂", "😅", "😜", "🤐", "😍", "🤗", "😳", "😇", "💩", "🙈", "🙉", "🙊", "💅", "💖");
+		break;
+}
+	localStorage.setItem('tacos', JSON.stringify(sendOpt));
 }

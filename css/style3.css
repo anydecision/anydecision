@@ -32,105 +32,6 @@
 .active {
 	background-color: rgba(0,0,0,.2);
 }
-.spacer {
-	padding: 35px 0px;
-	display: block;
-	background-color: #fff;
-}
-#teamBanner {
-	background: url('../images/teamPhoto2.jpg') center;
-	height: 400px;
-	color: #fff;
-	text-align: center;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	justify-content: flex-end;
-	margin: 0px 0px 50px 0px;
-	flex-direction: column;
-}
-#teamBanner h2 {
-	margin-bottom: -11px;
-}
-#helpBanner {
-	background: url('../images/helpPhoto.jpg') center;
-	height: 400px;
-	color: #fff;
-	text-align: center;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	justify-content: flex-end;
-	margin: 0px 0px 50px 0px;
-	flex-direction: column;
-}
-#helpBanner h2 {
-	margin-bottom: 250px;
-}
-#donateBanner {
-	background: url('../images/donatePhoto.jpg') center;
-	height: 400px;
-	color: #fff;
-	text-align: center;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	justify-content: flex-end;
-	margin: 0px 0px 50px 0px;
-	flex-direction: column;
-}
-#donateBanner h2 {
-	margin-bottom: 13px;
-}
-#donateBtnBorder {
-	border: 1px #999 solid;
-	border-radius: 8px;
-	float: right;
-	margin: 0px 80px 20px 50px;
-	width: 250px;
-	padding-bottom: 15px;
-}
-#donateBtnBorder:before {
-	content: url(https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png);
-	display: inline-block;
-    position: relative;
-    top: -12;
-	left: 12;
-    background: #fff;
-	padding: 0px 8px;
-}
-#popContent {
-	margin: 25px 0px;
-	height: 85%;
-	overflow:auto;
-	background-color: #FFF;
-}
-#popContent > h3 {
-	text-align: center;
-	font-size: 1.5em;
-}
-#popContent > p{
-	margin: 25px 50px;
-}
-form {
-	display: block;
-	margin: 0px auto;
-	background: #00A7E1;
-	width: 200px;
-}
-form:active,
-form:focus,
-form:hover {
-	background: #0089B9;
-	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
-	-webkit-appearance: none;
-}
 #banner {
 	display: -webkit-box;
 	display: -moz-box;
@@ -156,20 +57,83 @@ form:hover {
 	height: 50px;
 	align-self: flex-end;
 }
+
 .center {
-    margin: 50px auto;
+    margin: 53px auto 10px auto;
     max-width: 90%;
 	min-height: 50%;
 	background-color: #fff;
 	padding-bottom: 50px;
 }
-.center p {
-	margin: 15px 35px 0px 35px;
+.flex-container{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex; 
+	justify-content: start;
+	flex-wrap: wrap;
+	flex-direction: row;
+	margin: 0px auto;
+}
+.itemGroup {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.itemGroup:before {
+  content: '';
+  display: table;
+  padding-top: 100%;
+}
+
+.itemGroup a{
+  flex-grow: 1;
+  background: #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #555;
+  text-decoration: none;
+  padding: 20px;
+}
+.itemGroup a:hover{
+  background: #ddd;
+}
+#samples {
+	background-color: #fff;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 0px;
+}
+#samples div{
+	padding: 50px;
+}
+#samples div:before {
+  content: '';
+  display: table;
+}
+#samples a{
+	text-decoration: none;
+	color: #555;
+}
+#samples div:hover{
+	background: #ddd;
 }
 #tagLine {
 	text-align: center;
 	color: #3F3F3F;
-	padding: 0px 0px 2% 0px;
+	padding: 0px 0px 4% 0px;
 	margin-top: 0px;
 }
 h1 {
@@ -189,10 +153,6 @@ h2 {
 }
 .alignCenter {
 	text-align: center;
-}
-.testimonials {
-	text-align: center;
-	margin: 25px 50px;
 }
 body {
 	background-color: #22c1c3;
@@ -234,32 +194,6 @@ input[type="submit"] {
 	display: block;
 	text-align: center;
 }
-hr {
-	width: 50%;
-    border: 0;
-    height: 1px;
-    background-color: #000;
-	margin: 25px auto;
-}
-.instruction {
-	background-color: #007ea7;
-	margin: 15px 35px 0px 35px;
-	border-radius: 12px 12px 15px 15px;
-	padding-top: 1px;
-}
-.instruction div {
-	background-color: #EFEFEF;
-	padding: 20px;
-	border-bottom-left-radius: 12px;
-	border-bottom-right-radius: 12px;
-}
-.instruction h3 {
-	text-align: center;
-	color: #fff;
-}
-.instruction p {
-	margin: 0px;
-}
 #footerInfo {
 	padding: 10px;
 	text-align: center;
@@ -274,14 +208,11 @@ hr {
 	}
 	#nav {
 		width: 800px;
-		background: #00a7e1 url('../images/icons/icon.svg') no-repeat left;
 		justify-content: flex-end;
+		background: #00a7e1 url('../images/icons/icon.svg') no-repeat left;
 	}
 	h2 {
 		font-size: 3em;
-	}
-	hr {
-		margin: 50px auto;
 	}
 	.center {
 		margin: 0px auto 0px auto;
@@ -358,5 +289,13 @@ hr {
 		border: 0px;
 		color: #8b8b8b;
 		background-color: transparent;
+	}
+	.itemGroup {
+	  flex: 0 0 33.33%;
+	  display: flex;
+	  justify-content: center;
+	  align-items: stretch;
+	  padding: 5px;
+	  box-sizing: border-box;
 	}
 }
