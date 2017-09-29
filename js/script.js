@@ -266,7 +266,7 @@ function showResult() {
 		// Ends each row
 		str += "<\/tr>";
 	}
-	str += "<\/table></div><br \/><div id=\"resultOptions\"><div id=\"groupBox\"><h2>Group Decision<\/h2><hr /><p>With a group?<br />Let everyone have a say.</p><input id=\"next_btn\" type=\"button\" name=\"Next\" label=\"Next Person\" value=\"Next Person\" onClick=\"initList(); \"><\/div><div id=\"groupBox\"><h2>New Decision<\/h2><hr /><p>Done with this list?<br />Go back to create a new one.</p><a href=\"landingPage.html\" tabindex=\"-1\"><input id=\"reset_btn\" type=\"button\" name=\"Reset\" label=\"Reset\" value=\"Start Over\" onClick=\"goBack(); clearOptions(); reset();\"><\/div><\/div><\/a>";
+	str += "<\/table></div><br \/><div id=\"resultOptions\"><div id=\"groupBox\"><h2>Group Decision<\/h2><hr /><p>With a group?<br />Let everyone have a say.</p><input id=\"next_btn\" type=\"button\" name=\"Next\" label=\"Next Person\" value=\"Next Person\" onClick=\"initList(); \"><\/div><div id=\"groupBox\"><h2>New Decision<\/h2><hr /><p>Done with this list?<br />Go back to create a new one.</p><a href=\"\/\" tabindex=\"-1\"><input id=\"reset_btn\" type=\"button\" name=\"Reset\" label=\"Reset\" value=\"Start Over\" onClick=\"goBack(); clearOptions(); reset();\"><\/div><\/div><\/a>";
 	/*&nbsp; &nbsp; <input type=\"button\" value=\"Reset\" onClick=\"window.location.reload()\">*/
 	document.getElementById("resultField").style.visibility = "visible";
 	document.getElementById("resultField").innerHTML = str;
