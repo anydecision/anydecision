@@ -105,6 +105,35 @@
 .itemGroup a:hover{
   background: #ddd;
 }
+.itemGroup2 {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.itemGroup2:before {
+  content: '';
+  display: table;
+  padding-top: 50%;
+}
+
+.itemGroup2 a{
+  flex-grow: 1;
+  background: #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #555;
+  text-decoration: none;
+  padding: 20px;
+}
+.itemGroup2 a:hover{
+  background: #ddd;
+}
 #samples {
 	background-color: #fff;
 	display: -webkit-box;
@@ -297,5 +326,10 @@ input[type="submit"] {
 	  align-items: stretch;
 	  padding: 5px;
 	  box-sizing: border-box;
+	}
+	.itemGroup2:before {
+	  content: '';
+	  display: table;
+	  padding-top: 33.33%;
 	}
 }

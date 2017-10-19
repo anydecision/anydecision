@@ -510,9 +510,6 @@ function clearOptions(){
 	document.getElementById("emptyOptions").innerHTML = "Add some options above and they will fill in down here!";
 	document.getElementById("count").innerHTML = "0 options";
 }
-function resetDrop(){
-	document.getElementById("popCats").value = "default";
-}
 function highlight(){
 	document.getElementById("submission").style.border = "1px solid #5BC0EB";
 }
@@ -551,12 +548,17 @@ function check(){
 		restarted = true;
 		showData();
 		localStorage.removeItem('tacos');
+	} else if(localStorage.getItem('custom')){
+		document.getElementById("txtOption").focus();
 	}
+}
+function setLocalStorageCustom(){
+	localStorage.setItem('custom', ' ');
 }
 function setLocalStorage(opt){
 	switch (opt) {
     case 'samVac':
-        var sendOpt = new Array("Relaxating Beach Trip", "Cruise Vacation", "Hiking/Camping Trip", "Skiing/Snowboarding");
+        var sendOpt = new Array("Relaxating Beach Trip", "Cruise Vacation", "Hiking / Camping Trip", "Skiing / Snowboarding");
         break;
     case 'samGot':
         var sendOpt = new Array("Arya Stark", "John Snow", "Daenerys Targaryen", "Sansa Stark");
@@ -569,7 +571,7 @@ function setLocalStorage(opt){
 "Vietnamese Food", "Seafood", "Southern Food");
         break;
     case 'vac':
-        var sendOpt = new Array("Beach Trip", "Relaxation and/or Yoga Retreat", "Cruise Vacation", "Hiking/Camping Trip", "Backpacking/Hitch Hiking", "Hunting/Fishing Trip", "Skiing/Snowboarding",
+        var sendOpt = new Array("Beach Trip", "Relaxation and/or Yoga Retreat", "Cruise Vacation", "Hiking / Camping Trip", "Backpacking / Hitch Hiking", "Hunting / Fishing Trip", "Skiing / Snowboarding",
 "Safari Trek", "Sightseeing/Art and Culture", "Wine Tasting", "Golfing Trip", "Theme Park", "Road Trip", "Festival/Live Event", "Volunteering Trip", "Stay-cation");
         break;
     case 'mov':
@@ -589,9 +591,6 @@ function setLocalStorage(opt){
     case 'net':
         var sendOpt = new Array("Stranger Things", "Orange is the New Black", "Dear White People", "A Series of Unfortunate Events", "G.L.O.W.", "Black Mirror", "Easy", "White Rabbit Project",
 "The Crown", "Narcos", "13 Reasons Why", "House of Cards", "Master of None", "Love", "Girlboss", "Hemlock Grove");
-		break;
-    case 'emo':
-        var sendOpt = new Array("😀", "😁", "😂", "😅", "😜", "🤐", "😍", "🤗", "😳", "😇", "💩", "🙈", "🙉", "🙊", "💅", "💖");
 		break;
 }
 	localStorage.setItem('tacos', JSON.stringify(sendOpt));
