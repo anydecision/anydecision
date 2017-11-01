@@ -2,7 +2,6 @@
 var mainList = new Array();
 var storeSelect = new Array();
 var parent = new Array();
-var equal = new Array();
 var record = new Array();
 var leftChoice,rightChoice;
 var head1,head2;
@@ -93,9 +92,6 @@ function initList(){
 		record[i] = 0;
 	}
 	newRecord = 0;
-	for (i=0; i<=mainList.length; i++) {
-		equal[i] = -1;
-	}
  	leftChoice = storeSelect.length-2;
 	rightChoice = storeSelect.length-1;
 	head1 = 0;
@@ -118,46 +114,21 @@ function sortList(flag){
 		head1++;
 		newRecord++;
 		finishSize++;
-		while (equal[record[newRecord-1]]!=-1) {
-			record[newRecord] = storeSelect[leftChoice][head1];
-			head1++;
-			newRecord++;
-			finishSize++;
-		}
 	// If user clicked RIGHT
 	} else if (flag>0) {
 		record[newRecord] = storeSelect[rightChoice][head2];
 		head2++;
 		newRecord++;
 		finishSize++;
-		while (equal[record[newRecord-1]]!=-1) {
-			record[newRecord] = storeSelect[rightChoice][head2];
-			head2++;
-			newRecord++;
-			finishSize++;
-		}
 	} else {
 		record[newRecord] = storeSelect[leftChoice][head1];
 		head1++;
 		newRecord++;
 		finishSize++;
-		while (equal[record[newRecord-1]]!=-1) {
-			record[newRecord] = storeSelect[leftChoice][head1];
-			head1++;
-			newRecord++;
-			finishSize++;
-		}
-		equal[record[newRecord-1]] = storeSelect[rightChoice][head2];
 		record[newRecord] = storeSelect[rightChoice][head2];
 		head2++;
 		newRecord++;
 		finishSize++;
-		while (equal[record[newRecord-1]]!=-1) {
-			record[newRecord] = storeSelect[rightChoice][head2];
-			head2++;
-			newRecord++;
-			finishSize++;
-		}
 	}
 	// Processing after it has finished scanning the list of one
 	// Sets the next position in the record array to the losing option (LEFT)
