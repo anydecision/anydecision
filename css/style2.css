@@ -115,7 +115,7 @@
 	text-align: center;
 	font-size: 1.5em;
 }
-#popContent > p{
+#popContent > p {
 	margin: 25px 50px;
 }
 form {
@@ -161,7 +161,7 @@ form:hover {
     max-width: 90%;
 	min-height: 50%;
 	background-color: #fff;
-	padding-bottom: 50px;
+	padding-bottom: 50px 35px;
 }
 .center p {
 	margin: 15px 35px 0px 35px;
@@ -234,7 +234,7 @@ input[type="submit"] {
 	display: block;
 	text-align: center;
 }
-hr {
+hr.faq {
 	width: 50%;
     border: 0;
     height: 1px;
