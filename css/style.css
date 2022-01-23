@@ -37,8 +37,7 @@
 	display: block;
 	background-color: #fff;
 }
-#teamBanner {
-	background: url('../images/teamPhoto2.jpg') center;
+.pagesBanner {
 	height: 400px;
 	color: #fff;
 	text-align: center;
@@ -50,40 +49,21 @@
 	justify-content: flex-end;
 	margin: 0px 0px 50px 0px;
 	flex-direction: column;
+}
+#teamBanner {
+	background: center / cover #8b8b8b url('../images/teamPhoto2.jpg');
 }
 #teamBanner h2 {
-	margin-bottom: -5px;
+	margin-bottom: 13px;
 }
 #helpBanner {
-	background: url('../images/helpPhoto.jpg') center;
-	height: 400px;
-	color: #fff;
-	text-align: center;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	justify-content: flex-end;
-	margin: 0px 0px 50px 0px;
-	flex-direction: column;
+	background: center / cover #8b8b8b url('../images/helpPhoto.jpg');
 }
 #helpBanner h2 {
 	margin-bottom: 250px;
 }
 #donateBanner {
-	background: url('../images/donatePhoto.jpg') center;
-	height: 400px;
-	color: #fff;
-	text-align: center;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	justify-content: flex-end;
-	margin: 0px 0px 50px 0px;
-	flex-direction: column;
+	background: center / cover #8b8b8b url('../images/donatePhoto.jpg');
 }
 #donateBanner h2 {
 	margin-bottom: 13px;
@@ -244,11 +224,11 @@ form:hover {
 	font-size: 0px;
 }
 .center {
-	margin: 53px auto 0 auto;
+	margin: 0 auto;
 	max-width: 100%;
-	min-height: 50%;
+	min-height: calc(100% - 143px);
 	background-color: #fff;
-	padding: 35px 0 50px;
+	padding: 84px 0 24px;
 }
 .center p {
 	margin: 15px 35px 0px 35px;
@@ -470,10 +450,13 @@ input[type="submit"] {
 	background: #999 url('../images/icons/close.svg') no-repeat center;
 	font-size: 1em;
 }
-#close_btn:active,
 #close_btn:focus,
 #close_btn:hover {
-	background-color: #FF3D32;
+	background-color: #ff3d32;
+	-webkit-appearance: none;
+}
+#close_btn:active {
+	background-color: rgb(220, 61, 50);
 	-webkit-appearance: none;
 }
 #count {
@@ -485,7 +468,6 @@ input[type="submit"] {
 	color: #222;
 	display: inline-block;
 	clear: both;
-	align: bottom;
 	font-size: 1em;
 	padding: 0px;
 	padding-left: 20px;
@@ -789,6 +771,9 @@ hr.faq {
 		background: #00a7e1 url('../images/icons/icon.svg') no-repeat left;
 		justify-content: flex-end;
 	}
+	#teamBanner h2 {
+		margin-bottom: -5px;
+	}
 	.center h1 {
 		padding: 0px;
 		margin: 0px 10px;
@@ -800,10 +785,9 @@ hr.faq {
 		margin: 50px auto;
 	}
 	.center {
-		margin: 50px auto 0 auto;
+		margin: 0 auto;
 		max-width: 640px;
-		padding: 18px 80px;
-		min-height: calc(100% - 121px);
+		padding: 84px 80px 24px;
 	}
 	.center.pages p {
 		margin: 15px 80px 0px 80px;
