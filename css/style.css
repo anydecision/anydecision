@@ -15,12 +15,12 @@
 	margin: 0px auto;
 }
 #nav div a {
-    display: block;
+	display: block;
 	width: 50px;
-    color: #fff;
-    text-align: center;
-    padding: 15px 16px;
-    text-decoration: none;
+	color: #fff;
+	text-align: center;
+	padding: 15px 16px;
+	text-decoration: none;
 	cursor: pointer;
 	height: 20px;
 }
@@ -52,7 +52,7 @@
 	flex-direction: column;
 }
 #teamBanner h2 {
-	margin-bottom: -6px;
+	margin-bottom: -5px;
 }
 #helpBanner {
 	background: url('../images/helpPhoto.jpg') center;
@@ -99,21 +99,21 @@
 #donateBtnBorder:before {
 	content: url(https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png);
 	display: inline-block;
-    position: relative;
-    top: -12;
+	position: relative;
+	top: -12;
 	left: 12;
-    background: #fff;
+	background: #fff;
 	padding: 0px 8px;
 }
 #fade {
-    position:fixed;
-    top:0;
-    left:0;
-    background:rgba(0,0,0,0.23);
-    z-index:5;
-    width:100%;
-    height:100%;
-    display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	background:rgba(0,0,0,0.23);
+	z-index:5;
+	width:100%;
+	height:100%;
+	display:none;
 }
 #popContent {
 	margin: 25px 0px;
@@ -192,11 +192,11 @@ form:hover {
 	border: 0px;
 	margin: auto;
 }
-#txtOption::placeholder  {
-  color: #aaa;
+#txtOption::placeholder {
+	color: #aaa;
 }
 #txtOption:focus {
-    outline: 0px;
+	outline: 0px;
 	border: 0px;
 }
 #popCats {
@@ -244,13 +244,13 @@ form:hover {
 	font-size: 0px;
 }
 .center {
-    margin: 53px auto 10px auto;
-    max-width: 100%;
+	margin: 53px auto 0 auto;
+	max-width: 100%;
 	min-height: 50%;
 	background-color: #fff;
 	padding: 35px 0 50px;
 }
-.center p, .center h1 {
+.center p {
 	margin: 15px 35px 0px 35px;
 }
 .flex-container{
@@ -265,58 +265,58 @@ form:hover {
 	margin: 0px auto;
 }
 .itemGroup {
-  flex: 0 0 50%;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  padding: 5px;
-  box-sizing: border-box;
+	flex: 0 0 50%;
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	padding: 5px;
+	box-sizing: border-box;
 }
 .itemGroup:before {
-  content: '';
-  display: table;
-  padding-top: 100%;
+	content: '';
+	display: table;
+	padding-top: 100%;
 }
 .itemGroup a{
-  flex-grow: 1;
-  background: #efefef;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #555;
-  text-decoration: none;
-  padding: 20px;
+	flex-grow: 1;
+	background: #efefef;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #555;
+	text-decoration: none;
+	padding: 20px;
 }
 .itemGroup a:hover{
-  background: #ddd;
+	background: #ddd;
 }
 .itemGroup2 {
-  flex: 0 0 100%;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  padding: 5px;
-  box-sizing: border-box;
+	flex: 0 0 100%;
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	padding: 5px;
+	box-sizing: border-box;
 }
 .itemGroup2:before {
-  content: '';
-  display: table;
-  padding-top: 50%;
+	content: '';
+	display: table;
+	padding-top: 50%;
 }
 .itemGroup2 a{
-  flex-grow: 1;
-  background: #efefef;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #555;
-  text-decoration: none;
-  padding: 20px;
+	flex-grow: 1;
+	background: #efefef;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #555;
+	text-decoration: none;
+	padding: 20px;
 }
 .itemGroup2 a:hover{
-  background: #ddd;
+	background: #ddd;
 }
 #space {
 	padding: 10px;
@@ -337,8 +337,8 @@ form:hover {
 	padding: 50px;
 }
 #samples div:before {
-  content: '';
-  display: table;
+	content: '';
+	display: table;
 }
 #samples a{
 	text-decoration: none;
@@ -354,11 +354,9 @@ form:hover {
 	margin-top: 0px;
 }
 h1 {
-	padding: 0px 35px;
-	margin: 0px 0px 10px 0px;
 	text-align: center;
 	width: 100%;
-	font-size: 1.5em;
+	font-size: 1.75em;
 }
 h2 {
 	padding: 0px;
@@ -378,15 +376,12 @@ h2 {
 	margin: 25px 50px;
 }
 body {
-	background-color: #22c1c3;
-	background: -webkit-linear-gradient(#22c1c3, #64b3f4); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#22c1c3, #64b3f4); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#22c1c3, #64b3f4); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#22c1c3, #64b3f4); /* Standard syntax */
+	background-color: #000;
 	font-family: verdana;
 	font-size: 1em;
 	color: #555;
-	margin: 0px;
+	margin: 0;
+	padding: 0;
 }
 #submittingOptions {
 	text-align: center;
@@ -410,7 +405,7 @@ body {
 	margin:0px;
 	text-align: left;
 	text-indent: -54px;
-    padding-left: 54px;
+	padding-left: 54px;
 }
 #optionArrange {
 	line-height: 3em;
@@ -469,7 +464,7 @@ input[type="submit"] {
 	border-radius: 0px;
 }
 #close_btn {
-  	width: 3em;
+	width: 3em;
 	height: 3em;
 	padding: 7.5px 0px;
 	background: #999 url('../images/icons/close.svg') no-repeat center;
@@ -624,21 +619,21 @@ input[type="submit"] {
 }
 #choices > * {
 	flex: 1;
-    background-color:#00A7E1;
+	background-color:#00A7E1;
 	cursor: pointer;
 	text-align: center;
 	padding: 20% 5px;
 	margin: 5% 0px;
 	color: #fff;
 	-webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 #choices > a:active {
-    background-color: #0089B9;
+	background-color: #0089B9;
 	-webkit-appearance: none;
 }
 #warning {
@@ -671,15 +666,15 @@ input[type="submit"] {
 	text-align: center;
 }
 #results {
-    font-size: .9em; text-align: left; min-width: 300px; background:#F0F9FD; line-height:120%;
+	font-size: .9em; text-align: left; min-width: 300px; background:#F0F9FD; line-height:120%;
 	margin: 0px auto; border:0px; border-collapse:collapse; border-radius:6px; -moz-border-radius:6px;
 }
 #results td {
-  padding: 10px; color:#000; border: 2px solid #fff;
+	padding: 10px; color:#000; border: 2px solid #fff;
 }
 #results tr:first-child {
-  border-top-left-radius: 6px; border-top-right-radius: 6px; color:#000;font-size: 1em;
-  font-weight: bold; background: #c3e8f7; border-top-left-radius: 6px; border-top-right-radius: 6px;
+	border-top-left-radius: 6px; border-top-right-radius: 6px; color:#000;font-size: 1em;
+	font-weight: bold; background: #c3e8f7; border-top-left-radius: 6px; border-top-right-radius: 6px;
 }
 #results td:nth-child(2) {
 	background: #c3e8f7
@@ -714,27 +709,27 @@ input[type="submit"] {
 }
 hr {
 	width: 100%;
-    border: 0;
-    height: 1px;
-    background-color: #aaa;
+	border: 0;
+	height: 1px;
+	background-color: #aaa;
 	margin: 25px auto;
 }
 hr.faq {
 	width: 50%;
-    background-color: #000;
+	background-color: #000;
 }
 #progress {
-  flex: 1;
-  background-color: #efefef;
-  border-radius: 8px;
+	flex: 1;
+	background-color: #efefef;
+	border-radius: 8px;
 }
 #progressBar {
-  width: 3%;
-  height: 8px;
-  background-color: #22c1c3;
-  border-radius: 8px;
-  transition: 0.3s linear;
-  transition-property: width;
+	width: 3%;
+	height: 8px;
+	background-color: #22c1c3;
+	border-radius: 8px;
+	transition: 0.3s linear;
+	transition-property: width;
 }
 #percentComplete {
 	text-align: right;
@@ -762,11 +757,13 @@ hr.faq {
 	margin: 0px;
 }
 #footerInfo {
-	padding: 10px;
+	margin: -1px auto 0;
+	max-width: 100%;
+	padding: 10px 0;
 	text-align: center;
 	font-size: .8em;
-	color: #fff;
-	background-color: #8b8b8b;
+	color: #8b8b8b;
+	background-color: #fff;
 }
 
 
@@ -776,12 +773,12 @@ hr.faq {
 		position: relative;
 		min-height: 100%;
 	}
-	#footerContainer {
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		width: 100%;
-		overflow:hidden;
+	#footerInfo {
+		max-width: 640px;
+		padding: 10px 80px;
+		text-align: center;
+		font-size: .8em;
+		color: #8b8b8b;
 	}
 	#navWrap {
 		width: 100%;
@@ -792,6 +789,10 @@ hr.faq {
 		background: #00a7e1 url('../images/icons/icon.svg') no-repeat left;
 		justify-content: flex-end;
 	}
+	.center h1 {
+		padding: 0px;
+		margin: 0px 10px;
+	}
 	h2 {
 		font-size: 3em;
 	}
@@ -799,9 +800,10 @@ hr.faq {
 		margin: 50px auto;
 	}
 	.center {
-		margin: 75px auto 75px auto;
+		margin: 50px auto 0 auto;
 		max-width: 640px;
 		padding: 18px 80px;
+		min-height: calc(100% - 121px);
 	}
 	.center.pages p {
 		margin: 15px 80px 0px 80px;
