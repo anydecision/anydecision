@@ -507,7 +507,6 @@ input[type="submit"] {
 	color: #222;
 	display: inline-block;
 	clear: both;
-	align: bottom;
 	font-size: 1em;
 	padding: 0px;
 	background: #fff url('../images/icons/edit.svg') no-repeat left;
@@ -542,8 +541,6 @@ input[type="submit"] {
 	color: #fff;
 	display: inline-block;
 	clear: both;
-	align: bottom;
-	font-size: 1em;
 	font-weight: inherit;	
 }
 #next_btn:active,
@@ -561,7 +558,6 @@ input[type="submit"] {
 	color: #fff;
 	display: inline-block;
 	clear: both;
-	align: bottom;
 	font-size: 1em;
 	font-weight: inherit;	
 }

@@ -14,7 +14,6 @@ var restarted = false;
 var finalResults = new Array();
 var calculate = new Array();
 var timeEstimate;
-var firstScroll = true;
 
 // Popular Categories
 var food = new Array("Mexican Food", "Italian Cuisine", "Indian Food", "Thai Food", "Greek Cuisine", "Chinese Food", "Japanese Cuisine", "American Food", "Mediterranean Cuisine", "Korean Food",
@@ -32,10 +31,6 @@ var got = new Array("Arya Stark", "Beric Dondarrion", "Bran Stark", "Brienne of 
 var tvNetflix = new Array("Stranger Things", "Orange is the New Black", "Dear White People", "A Series of Unfortunate Events", "G.L.O.W.", "Black Mirror", "Easy", "White Rabbit Project",
 "The Crown", "Narcos", "13 Reasons Why", "House of Cards", "Master of None", "Love", "Girlboss", "Hemlock Grove");
 var emoji = new Array("😀", "😁", "😂", "😅", "😜", "🤐", "😍", "🤗", "😳", "😇", "💩", "🙈", "🙉", "🙊", "💅", "💖");
-
-var popCatNums = new Array("food", "vacation", "movieGenre", "tattoo", "got", "tvNetflix", "emoji");
-var popCategories = new Array(food, vacation, movieGenre, tattoo, got, tvNetflix, emoji);
-
 
 // Checks to see if there is a null value in 'mainList'
 function checkNull(namMem) {
@@ -87,7 +82,6 @@ function initList(){
 			n++;
 		}
 	}
-// console.log(storeSelect);
  	for (i=0; i<mainList.length; i++) {
 		record[i] = 0;
 	}
@@ -105,7 +99,6 @@ function initList(){
 }
 // Save users choice to the 'record' array
 function sortList(flag){
-	// console.log(record);
 	var i;
 	var str;
 	// If user clicked LEFT
@@ -169,12 +162,16 @@ function sortList(flag){
 			}
 			newRecord = 0;
 		}
+	} else if(storeSelect.length == 3){
+		console.log('final answer', mainList[record[0]]);
+		if(head1+head2 > 2){
+			console.log('top three answers:', mainList[record[0]], mainList[record[1]], mainList[record[2]]);
+		}
 	}
 	if (leftChoice<0) {
 		str = "Option No."+(numQuestion-1)+"<br>"+Math.floor(finishSize*100/totalSize)+"% sorted.";
 		document.getElementById("percentComplete").innerHTML = str;
 		showResult();
-		// console.log(record);
 		finishFlag = 1;
 	}
 	else {
@@ -246,7 +243,6 @@ function showResult() {
 }
 // Display two elements to be compared
 function showImage() {
-	// document.getElementById("submittingOptions").style.display = "none";
 	document.getElementById("tagLine").style.display = "none";
 	document.getElementById("quiz").style.display = "inline";
 	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">Return to the first screen and lose result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div>";
@@ -312,79 +308,55 @@ function resetTime(){
 function showData(){
 	// Removes the default text in Option List
 	document.getElementById("emptyOptions").innerHTML = " ";
-	// Finds the index of the value of popCatNums
-	function checkList(cList) {
-		return cList == document.getElementById("popCats").value;
-	}
-/*
-	// Decides if the dropdown value matches an array
-	if(popCatNums.some(checkList)){
-		// Rests the list if the user selects a new dropdown
-		for(i=0; i<mainList.length; i++){
-			mainList.splice(i);
-		}
-		nullArray = [];
-		// Sets e equal to the index of the dropdown item
-		var e = popCatNums.findIndex(checkList);
-		// Runs the length of the dropdown item's array
-		for(i=0; i<popCategories[e].length; i++){
-			// Adds each item in the array at the end of mainList
-			mainList.push(popCategories[e][i]);
-		}
-		restarted = true;
-	} else {
-*/
-		var inputText = document.getElementById("txtOption").value;
-		// Determines if the user provided text has characters (not just spaces or left blank)
-		if (/\S/.test(inputText)){
-			// Allows a user to input a list from an Excel row (separated by tabs)
-			if(/\t/.test(inputText)){
-				var excelT = inputText.split("\t");
-				for(i=0; i<excelT.length; i++){
-					mainList.push(excelT[i]);
-				}
-				inputText = document.getElementById("txtOption").value = "";
-			} else if(mainList.indexOf(inputText)==-1){
-				// Adds the user provided text at the end of mainList
-				mainList.push(inputText);
-				// Suggests adding more options
-				if ((mainList.length-nullArray.length)<2){
-					document.getElementById("question").innerHTML = "Please add at least two:";
-					document.getElementById("question").style.color = "inherit";
-				}else{
-					document.getElementById("question").innerHTML = "Submit any new options not listed:";
-					document.getElementById("question").style.color = "inherit";				
-				}
-			// Tell user item has been added
-				added();
-			} else {
-				// Suggests user should type an option
-			document.getElementById("question").innerHTML = "Duplicate entries not allowed.";
-			document.getElementById("question").style.color = "#f26430";
+	var inputText = document.getElementById("txtOption").value;
+	// Determines if the user provided text has characters (not just spaces or left blank)
+	if (/\S/.test(inputText)){
+		// Allows a user to input a list from an Excel row (separated by tabs)
+		if(/\t/.test(inputText)){
+			var excelT = inputText.split("\t");
+			for(i=0; i<excelT.length; i++){
+				mainList.push(excelT[i]);
 			}
-			document.getElementById("submission").style.border = "1px solid #5BC0EB";
-			// Resets the input field
 			inputText = document.getElementById("txtOption").value = "";
-			document.getElementById("txtOption").innerHTML = inputText;
+		} else if(mainList.indexOf(inputText)==-1){
+			// Adds the user provided text at the end of mainList
+			mainList.push(inputText);
+			// Suggests adding more options
+			if ((mainList.length-nullArray.length)<2){
+				document.getElementById("question").innerHTML = "Please add at least two:";
+				document.getElementById("question").style.color = "inherit";
+			}else{
+				document.getElementById("question").innerHTML = "Submit any new options not listed:";
+				document.getElementById("question").style.color = "inherit";				
+			}
+			// Tell user item has been added
+			added();
 		} else {
 			// Suggests user should type an option
-			document.getElementById("question").innerHTML = "Please submit a valid option below:";
+			document.getElementById("question").innerHTML = "Duplicate entries not allowed.";
 			document.getElementById("question").style.color = "#f26430";
-			inputText = document.getElementById("txtOption").value = "";
-			if(mainList.length == nullArray.length){
-				document.getElementById("emptyOptions").innerHTML = "Add some options above and they will fill in down here!";
-				document.getElementById("optionChoices").innerHTML = " ";
-				//document.getElementById("count").innerHTML = " ";
-			}
-		};
-	//}
+		}
+		document.getElementById("submission").style.border = "1px solid #5BC0EB";
+		// Resets the input field
+		inputText = document.getElementById("txtOption").value = "";
+		document.getElementById("txtOption").innerHTML = inputText;
+	} else {
+		// Suggests user should type an option
+		document.getElementById("question").innerHTML = "Please submit a valid option below:";
+		document.getElementById("question").style.color = "#f26430";
+		inputText = document.getElementById("txtOption").value = "";
+		if(mainList.length == nullArray.length){
+			document.getElementById("emptyOptions").innerHTML = "Add some options above and they will fill in down here!";
+			document.getElementById("optionChoices").innerHTML = " ";
+			//document.getElementById("count").innerHTML = " ";
+		}
+	};
 		document.getElementById("count").innerHTML = (mainList.length-nullArray.length)+" options";
 	// Makes start button available if the mainList array has at least two non-null items
 	if ((mainList.length-nullArray.length)>=2){
 		document.getElementById("start_btn").disabled = false;
 	};
-	// Resets the dropdown menu and optionChoices input field
-	// document.getElementById("popCats").value = "default";
+	// Resets the optionChoices input field
 	document.getElementById("optionChoices").innerHTML = "";
 	// Fills in the optionChoices section from the mainList array
 	for(i=0; i<mainList.length; i++){
@@ -394,11 +366,6 @@ function showData(){
 			document.getElementById("optionChoices").innerHTML += "<div id="+i+"><p>"+"<input type=\"button\" id=\"close_btn\"value=\" \" onclick=\"remove("+i+");\"/> "+mainList[i]+"<\/p><\/div>";
 		}
 	}
-	/* if(firstScroll){
-		var showView = document.getElementById("submittingOptions");
-		showView.scrollIntoView(true);
-		firstScroll = false;
-	}*/
 	if(restarted == true){
 		document.getElementById("question").innerHTML = "Submit any new options not listed:";
 		document.getElementById("question").style.color = "inherit";
@@ -462,7 +429,6 @@ function goBack(){
 	nullArray = [];
 	restarted = true;
 	showData();
-	// document.getElementById("submittingOptions").style.display = "inherit";
 	document.getElementById("tagLine").style.display = "inherit";
 	document.getElementById("quiz").style.display = "none";
 	document.getElementById("banner").innerHTML = "<h1>From the list below,<br />remove any irrelevant items.</h1>";
@@ -485,7 +451,7 @@ function highlight(){
 	document.getElementById("submission").style.border = "1px solid #5BC0EB";
 }
 function noHighlight(){
-	document.getElementById("submission").style.border = "1px solid #ddd";
+	document.getElementById("submission").style.border = "1px solid #efefef";
 }
 function reset(){
 	finalResults = [];
