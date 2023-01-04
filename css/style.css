@@ -252,14 +252,14 @@ form:hover {
 	padding: 5px;
 	box-sizing: border-box;
 }
-.itemGroup:before {
+/*.itemGroup:before {
 	content: '';
 	display: table;
 	padding-top: 100%;
-}
+}*/
 .itemGroup a{
 	flex-grow: 1;
-	background: #efefef;
+	background: #F0F9FD;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -269,7 +269,7 @@ form:hover {
 	padding: 20px;
 }
 .itemGroup a:hover{
-	background: #ddd;
+	background: #c3e8f7;
 }
 .itemGroup2 {
 	flex: 0 0 100%;
@@ -279,24 +279,25 @@ form:hover {
 	padding: 5px;
 	box-sizing: border-box;
 }
-.itemGroup2:before {
+/*.itemGroup2:before {
 	content: '';
 	display: table;
 	padding-top: 50%;
-}
+}*/
 .itemGroup2 a{
-	flex-grow: 1;
-	background: #efefef;
+	flex-grow: 0;
+	background: #00A7E1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	color: #555;
+	color: #fff;
 	text-decoration: none;
-	padding: 20px;
+	padding: 40px 20px;
+	width: 50%;
 }
 .itemGroup2 a:hover{
-	background: #ddd;
+	background: #0089B9;
 }
 #space {
 	padding: 10px;
@@ -413,6 +414,10 @@ body {
 	padding: 0px;
 	margin: 0px 0px 10px 0px;
 }
+#optionChoices img {
+	width: 96%;
+    margin: 2%;
+}
 #resultField {
 	text-align: center;
 	width: 100%;
@@ -449,6 +454,9 @@ input[type="submit"] {
 	padding: 7.5px 0px;
 	background: #999 url('../images/icons/close.svg') no-repeat center;
 	font-size: 1em;
+}
+.imageOption input#close_btn {
+	position: absolute;
 }
 #close_btn:focus,
 #close_btn:hover {
@@ -610,6 +618,10 @@ input[type="submit"] {
 	-ms-user-select: none;
 	user-select: none;
 }
+#choices img {
+    max-width: 100%;
+	max-height: 180px;
+}
 #choices > a:active {
 	background-color: #0089B9;
 	-webkit-appearance: none;
@@ -630,6 +642,9 @@ input[type="submit"] {
 	color: #000;
 	background-color: #c3e8f7;
 	width: 75%;
+}
+#winner img {
+	width: 100%;
 }
 #winner p {
 	margin: 0px;
@@ -656,6 +671,9 @@ input[type="submit"] {
 }
 #results td:nth-child(2) {
 	background: #c3e8f7
+}
+#results img {
+    width: 100px;
 }
 #scrollResults {
 	width: 100%;
@@ -772,10 +790,10 @@ hr.faq {
 	}
 	.center h1 {
 		padding: 0px;
-		margin: 0px 10px;
+		margin: 0px;
 	}
 	h2 {
-		font-size: 3em;
+		font-size: 2em;
 	}
 	hr.faq {
 		margin: 50px auto;
@@ -887,18 +905,18 @@ hr.faq {
 		background-color: transparent;
 	}
 	.itemGroup {
-		flex: 0 0 33.33%;
+		flex: 0 0 50%;
 		display: flex;
 		justify-content: center;
 		align-items: stretch;
 		padding: 5px;
 		box-sizing: border-box;
 	}
-	.itemGroup2:before {
+	/*.itemGroup2:before {
 		content: '';
 		display: table;
 		padding-top: 33.33%;
-	}
+	}*/
 	#mainTable {
 		min-height: 50%;
 	}
@@ -924,6 +942,9 @@ hr.faq {
 	}
 	#winner {
 		width: 50%;
+	}
+	#winner img {
+		width: 100%;
 	}
 	#groupBox {
 		width: 75%;

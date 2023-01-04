@@ -206,7 +206,11 @@ function showResult() {
 		justin.push(mainList[calculate.indexOf(calc2[i])]);
 		calculate.splice((calculate.indexOf(calc2[i])), 1, null);
 	}
-	str+="<div id=\"winner\"><p>And the winner is:<\/p><span>"+justin[0]+"<\/span></div><br /><div id=\"scrollResults\"><table id=\"results\" align=\"center\">";
+	if(justin[0].match(/\.(jpeg|jpg|gif|png)$/) != null){
+		str+="<div id=\"winner\"><p>And the winner is:<\/p><img src=\""+justin[0]+"\" \/></div><br /><div id=\"scrollResults\"><table id=\"results\" align=\"center\">";
+	} else {
+		str+="<div id=\"winner\"><p>And the winner is:<\/p><span>"+justin[0]+"<\/span></div><br /><div id=\"scrollResults\"><table id=\"results\" align=\"center\">";
+	}
 	// Table heading section
 	str += "<tr>"+"<td>Name</td>";
 	if(finalResults.length > 1){
@@ -221,7 +225,11 @@ function showResult() {
 	// Runs the length of mainList
 	for (i=0; i < mainList.length; i++) {
 		// Adds the name of each option in order of the justin array
-		str += "<tr>"+"<td>"+justin[i]+"<\/td>";
+		if(justin[i].match(/\.(jpeg|jpg|gif|png)$/) != null){
+			str += "<tr>"+"<td><img src=\""+justin[i]+"\" \/><\/td>";
+		} else {
+			str += "<tr>"+"<td>"+justin[i]+"<\/td>";
+		}
 		// Creates a row and adds the rank numbers in order
 		str += "<td style=\"text-align: center;\">"+(i+1)+"</td>";
 		// Adds the values of the options as they were ranked
@@ -253,8 +261,16 @@ function showImage() {
 	var str1 = ""+namingBoxFunc(storeSelect[leftChoice][head1]);
 	var str2 = ""+namingBoxFunc(storeSelect[rightChoice][head2]);
 	document.getElementById("percentComplete").innerHTML = str0;
-	document.getElementById("leftField").innerHTML = str1;
-	document.getElementById("rightField").innerHTML = str2;
+	if(str1.match(/\.(jpeg|jpg|gif|png)$/) != null){
+		document.getElementById("leftField").innerHTML = "<img src=\""+str1+"\" \/>";
+	} else {
+		document.getElementById("leftField").innerHTML = str1;
+	}
+	if(str2.match(/\.(jpeg|jpg|gif|png)$/) != null){
+		document.getElementById("rightField").innerHTML = "<img src=\""+str2+"\" \/>";
+	} else {
+		document.getElementById("rightField").innerHTML = str2;	
+	}
 	numQuestion++;
 	// Display a progress bar
 	var bar = document.getElementById("progressBar");
@@ -361,9 +377,13 @@ function showData(){
 	// Fills in the optionChoices section from the mainList array
 	for(i=0; i<mainList.length; i++){
 		// If the i value of mainList isn't set to null
-		if(mainList[i] != null){
+		if((mainList[i] != null)){
 			// Create items in optionChoices with an id, remove button, and mainList location of i
-			document.getElementById("optionChoices").innerHTML += "<div id="+i+"><p>"+"<input type=\"button\" id=\"close_btn\"value=\" \" onclick=\"remove("+i+");\"/> "+mainList[i]+"<\/p><\/div>";
+			if(mainList[i].match(/\.(jpeg|jpg|gif|png)$/) != null){
+				document.getElementById("optionChoices").innerHTML += "<div id="+i+" class=\"imageOption\">"+"<input type=\"button\" id=\"close_btn\"value=\" \" onclick=\"remove("+i+");\"/> <img src=\""+mainList[i]+"\" \/><\/div>";
+			} else {
+				document.getElementById("optionChoices").innerHTML += "<div id="+i+"><p>"+"<input type=\"button\" id=\"close_btn\"value=\" \" onclick=\"remove("+i+");\"/> "+mainList[i]+"<\/p><\/div>";
+			}
 		}
 	}
 	if(restarted == true){
