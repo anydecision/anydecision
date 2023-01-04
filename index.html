@@ -47,7 +47,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h1>Pick a category below.</h1>
 <p id="tagLine">(samples recommended for first time users)</p>
 
-<div class="flex-container">
+    <div class="flex-container">
+        <div class="itemGroup2">
+            <a href="compare.html" onclick="setLocalStorageCustom();"><div class="item">Create your own list</div></a>
+        </div>
         <div class="itemGroup">
             <a href="compare.html" onclick="setLocalStorage('samVac');"><div class="item">(Sample) How should I vacation?</div></a>
         </div>
@@ -75,12 +78,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="itemGroup">
             <a href="compare.html" onclick="setLocalStorage('net');"><div class="item">What should I watch on Netflix?</div></a>
         </div>
-        <div class="itemGroup2">
-            <a href="compare.html" onclick="setLocalStorageCustom();"><div class="item">Create your own list</div></a>
-        </div>
     </div>
 </div>
-<footer id="footerInfo">Copyright &#169 2022 Any Decision</footer>
+<footer id="footerInfo">Copyright &#169 <span id="footerDate">2017-</span> Any Decision</footer>
+<script>document.getElementById('footerDate').append(new Date().getFullYear());</script>
 
 <!--<script type="module">
     // Import the functions you need from the SDKs you need

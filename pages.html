@@ -108,8 +108,9 @@ We reserve the right to record any use of our product for research purposes. We 
 <p>But also remember, this resource is only free because of the donations we receive in support of this project.</p>
 <div class="spacer"></div>
 </div>
-<footer id="footerInfo">Copyright &#169 2022 Any Decision</footer>
+<footer id="footerInfo">Copyright &#169 <span id="footerDate">2017-</span> Any Decision</footer>
 <script type="text/javascript">
+  document.getElementById('footerDate').append(new Date().getFullYear());
 window.onscroll = function() {scrollFunction();};
 </script>
 <!--<script type="module">
