@@ -15,6 +15,8 @@ var finalResults = new Array();
 var calculate = new Array();
 var timeEstimate;
 
+var paramURL = new URLSearchParams(window.location.search);
+
 // Popular Categories
 var food = new Array("Mexican Food", "Italian Cuisine", "Indian Food", "Thai Food", "Greek Cuisine", "Chinese Food", "Japanese Cuisine", "American Food", "Mediterranean Cuisine", "Korean Food",
 "Vietnamese Food", "Seafood", "Southern Food");
@@ -163,7 +165,7 @@ function sortList(flag){
 			newRecord = 0;
 		}
 	} else if(storeSelect.length == 3){
-		console.log('final answer', mainList[record[0]]);
+		//console.log('final answer', mainList[record[0]]);
 		if(head1+head2 > 2){
 			console.log('top three answers:', mainList[record[0]], mainList[record[1]], mainList[record[2]]);
 		}
@@ -242,13 +244,15 @@ function showResult() {
 		// Ends each row
 		str += "<\/tr>";
 	}
-	str += "<\/table></div><br \/><div id=\"resultOptions\"><div id=\"groupBox\"><h2>Group Decision<\/h2><hr /><p>With a group?<br />Let everyone have a say.</p><input id=\"next_btn\" type=\"button\" name=\"Next\" label=\"Next Person\" value=\"Next Person\" onClick=\"initList(); \"><\/div><div id=\"groupBox\"><h2>New Decision<\/h2><hr /><p>Done with this list?<br />Go back to create a new one.</p><a href=\"\/\" tabindex=\"-1\"><input id=\"reset_btn\" type=\"button\" name=\"Reset\" label=\"Reset\" value=\"Start Over\" onClick=\"goBack(); clearOptions(); reset();\"><\/div><\/div><\/a>";
+	str += "<\/table></div><br \/><div id=\"resultOptions\"><div id=\"groupBox\"><h2>Group Decision<\/h2><hr /><p>With a group?<br />Let everyone have a say.</p><input id=\"next_btn\" type=\"button\" name=\"Next\" label=\"Next Person\" value=\"Next Person\" onClick=\"initList(); \"><p>Or share link with the&nbsp;next&nbsp;person:</p><div id=\"copyField\" style=\"border: 1px solid rgb(239, 239, 239);\"><input type=\"text\" name=\"copyText\" id=\"copyText\" value=\""+makeUrlParams()+"\"><div class=\"toolTip\"><div id=\"added\" style=\"opacity: 0;\">Copied<\/div><input type=\"button\" name=\"Copy\" id=\"copy_btn\" onclick=\"copyShare();\" value=\"Copy\"><\/div><\/div><\/div><div id=\"groupBox\"><h2>New Decision<\/h2><hr /><p>Done with this list?<br />Go back to create a new one.</p><a href=\"\/\" tabindex=\"-1\"><input id=\"reset_btn\" type=\"button\" name=\"Reset\" label=\"Reset\" value=\"Start Over\" onClick=\"goBack(); clearOptions(); reset();\"><\/div><\/div><\/a>";
 	/*&nbsp; &nbsp; <input type=\"button\" value=\"Reset\" onClick=\"window.location.reload()\">*/
 	document.getElementById("resultField").style.visibility = "visible";
 	document.getElementById("resultField").innerHTML = str;
 	document.getElementById("quiz").style.display = "none";
 	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">Return to the first screen and lose result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div>";
 }
+
+
 // Display two elements to be compared
 function showImage() {
 	document.getElementById("tagLine").style.display = "none";
@@ -460,6 +464,7 @@ function clearOptions(){
 	for(i=0; i<mainList.length; i++){
 		mainList.splice(i);
 	}
+	window.history.pushState({}, document.title, window.location.pathname);
 	nullArray = [];
 	document.getElementById("start_btn").disabled = true;
 	restarted = true;
@@ -508,7 +513,33 @@ function check(){
 	} else if(localStorage.getItem('custom')){
 		document.getElementById("txtOption").focus();
 	}
+	if(paramURL.has('l') && paramURL.has('r')){
+		mainList= JSON.parse(b64_to_utf8(paramURL.get('l')));
+		finalResults= JSON.parse(b64_to_utf8(paramURL.get('r')));
+		initList();
+	}
 }
+function utf8_to_b64(str) {
+	return window.btoa(unescape(encodeURIComponent(str)));
+}
+function b64_to_utf8(str) {
+return decodeURIComponent(escape(window.atob(str)));
+}
+function makeUrlParams(){
+	var currentUrl= window.location.origin + window.location.pathname;
+	var mL= utf8_to_b64(JSON.stringify(mainList));
+	var fR= utf8_to_b64(JSON.stringify(finalResults));
+	return currentUrl+'?l='+mL+'&r='+fR;
+}
+function copyShare() {
+	var copyText = document.getElementById("copyText");
+	var copyButton = document.getElementById("copy_btn");
+	copyText.select();
+	copyText.setSelectionRange(0, 99999);
+	navigator.clipboard.writeText(copyText.value);
+	copyButton.value= "Copied";
+	added();
+  }
 function setLocalStorageCustom(){
 	localStorage.setItem('custom', ' ');
 }

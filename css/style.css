@@ -146,7 +146,7 @@ form:hover {
 	height: 50px;
 	align-self: flex-end;
 }
-#submission {
+#submission, #copyField {
 	display: -webkit-box;
 	display: -moz-box;
 	display: -ms-flexbox;
@@ -163,7 +163,11 @@ form:hover {
 	border: 1px solid #efefef;
 	flex-direction: row;
 }
-#txtOption {
+#copyField {
+	margin: 10px auto;
+    width: 95%;
+}
+#txtOption, #copyText {
 	width: 90%;
 	flex: 0px;
 	height: 3em;
@@ -171,6 +175,13 @@ form:hover {
 	font-size: 1em;
 	border: 0px;
 	margin: auto;
+}
+#copyText {
+	width: 100%;
+	font-size: .9em;
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 #txtOption::placeholder {
 	color: #aaa;
@@ -185,17 +196,30 @@ form:hover {
 	padding-left: 2%;
 	font-size: 1em;
 }
-#optionSubmit_btn {
+#optionSubmit_btn, #copy_btn {
 	background: #00A7E1 url('../images/icons/add.svg') no-repeat center;
 	height: 3em;
 	width: 3em;
 	padding: 1px 6px;
 	font-size: 1em;
 }
+#copy_btn{
+	background-image: none;
+	color: #fff;
+	width: auto;
+	font-weight: inherit;
+}
 #optionSubmit_btn:active,
 #optionSubmit_btn:focus,
 #optionSubmit_btn:hover {
 	background: #0089B9 url('../images/icons/add.svg') no-repeat center;
+	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+	-webkit-appearance: none;
+}
+#copy_btn:active,
+#copy_btn:focus,
+#copy_btn:hover {
+	background-color: #0089B9;
 	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
 	-webkit-appearance: none;
 }
@@ -947,7 +971,7 @@ hr.faq {
 		width: 100%;
 	}
 	#groupBox {
-		width: 75%;
+		width: 50%;
 		margin: 0px 10px;
 	}
 }
