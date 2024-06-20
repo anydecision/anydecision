@@ -118,7 +118,9 @@ form:active,
 form:focus,
 form:hover {
 	background: #0089B9;
-	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+	animation-delay: 2s;
+	-webkit-animation-delay: 2s;
+	appearance: none;
 	-webkit-appearance: none;
 }
 #banner {
@@ -213,15 +215,23 @@ form:hover {
 #optionSubmit_btn:focus,
 #optionSubmit_btn:hover {
 	background: #0089B9 url('../images/icons/add.svg') no-repeat center;
-	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+	animation-delay: 2s;
+	-webkit-animation-delay: 2s;
+	appearance: none;
 	-webkit-appearance: none;
 }
 #copy_btn:active,
 #copy_btn:focus,
 #copy_btn:hover {
 	background-color: #0089B9;
-	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+	animation-delay: 2s;
+	-webkit-animation-delay: 2s;
+	appearance: none;
 	-webkit-appearance: none;
+}
+#question {
+	display: block;
+	padding-bottom: .5em;
 }
 #added {
 	color: #22c1c3;
@@ -455,6 +465,7 @@ input[type="submit"][disabled] {
 	cursor: inherit;
 	background: transparent;
 	font-family: verdana;
+	appearance: none;
 	-webkit-appearance: none;
 	border-radius: 0px;
 }
@@ -469,6 +480,7 @@ input[type="submit"] {
 	background: transparent;
 	font-weight: bold;
 	font-family: verdana;
+	appearance: none;
 	-webkit-appearance: none;
 	border-radius: 0px;
 }
@@ -482,14 +494,13 @@ input[type="submit"] {
 .imageOption input#close_btn {
 	position: absolute;
 }
-#close_btn:focus,
-#close_btn:hover {
-	background-color: #ff3d32;
-	-webkit-appearance: none;
-}
 #close_btn:active {
 	background-color: rgb(220, 61, 50);
+	appearance: none;
 	-webkit-appearance: none;
+}
+#close_btn:blur {
+	background-color: initial;
 }
 #count {
 	color: #aaa;
@@ -498,7 +509,6 @@ input[type="submit"] {
 #clearOptions_btn {
 	background-color: #efefef;
 	color: #222;
-	display: inline-block;
 	clear: both;
 	font-size: 1em;
 	padding: 0px;
@@ -511,6 +521,7 @@ input[type="submit"] {
 #clearOptions_btn:hover {
 	color: #8b8b8b;
 	background: #efefef url('../images/icons/trashDown.svg') no-repeat left;
+	appearance: none;
 	-webkit-appearance: none;
 }
 #start_btn[disabled]:active,
@@ -520,6 +531,7 @@ input[type="submit"] {
 	background: #fff url('../images/icons/noPlay.svg') no-repeat center;
 	font-size: 1em;
 	cursor: inherit;
+	appearance: none;
 	-webkit-appearance: none;
 }
 #start_btn {
@@ -549,6 +561,7 @@ input[type="submit"] {
 #back_btn:hover {
 	color: #8b8b8b;
 	background: #fff url('../images/icons/editDown.svg') no-repeat left;
+	appearance: none;
 	-webkit-appearance: none;
 }
 #estimatedTime {
@@ -644,11 +657,22 @@ input[type="submit"] {
 }
 #choices img {
     max-width: 100%;
-	max-height: 180px;
+	max-height: 300px;
 }
 #choices > a:active {
 	background-color: #0089B9;
+	appearance: none;
 	-webkit-appearance: none;
+}
+#choices a:has(img){
+	padding: 0;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 #warning {
 	text-align: center;
@@ -862,6 +886,12 @@ hr.faq {
 	#submission {
 		width: 471.9px;
 	}
+	#close_btn:focus,
+	#close_btn:hover {
+		background-color: #ff3d32;
+		appearance: none;
+		-webkit-appearance: none;
+	}
 	#options {
 		max-width: 640px;
 		margin: 0px auto 20px auto;
@@ -875,7 +905,6 @@ hr.faq {
 		column-count: 2;
 	}
 	#question {
-		display: block;
 		text-align: center;
 	}
 	.toolTip {
@@ -963,6 +992,11 @@ hr.faq {
 	}
 	#choices > a:hover {
 		background-color: #0089B9;
+		outline: 5px solid #0089B9;
+        outline-offset: -5px;
+	}
+	#choices img {
+		max-height: 350px;
 	}
 	#winner {
 		width: 50%;

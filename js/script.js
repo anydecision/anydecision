@@ -208,7 +208,7 @@ function showResult() {
 		justin.push(mainList[calculate.indexOf(calc2[i])]);
 		calculate.splice((calculate.indexOf(calc2[i])), 1, null);
 	}
-	if(justin[0].match(/\.(jpeg|jpg|gif|png)$/) != null){
+	if(justin[0].match(/\.(jpeg|jpg|gif|png)[?]?/i) != null || justin[0].match(/images\.unsplash/i) != null){
 		str+="<div id=\"winner\"><p>And the winner is:<\/p><img src=\""+justin[0]+"\" \/></div><br /><div id=\"scrollResults\"><table id=\"results\" align=\"center\">";
 	} else {
 		str+="<div id=\"winner\"><p>And the winner is:<\/p><span>"+justin[0]+"<\/span></div><br /><div id=\"scrollResults\"><table id=\"results\" align=\"center\">";
@@ -227,7 +227,7 @@ function showResult() {
 	// Runs the length of mainList
 	for (i=0; i < mainList.length; i++) {
 		// Adds the name of each option in order of the justin array
-		if(justin[i].match(/\.(jpeg|jpg|gif|png)$/) != null){
+		if(justin[i].match(/\.(jpeg|jpg|gif|png)[?]?/i) != null || justin[i].match(/images\.unsplash/i) != null){
 			str += "<tr>"+"<td><img src=\""+justin[i]+"\" \/><\/td>";
 		} else {
 			str += "<tr>"+"<td>"+justin[i]+"<\/td>";
@@ -265,12 +265,12 @@ function showImage() {
 	var str1 = ""+namingBoxFunc(storeSelect[leftChoice][head1]);
 	var str2 = ""+namingBoxFunc(storeSelect[rightChoice][head2]);
 	document.getElementById("percentComplete").innerHTML = str0;
-	if(str1.match(/\.(jpeg|jpg|gif|png)$/) != null){
+	if(str1.match(/\.(jpeg|jpg|gif|png)[?]?/i) != null || str1.match(/images\.unsplash/i) != null){
 		document.getElementById("leftField").innerHTML = "<img src=\""+str1+"\" \/>";
 	} else {
 		document.getElementById("leftField").innerHTML = str1;
 	}
-	if(str2.match(/\.(jpeg|jpg|gif|png)$/) != null){
+	if(str2.match(/\.(jpeg|jpg|gif|png)[?]?/i) != null || str2.match(/images\.unsplash/i) != null){
 		document.getElementById("rightField").innerHTML = "<img src=\""+str2+"\" \/>";
 	} else {
 		document.getElementById("rightField").innerHTML = str2;	
@@ -383,7 +383,7 @@ function showData(){
 		// If the i value of mainList isn't set to null
 		if((mainList[i] != null)){
 			// Create items in optionChoices with an id, remove button, and mainList location of i
-			if(mainList[i].match(/\.(jpeg|jpg|gif|png)$/) != null){
+			if(mainList[i].match(/\.(jpeg|jpg|gif|png)[?]?/i) != null || mainList[i].match(/images\.unsplash/i) != null){
 				document.getElementById("optionChoices").innerHTML += "<div id="+i+" class=\"imageOption\">"+"<input type=\"button\" id=\"close_btn\"value=\" \" onclick=\"remove("+i+");\"/> <img src=\""+mainList[i]+"\" \/><\/div>";
 			} else {
 				document.getElementById("optionChoices").innerHTML += "<div id="+i+"><p>"+"<input type=\"button\" id=\"close_btn\"value=\" \" onclick=\"remove("+i+");\"/> "+mainList[i]+"<\/p><\/div>";
