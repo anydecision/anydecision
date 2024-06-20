@@ -673,6 +673,7 @@ input[type="submit"] {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: #efefef;
 }
 #warning {
 	text-align: center;
@@ -994,6 +995,9 @@ hr.faq {
 		background-color: #0089B9;
 		outline: 5px solid #0089B9;
         outline-offset: -5px;
+	}
+	#choices > a:hover:has(img) {
+		background-color: #efefef;
 	}
 	#choices img {
 		max-height: 350px;
