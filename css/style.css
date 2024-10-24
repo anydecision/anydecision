@@ -132,7 +132,7 @@ form:hover {
 	width: 80%;
 	margin: 0px auto;
 	padding: 0px 20px;
-	justify-content: flex-start;
+	justify-content: space-between;
 	flex-wrap: nowrap;
 	flex-direction: row;
 	align-items: center;
@@ -169,7 +169,7 @@ form:hover {
 	margin: 10px auto;
     width: 95%;
 }
-#txtOption, #copyText {
+#txtOption, #copyText,#copyText2 {
 	width: 90%;
 	flex: 0px;
 	height: 3em;
@@ -178,7 +178,7 @@ form:hover {
 	border: 0px;
 	margin: auto;
 }
-#copyText {
+#copyText, #copyText2 {
 	width: 100%;
 	font-size: .9em;
 	text-overflow: ellipsis;
@@ -198,14 +198,14 @@ form:hover {
 	padding-left: 2%;
 	font-size: 1em;
 }
-#optionSubmit_btn, #copy_btn {
+#optionSubmit_btn, #copy_btn, #results_btn {
 	background: #00A7E1 url('../images/icons/add.svg') no-repeat center;
 	height: 3em;
 	width: 3em;
 	padding: 1px 6px;
 	font-size: 1em;
 }
-#copy_btn{
+#copy_btn, #results_btn {
 	background-image: none;
 	color: #fff;
 	width: auto;
@@ -741,7 +741,7 @@ input[type="submit"] {
 	margin: 0px auto;
 	flex-direction: column;
 }
-#groupBox {
+#groupBox, #resultsBox {
 	margin: 10px 0px;
 	border-radius: 8px;
 	background-color: #efefef;
@@ -860,13 +860,14 @@ hr.faq {
 	}
 	#banner {
 		width: 640px;
-		justify-content: flex-start;
+		justify-content: space-between;
 		padding: 0px;
 	}
 	#resultOptions {
 		align-items: stretch;
 		width: 640px;
 		flex-direction: row;
+		flex-wrap: wrap;
 	}
 	#logo {
 		width: 492px;
@@ -1011,5 +1012,11 @@ hr.faq {
 	#groupBox {
 		width: 50%;
 		margin: 0px 10px;
+		flex: 1;
+	}
+	#resultsBox {
+		width: 100%;
+		margin: 10px 10px 0;
+		flex: 2;
 	}
 }

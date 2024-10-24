@@ -168,6 +168,7 @@ function sortList(flag){
 		//console.log('final answer', mainList[record[0]]);
 		if(head1+head2 > 2){
 			console.log('top three answers:', mainList[record[0]], mainList[record[1]], mainList[record[2]]);
+			//document.getElementById("banner").innerHTML += '<div>Top three answers: ' + mainList[record[0]] + ', ' + mainList[record[1]] + ', ' + mainList[record[2]] + '</div>';
 		}
 	}
 	if (leftChoice<0) {
@@ -177,7 +178,7 @@ function sortList(flag){
 		finishFlag = 1;
 	}
 	else {
-		showImage();
+		showChoices();
 	}
 }
 // View Results
@@ -185,7 +186,10 @@ function showResult() {
 	var ranking = 1;
 	var sameRank = 1;
 	var str = "";
-	finalResults.push(storeSelect[0]);
+	if(storeSelect[0]){
+		finalResults.push(storeSelect[0]);
+	}
+
 	calculate=[];
 	var calc2= new Array();
 	for (i=0; i < mainList.length; i++) {
@@ -244,14 +248,15 @@ function showResult() {
 		// Ends each row
 		str += "<\/tr>";
 	}
-	str += "<\/table></div><br \/><div id=\"resultOptions\"><div id=\"groupBox\"><h2>Group Decision<\/h2><hr /><p>With a group?<br />Let everyone have a say.</p><input id=\"next_btn\" type=\"button\" name=\"Next\" label=\"Next Person\" value=\"Next Person\" onClick=\"initList(); \"><p>Or share link with the&nbsp;next&nbsp;person:</p><div id=\"copyField\" style=\"border: 1px solid rgb(239, 239, 239);\"><input type=\"text\" name=\"copyText\" id=\"copyText\" value=\""+makeUrlParams()+"\"><div class=\"toolTip\"><div id=\"added\" style=\"opacity: 0;\">Copied<\/div><input type=\"button\" name=\"Copy\" id=\"copy_btn\" onclick=\"copyShare();\" value=\"Copy\"><\/div><\/div><\/div><div id=\"groupBox\"><h2>New Decision<\/h2><hr /><p>Done with this list?<br />Go back to create a new one.</p><a href=\"\/\" tabindex=\"-1\"><input id=\"reset_btn\" type=\"button\" name=\"Reset\" label=\"Reset\" value=\"Start Over\" onClick=\"goBack(); clearOptions(); reset();\"><\/div><\/div><\/a>";
+	str += "<\/table></div><br \/><div id=\"resultOptions\"><div id=\"groupBox\"><h2>Group Decision<\/h2><hr /><p>With a group?<br />Let everyone have a say.</p><input id=\"next_btn\" type=\"button\" name=\"Next\" label=\"Next Person\" value=\"Next Person\" onClick=\"initList(); \"><p>Or share this link with the&nbsp;next&nbsp;person:</p><div id=\"copyField\" style=\"border: 1px solid rgb(239, 239, 239);\"><input type=\"text\" name=\"copyText\" id=\"copyText\" value=\""+makeUrlParams()+"\"><div class=\"toolTip\"><div id=\"added\" style=\"opacity: 0;\">Copied<\/div><input type=\"button\" name=\"Copy\" id=\"copy_btn\" onclick=\"copyShare();\" value=\"Copy\"><\/div><\/div><\/div><div id=\"groupBox\"><h2>New Decision<\/h2><hr /><p>Done with this list?<br />Go back to create a new one.</p><a href=\"\/\" tabindex=\"-1\"><input id=\"reset_btn\" type=\"button\" name=\"Reset\" label=\"Reset\" value=\"Start Over\" onClick=\"goBack(); clearOptions(); reset();\"><\/a><\/div><div id=\"resultsBox\"><h2>Share Results<\/h2><hr /><div id=\"copyField\" style=\"border: 1px solid rgb(239, 239, 239);min-width: 150px;\"><input type=\"text\" name=\"copyText2\" id=\"copyText2\" value=\""+makeUrlParams()+"&sr=1\"><div class=\"toolTip\"><div id=\"added\" style=\"opacity: 0;\">Copied<\/div><input type=\"button\" name=\"Copy\" id=\"results_btn\" onclick=\"shareResults();\" value=\"Copy\"><\/div><\/div>";
 	/*&nbsp; &nbsp; <input type=\"button\" value=\"Reset\" onClick=\"window.location.reload()\">*/
+	document.getElementById("tagLine").style.display = "none";
 	document.getElementById("resultField").style.visibility = "visible";
 	document.getElementById("resultField").innerHTML = str;
 	document.getElementById("quiz").style.display = "none";
+	document.getElementById("options").style.display = "none";
 	document.getElementById("banner").innerHTML = "<div class=\"toolTip\"><span class=\"toolTipText\">Return to the first screen and lose result data.<\/span><input type=\"button\" name=\"Edit\" label=\"Edit List\" value=\"Edit List\" id=\"back_btn\" onclick=\"goBack(); reset();\"\/><\/div>";
 }
-
 
 // Display two elements to be compared
 function showImage() {
@@ -261,6 +266,9 @@ function showImage() {
 	document.getElementById("resultField").innerHTML = "";
 	document.getElementById("resultField").style.visibility = "hidden";
 	document.getElementById("options").style.display = "none";
+	showChoices();
+}
+function showChoices() {
 	var str0 = Math.floor(finishSize*100/totalSize)+"%";
 	var str1 = ""+namingBoxFunc(storeSelect[leftChoice][head1]);
 	var str2 = ""+namingBoxFunc(storeSelect[rightChoice][head2]);
@@ -328,6 +336,7 @@ function resetTime(){
 function showData(){
 	// Removes the default text in Option List
 	document.getElementById("emptyOptions").innerHTML = " ";
+	document.getElementById("emptyOptions").style.paddingTop = 0;
 	var inputText = document.getElementById("txtOption").value;
 	// Determines if the user provided text has characters (not just spaces or left blank)
 	if (/\S/.test(inputText)){
@@ -367,6 +376,7 @@ function showData(){
 		inputText = document.getElementById("txtOption").value = "";
 		if(mainList.length == nullArray.length){
 			document.getElementById("emptyOptions").innerHTML = "Add some options above and they will fill in down here!";
+			document.getElementById("emptyOptions").style.paddingTop = "";
 			document.getElementById("optionChoices").innerHTML = " ";
 			//document.getElementById("count").innerHTML = " ";
 		}
@@ -443,6 +453,7 @@ function remove(item){
 	resetTime();
 	if(mainList.length == nullArray.length){
 			document.getElementById("emptyOptions").innerHTML = "Add some options above and they will fill in down here!";
+			document.getElementById("emptyOptions").style.paddingTop = "";
 			document.getElementById("count").innerHTML = "0 options";
 	} else {
 			document.getElementById("count").innerHTML = (mainList.length-nullArray.length)+" options";
@@ -516,7 +527,11 @@ function check(){
 	if(paramURL.has('l') && paramURL.has('r')){
 		mainList= JSON.parse(b64_to_utf8(paramURL.get('l')));
 		finalResults= JSON.parse(b64_to_utf8(paramURL.get('r')));
-		initList();
+		if(paramURL.has('sr')){
+			showResult();
+		} else {
+			initList();
+		}
 	}
 }
 function utf8_to_b64(str) {
@@ -539,7 +554,16 @@ function copyShare() {
 	navigator.clipboard.writeText(copyText.value);
 	copyButton.value= "Copied";
 	added();
-  }
+}
+function shareResults() {
+	var copyText = document.getElementById("copyText2");
+	var copyButton = document.getElementById("results_btn");
+	copyText.select();
+	copyText.setSelectionRange(0, 99999);
+	navigator.clipboard.writeText(copyText.value);
+	copyButton.value= "Copied";
+	added();
+}
 function setLocalStorageCustom(){
 	localStorage.setItem('custom', ' ');
 }
